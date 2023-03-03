@@ -1,1 +1,3 @@
-Check the build courseware https://redhat-scholars.github.io/build-course[documentation]  on how folder structure, how to use macros and other gotchas
+# Backstage Workshop for Red Hat Summit 2023
+
+https://redhat-scholars.github.io/backstage-workshop/backstage-workshop/index.html
