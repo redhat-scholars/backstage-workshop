@@ -1,4 +1,4 @@
-= Welcome to Template Tutorial
+= Backstage Workshop at Red Hat Summit 2023
 :page-layout: home
 :!sectids:
 
