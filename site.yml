@@ -2,9 +2,9 @@ runtime:
   cache_dir: ./.cache/antora
 
 site:
-  title: Template Tutorial
-  url: https://redhat-scholars.github.io/course-template
-  start_page: template-tutorial::index.adoc
+  title: Backstage Workshop
+  url: https://redhat-scholars.github.io/backstage-workshop
+  start_page: backstage-workshop::index.adoc
 
 content:
   sources:

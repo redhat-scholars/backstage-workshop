@@ -1,5 +1,5 @@
-name: template-tutorial
-title: Template Tutorial
+name: backstage-workshop
+title: Backstage Workshop
 version: master
 nav:
   - modules/ROOT/nav.adoc
