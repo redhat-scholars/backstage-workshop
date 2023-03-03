@@ -24,7 +24,8 @@
   "scripts": {
     "dev": "gulp",
     "clean": "gulp clean",
-    "workshop": "gulp workshopSite"
+    "workshop": "gulp workshopSite",
+    "start": "gulp"
   },
   "repository": {
     "type": "git",
