@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <title>poi-map - 0.1.0</title>
+</head>
+
+<body>
+
+    <script type="text/javascript">
+        console.log("connecting to ws server endpoint...");
+        var socket = new WebSocket("ws://" + location.host + "/ws-server-endpoint");
+        socket.onopen = function () {
+            connected = true;
+            console.log("connected successfully!");
+        };
+        socket.onmessage = function (m) {
+            console.log("got message: " + m.data);
+        };
+    </script>
+</body>
+
+</html>
