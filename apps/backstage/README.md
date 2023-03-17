@@ -1,6 +1,7 @@
 # Backstage Setup
 
 This guide borrowed heavily from https://janus-idp.io/blog/deploying-backstage-onto-openshift-using-helm
+Thanks to @sabre1041 for the tips!
 
 1. Find a cluster: CRC, RHPDS, BYO environment
 2. Install a recent release of `oc` on your dev machine
@@ -15,4 +16,4 @@ This guide borrowed heavily from https://janus-idp.io/blog/deploying-backstage-o
 9. Run `helm install backstage backstage/backstage -f values-openshift.yaml` to install backstage
 10. Open https://backstage.$OPENSHIFT_APPS_SUBDOMAIN in a browser to access backstage
 
-For a 1 hour test cluster that includes the above, try: https://play.instruqt.com/openshift/tracks/backstage
+For a 1 hour test cluster that includes all of the above, try: https://play.instruqt.com/openshift/tracks/backstage
