@@ -1,8 +1,14 @@
-= Setup
+= Getting Started with Backstage
 include::_attributes.adoc[]
 
-[#prerequisite]
-== Prerequisite CLI tools
+[#introduction]
+== Introducing Backstage
+
+
+
+[#cluster_access]
+== Cluster Access
+
 
 include::https://raw.githubusercontent.com/redhat-developer-demos/rhd-tutorial-common/master/prerequisites-kubernetes.adoc[]
 |===

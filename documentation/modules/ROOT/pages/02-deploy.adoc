@@ -1,8 +1,14 @@
-= Deploy Service
+= Golden Path Templates
 include::_attributes.adoc[]
 
-[#service]
-== The Service
+[#golden_paths]
+== Introducing Golden Path Templates
+
+[#deploy]
+== Deploying the Front End Service
+
+[#view]
+== View the resulting Components
 
 The code:
 

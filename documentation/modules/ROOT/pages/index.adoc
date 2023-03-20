@@ -26,10 +26,12 @@ In this hands-on session, you'll use headline Red Hat products and technologies 
 == Workshop Outline
 
 [.tile]
-.xref:01-setup.adoc[Get Started]
-* xref:01-setup.adoc#minikube[Minikube]
+.xref:01-setup.adoc[Backstage]
+* xref:01-setup.adoc#introduction[Introducing Backstage]
+* xref:01-setup.adoc#cluster_access[Cluster Access]
 
 [.tile]
-.xref:02-deploy.adoc[Deploying]
-* xref:02-deploy.adoc#package[Package the Application]
-* xref:02-deploy.adoc#deploy[Deploy the Application]
+.xref:02-deploy.adoc[Golden Path Templates]
+* xref:02-deploy.adoc#golden_paths[Introducing GPTs]
+* xref:02-deploy.adoc#deploy[Deploy the Front End Application]
+* xref:02-deploy.adoc#view[View the resulting Components]
