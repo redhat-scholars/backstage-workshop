@@ -1,0 +1,35 @@
+= Golden Path Templates
+include::_attributes.adoc[]
+
+[#golden_paths]
+== Introducing Golden Path Templates
+
+[#frontend]
+== Deploying the Front End service
+
+Invoke the Angular SPA frontend template in backstage
+
+[#github]
+== View the resulting Components
+
+Click on the Github repo link.  Explore the newly created repo
+
+Return to web console to check the app status and review the pipeline runs
+
+[#pipelines]
+== Trigger a Pipeline Run
+
+Manually trigger a pipeline run
+
+check the app status and review the pipeline runs
+
+[#gateway]
+== Deploy the Gateway service
+
+Return to backstage to create the gateway component
+
+Click on the Github repo link.  Explore the newly created repo
+
+Make a minor change and commit it (via the GitHub web UI) to trigger a new pipeline run
+
+Return to web console to review the pipeline runs

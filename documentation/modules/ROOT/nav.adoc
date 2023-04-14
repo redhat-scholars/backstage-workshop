@@ -2,7 +2,12 @@
 ** xref:01-setup.adoc#introduction[Introducing Backstage]
 ** xref:01-setup.adoc#cluster_access[Cluster Access]
 
-* xref:02-deploy.adoc[2. Golden Path Templates]
-** xref:02-deploy.adoc#golden_paths[Introducing GPTs]
-** xref:02-deploy.adoc#deploy[Deploy the Front End Application]
-** xref:02-deploy.adoc#view[View the resulting Components]
+* xref:02-templates.adoc[2. Templates]
+** xref:02-templates.adoc#golden_paths[Introducing GPTs]
+** xref:02-templates.adoc#template_frontend[Deploy the Front End Template]
+** xref:02-templates.adoc#component[View the resulting Components]
+** xref:02-templates.adoc#template_gateway[Deploy the Gateway Template]
+
+* xref:03-plugins.adoc[3. Plugins]
+
+* xref:04-productivity.adoc[4. Productivity]

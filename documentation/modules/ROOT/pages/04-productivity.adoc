@@ -1,0 +1,18 @@
+= Productivity
+include::_attributes.adoc[]
+
+[#devspaces]
+== Introducing DevSpaces
+
+[#backend_update]
+== Update the Backend Service
+Open the Backend component in DevSpaces
+
+When prompted, make sure to “Grant” access to your team's GitHub Org when approving DevSpaces access via GH Auth!
+
+Make a change and push a commit
+
+Check the resulting pipelines and deployments for activity
+
+Verify that your change has been published
+

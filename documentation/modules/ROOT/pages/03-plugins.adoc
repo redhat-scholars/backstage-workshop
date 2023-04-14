@@ -1,0 +1,19 @@
+= Plugins
+include::_attributes.adoc[]
+
+[#plugins_overview]
+== Introducing Plugins
+
+Return to backstage to check the status of the frontend and gateway components
+
+[#backend]
+== Deploying the Back End service
+
+Invoke the backend component using the Backend template
+
+[#backend_view]
+== View the resulting Components
+
+View the resulting component and plugins
+
+View the resulting changes to the application
