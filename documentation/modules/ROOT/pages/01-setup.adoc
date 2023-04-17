@@ -19,7 +19,8 @@ image::kubelogo.png[]
 
 Open the provided web console url in your browser to connect to the openshift web console. Choose the "Login with Github" option to proceed.
 
-=== Create a Project
+[#project_access]
+=== Project Access
 
 Establish a project namespace for your work. 
 
@@ -27,8 +28,9 @@ Select "create a new project" from the main openshift page.  The project name mu
 
 Remember this project name!  You will need to enter it into several template inputs as your "Namespace" value.
 
-In the next section, we will learn how to populate this project namespace with fresh content from the Backstage catalog. But first, let's connect to Backstage.
+In the next section, we will learn how to populate this project namespace with fresh content from the Backstage catalog. But first, the final step in this section involves connecting to our instance of Backstage.
 
+[#backstage_access]
 == Login to Backstage
 
 Click on the app launcher link in the header menu and select "Backstage" to connect to your backstage instance.  

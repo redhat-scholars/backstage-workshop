@@ -1,8 +1,8 @@
-= Golden Path Templates
+= Templates
 include::_attributes.adoc[]
 
-[#golden_paths]
-== Introducing Golden Path Templates
+[#templates]
+== Introducing Templates
 
 [#frontend]
 == Deploying the Front End service
@@ -32,4 +32,12 @@ Click on the Github repo link.  Explore the newly created repo
 
 Make a minor change and commit it (via the GitHub web UI) to trigger a new pipeline run
 
+[#pipeline_triggers]
+== Pipeline Runs
+
 Return to web console to review the pipeline runs
+
+[#view_map]
+== View the resulting Workloads
+
+Open a connection to the frontend web service using your web browser
