@@ -69,7 +69,7 @@ When prompted, make sure to “Grant” access to your team's GitHub Org when ap
 Open `/src/main/java/com/rhdevelopers/summit/workshop/poi/PoiResource.java`
 
 Add the following code near the bottom of the file:
-+
+
 [.console-input]
 [source,bash,subs="+macros,+attributes"]
 ----
@@ -86,7 +86,7 @@ Verify that your change has been published
 == Validate your Changes
 
 Connect to the gateway pod to load a new datapoint:
-+
+
 [.console-input]
 [source,bash,subs="+macros,+attributes"]
 ----

@@ -2,17 +2,17 @@
 include::_attributes.adoc[]
 
 [#software_catalog]
-==View the components in the Software Catalog
+== View the components in the Software Catalog
 Return to backstage to check the status of the frontend and gateway components
 
 [#plugins]
 == About Plugins
 
 [#component_frontend]
-==View the FrontEnd Component
+== View the FrontEnd Component
 
 [#component_gateway]
-==View the Gateway Component
+== View the Gateway Component
 
 [#backend]
 == Deploying the Back End service
