@@ -52,13 +52,19 @@
 <ul class="nav-list">
   <li class="nav-item" data-depth="1">
     <button class="nav-item-toggle"></button>
-    <a class="nav-link" href="01-setup.html">1. Backstage</a>
+    <a class="nav-link" href="01-setup.html">1. Backstage Basics</a>
 <ul class="nav-list">
   <li class="nav-item" data-depth="2">
     <a class="nav-link" href="01-setup.html#introduction">Introducing Backstage</a>
   </li>
   <li class="nav-item" data-depth="2">
     <a class="nav-link" href="01-setup.html#cluster_access">Cluster Access</a>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="01-setup.html#project_access">Project Access</a>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="01-setup.html#backstage_access">Accessing Backstage</a>
   </li>
 </ul>
   </li>
@@ -67,24 +73,66 @@
     <a class="nav-link" href="02-templates.html">2. Templates</a>
 <ul class="nav-list">
   <li class="nav-item" data-depth="2">
-    <a class="nav-link" href="02-templates.html#golden_paths">Introducing GPTs</a>
+    <a class="nav-link" href="02-templates.html#templates">Templates Introduction</a>
   </li>
   <li class="nav-item" data-depth="2">
-    <a class="nav-link" href="02-templates.html#template_frontend">Deploy the Front End Template</a>
+    <a class="nav-link" href="02-templates.html#frontend">Deploy the Front End Template</a>
   </li>
   <li class="nav-item" data-depth="2">
-    <a class="nav-link" href="02-templates.html#component">View the resulting Components</a>
+    <a class="nav-link" href="02-templates.html#github">Front End Template Repo</a>
   </li>
   <li class="nav-item" data-depth="2">
-    <a class="nav-link" href="02-templates.html#template_gateway">Deploy the Gateway Template</a>
+    <a class="nav-link" href="02-templates.html#pipelines">Front End Build Pipeline</a>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="02-templates.html#gateway">Deploy the Gateway Template</a>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="02-templates.html#pipeline_triggers">Gateway Build Pipeline</a>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="02-templates.html#view_map">Access the resulting Workloads</a>
   </li>
 </ul>
   </li>
   <li class="nav-item" data-depth="1">
-    <a class="nav-link" href="03-plugins.html">3. Plugins</a>
+    <button class="nav-item-toggle"></button>
+    <a class="nav-link" href="03-components.html">3. Components</a>
+<ul class="nav-list">
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="03-components.html#software_catalog">View the resulting Components</a>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="03-components.html#plugins">About Plugins</a>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="03-components.html#backend">Deploy the Backend Template</a>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="03-components.html#backend_view">View the Backend Component</a>
+  </li>
+</ul>
   </li>
   <li class="nav-item" data-depth="1">
-    <a class="nav-link" href="04-productivity.html">4. Productivity</a>
+    <button class="nav-item-toggle"></button>
+    <a class="nav-link" href="04-development.html">4. Development</a>
+<ul class="nav-list">
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="04-development.html#backend_pipeline">Run the Backend Pipeline</a>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="04-development.html#configuration">Service Binding</a>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="04-development.html#devspaces">DevSpaces</a>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="04-development.html#gateway_update">Update the Gateway Service</a>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="04-development.html#validate_changes">Validate your Changes</a>
+  </li>
+</ul>
   </li>
 </ul>
   </li>
@@ -145,28 +193,83 @@
 <p><a href="01-setup.html#introduction" class="xref page">Introducing Backstage</a></p>
 </li>
 <li>
-<p><a href="01-setup.html#cluster_access" class="xref page">Cluster Access</a></p>
+<p><a href="01-setup.html#cluster_access" class="xref page">OpenShift Cluster Access</a></p>
+</li>
+<li>
+<p><a href="01-setup.html#backstage_access" class="xref page">Accessing Backstage</a></p>
 </li>
 </ul>
 </div>
 <div class="ulist tile">
-<div class="title"><a href="#02-deploy.adoc" class="xref unresolved">Golden Path Templates</a></div>
+<div class="title"><a href="02-templates.html" class="xref page">Templates</a></div>
 <ul>
 <li>
-<p><a href="#02-deploy.adoc#golden_paths" class="xref unresolved">Introducing GPTs</a></p>
+<p><a href="02-templates.html#templates" class="xref page">Introducing Templates</a></p>
 </li>
 <li>
-<p><a href="#02-deploy.adoc#deploy" class="xref unresolved">Deploy the Front End Application</a></p>
+<p><a href="02-templates.html#frontend" class="xref page">Deploy the Front End Template</a></p>
 </li>
 <li>
-<p><a href="#02-deploy.adoc#view" class="xref unresolved">View the resulting Components</a></p>
+<p><a href="02-templates.html#github" class="xref page">View the resulting Repos</a></p>
+</li>
+<li>
+<p><a href="02-templates.html#pipelines" class="xref page">View the resulting Pipelines</a></p>
+</li>
+<li>
+<p><a href="02-templates.html#gateway" class="xref page">Deploy the Gateway Template</a></p>
+</li>
+<li>
+<p><a href="02-templates.html#pipeline_triggers" class="xref page">Trigger a Pipeline Run</a></p>
+</li>
+</ul>
+</div>
+<div class="ulist tile">
+<div class="title"><a href="03-components.html" class="xref page">Components</a></div>
+<ul>
+<li>
+<p><a href="03-components.html#software_catalog" class="xref page">Software Catalog</a></p>
+</li>
+<li>
+<p><a href="03-components.html#plugins" class="xref page">Plugins</a></p>
+</li>
+<li>
+<p><a href="03-components.html#component_frontend" class="xref page">View the FrontEnd Component</a></p>
+</li>
+<li>
+<p><a href="03-components.html#component_gateway" class="xref page">View the Gateway Component</a></p>
+</li>
+<li>
+<p><a href="03-components.html#backend" class="xref page">Deploy the Backend Template</a></p>
+</li>
+<li>
+<p><a href="03-components.html#backend_view" class="xref page">View the Backend Component</a></p>
+</li>
+</ul>
+</div>
+<div class="ulist tile">
+<div class="title"><a href="04-development.html" class="xref page">Development</a></div>
+<ul>
+<li>
+<p><a href="04-development.html#backend_pipeline" class="xref page">Run the Backend Pipeline</a></p>
+</li>
+<li>
+<p><a href="04-development.html#configuration" class="xref page">Service Binding</a></p>
+</li>
+<li>
+<p><a href="04-development.html#devspaces" class="xref page">Using DevSpaces</a></p>
+</li>
+<li>
+<p><a href="04-development.html#gateway_update" class="xref page">Update the Gateway Service</a></p>
+</li>
+<li>
+<p><a href="04-development.html#validate_changes" class="xref page">Validate your Changes</a></p>
 </li>
 </ul>
 </div>
 </div>
 </div>
 <nav class="pagination">
-  <span class="next"><a href="01-setup.html">1. Backstage</a></span>
+  <span class="next"><a href="01-setup.html">1. Backstage Basics</a></span>
 </nav>
 </article>
 <aside class="toc sidebar" data-title="Contents" data-levels="2">

@@ -3,10 +3,9 @@
   <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width,initial-scale=1">
-    <title>Templates :: Backstage Workshop</title>
-    <link rel="canonical" href="https://redhat-scholars.github.io/backstage-workshop/backstage-workshop/02-templates.html">
-    <link rel="prev" href="01-setup.html">
-    <link rel="next" href="03-components.html">
+    <title>Development :: Backstage Workshop</title>
+    <link rel="canonical" href="https://redhat-scholars.github.io/backstage-workshop/backstage-workshop/04-development.html">
+    <link rel="prev" href="03-components.html">
     <meta name="generator" content="Antora 3.0.0">
     <link rel="stylesheet" href="../_/css/site.css">
   </head>
@@ -69,30 +68,30 @@
   </li>
 </ul>
   </li>
-  <li class="nav-item is-current-page" data-depth="1">
+  <li class="nav-item" data-depth="1">
     <button class="nav-item-toggle"></button>
     <a class="nav-link" href="02-templates.html">2. Templates</a>
 <ul class="nav-list">
   <li class="nav-item" data-depth="2">
-    <a class="nav-link" href="#templates">Templates Introduction</a>
+    <a class="nav-link" href="02-templates.html#templates">Templates Introduction</a>
   </li>
   <li class="nav-item" data-depth="2">
-    <a class="nav-link" href="#frontend">Deploy the Front End Template</a>
+    <a class="nav-link" href="02-templates.html#frontend">Deploy the Front End Template</a>
   </li>
   <li class="nav-item" data-depth="2">
-    <a class="nav-link" href="#github">Front End Template Repo</a>
+    <a class="nav-link" href="02-templates.html#github">Front End Template Repo</a>
   </li>
   <li class="nav-item" data-depth="2">
-    <a class="nav-link" href="#pipelines">Front End Build Pipeline</a>
+    <a class="nav-link" href="02-templates.html#pipelines">Front End Build Pipeline</a>
   </li>
   <li class="nav-item" data-depth="2">
-    <a class="nav-link" href="#gateway">Deploy the Gateway Template</a>
+    <a class="nav-link" href="02-templates.html#gateway">Deploy the Gateway Template</a>
   </li>
   <li class="nav-item" data-depth="2">
-    <a class="nav-link" href="#pipeline_triggers">Gateway Build Pipeline</a>
+    <a class="nav-link" href="02-templates.html#pipeline_triggers">Gateway Build Pipeline</a>
   </li>
   <li class="nav-item" data-depth="2">
-    <a class="nav-link" href="#view_map">Access the resulting Workloads</a>
+    <a class="nav-link" href="02-templates.html#view_map">Access the resulting Workloads</a>
   </li>
 </ul>
   </li>
@@ -114,24 +113,24 @@
   </li>
 </ul>
   </li>
-  <li class="nav-item" data-depth="1">
+  <li class="nav-item is-current-page" data-depth="1">
     <button class="nav-item-toggle"></button>
     <a class="nav-link" href="04-development.html">4. Development</a>
 <ul class="nav-list">
   <li class="nav-item" data-depth="2">
-    <a class="nav-link" href="04-development.html#backend_pipeline">Run the Backend Pipeline</a>
+    <a class="nav-link" href="#backend_pipeline">Run the Backend Pipeline</a>
   </li>
   <li class="nav-item" data-depth="2">
-    <a class="nav-link" href="04-development.html#configuration">Service Binding</a>
+    <a class="nav-link" href="#configuration">Service Binding</a>
   </li>
   <li class="nav-item" data-depth="2">
-    <a class="nav-link" href="04-development.html#devspaces">DevSpaces</a>
+    <a class="nav-link" href="#devspaces">DevSpaces</a>
   </li>
   <li class="nav-item" data-depth="2">
-    <a class="nav-link" href="04-development.html#gateway_update">Update the Gateway Service</a>
+    <a class="nav-link" href="#gateway_update">Update the Gateway Service</a>
   </li>
   <li class="nav-item" data-depth="2">
-    <a class="nav-link" href="04-development.html#validate_changes">Validate your Changes</a>
+    <a class="nav-link" href="#validate_changes">Validate your Changes</a>
   </li>
 </ul>
   </li>
@@ -150,83 +149,141 @@
 <nav class="breadcrumbs" aria-label="breadcrumbs">
   <ul>
     <li><a href="index.html">Backstage Workshop</a></li>
-    <li><a href="02-templates.html">2. Templates</a></li>
+    <li><a href="04-development.html">4. Development</a></li>
   </ul>
 </nav>
-  <div class="edit-this-page"><a href="https://github.com/redhat-scholars/backstage-workshop/edit/master/documentation/modules/ROOT/pages/02-templates.adoc">Edit this Page</a></div>
+  <div class="edit-this-page"><a href="https://github.com/redhat-scholars/backstage-workshop/edit/master/documentation/modules/ROOT/pages/04-development.adoc">Edit this Page</a></div>
   </div>
   <div class="content">
 <article class="doc">
-<h1 class="page">Templates</h1>
+<h1 class="page">Development</h1>
 <div class="sect1">
-<h2 id="templates"><a class="anchor" href="#templates"></a>Introducing Templates</h2>
+<h2 id="backend_pipeline"><a class="anchor" href="#backend_pipeline"></a>Run the Backend Pipeline</h2>
 <div class="sectionbody">
 
 </div>
 </div>
 <div class="sect1">
-<h2 id="frontend"><a class="anchor" href="#frontend"></a>Deploying the Front End service</h2>
+<h2 id="configuration"><a class="anchor" href="#configuration"></a>Service Binding</h2>
 <div class="sectionbody">
 <div class="paragraph">
-<p>Invoke the Angular SPA frontend template in backstage</p>
+<p>Connect to a terminal on the gateway pod</p>
+</div>
+<div class="olist arabic">
+<ol class="arabic">
+<li>
+<p>List gateway backends:</p>
+<div class="listingblock console-input">
+<div class="content">
+<pre class="highlightjs highlight"><code class="language-bash hljs" data-lang="bash">curl localhost:8080/backend/list</code></pre>
+</div>
+</div>
+</li>
+<li>
+<p>Register your new backend service:</p>
+<div class="listingblock console-input">
+<div class="content">
+<pre class="highlightjs highlight"><code class="language-bash hljs" data-lang="bash">curl localhost:8080/backend/register/poi-backend?endpoint=http://poi-backend-app:8080</code></pre>
+</div>
+</div>
+</li>
+<li>
+<p>List gateway backends:</p>
+<div class="listingblock console-input">
+<div class="content">
+<pre class="highlightjs highlight"><code class="language-bash hljs" data-lang="bash">curl localhost:8080/backend/list</code></pre>
+</div>
+</div>
+</li>
+<li>
+<p>Check the backend database for records. The result should be empty:</p>
+<div class="listingblock console-input">
+<div class="content">
+<pre class="highlightjs highlight"><code class="language-bash hljs" data-lang="bash">curl <a href="http://poi-backend-app:8080/ws/data/all" class="bare">http://poi-backend-app:8080/ws/data/all</a></code></pre>
+</div>
+</div>
+</li>
+<li>
+<p>Populate the backend database:</p>
+<div class="listingblock console-input">
+<div class="content">
+<pre class="highlightjs highlight"><code class="language-bash hljs" data-lang="bash">curl <a href="http://poi-backend-app:8080/ws/data/load" class="bare">http://poi-backend-app:8080/ws/data/load</a></code></pre>
+</div>
+</div>
+</li>
+<li>
+<p>Check the backend database for new records:</p>
+<div class="listingblock console-input">
+<div class="content">
+<pre class="highlightjs highlight"><code class="language-bash hljs" data-lang="bash">curl <a href="http://poi-backend-app:8080/ws/data/all" class="bare">http://poi-backend-app:8080/ws/data/all</a></code></pre>
+</div>
+</div>
+</li>
+</ol>
 </div>
 </div>
 </div>
 <div class="sect1">
-<h2 id="github"><a class="anchor" href="#github"></a>View the resulting Components</h2>
+<h2 id="devspaces"><a class="anchor" href="#devspaces"></a>Introducing DevSpaces</h2>
+<div class="sectionbody">
+
+</div>
+</div>
+<div class="sect1">
+<h2 id="gateway_update"><a class="anchor" href="#gateway_update"></a>Update the Gateway Service</h2>
 <div class="sectionbody">
 <div class="paragraph">
-<p>Click on the Github repo link.  Explore the newly created repo</p>
+<p>Open the Gateway component in DevSpaces</p>
 </div>
 <div class="paragraph">
-<p>Return to web console to check the app status and review the pipeline runs</p>
+<p>When prompted, make sure to “Grant” access to your team&#8217;s GitHub Org when approving DevSpaces access via GH Auth!</p>
+</div>
+<div class="paragraph">
+<p>Open <code>/src/main/java/com/rhdevelopers/summit/workshop/poi/PoiResource.java</code></p>
+</div>
+<div class="paragraph">
+<p>Add the following code near the bottom of the file:</p>
+</div>
+<div class="paragraph">
+<p>+</p>
+</div>
+<div class="listingblock console-input">
+<div class="content">
+<pre class="highlightjs highlight"><code class="language-bash hljs" data-lang="bash">Example code needed...</code></pre>
+</div>
+</div>
+<div class="paragraph">
+<p>Commit your change and sync</p>
+</div>
+<div class="paragraph">
+<p>Check the resulting pipelines and deployments for activity</p>
+</div>
+<div class="paragraph">
+<p>Verify that your change has been published</p>
 </div>
 </div>
 </div>
 <div class="sect1">
-<h2 id="pipelines"><a class="anchor" href="#pipelines"></a>Trigger a Pipeline Run</h2>
+<h2 id="validate_your_change"><a class="anchor" href="#validate_your_change"></a>Validate your Changes</h2>
 <div class="sectionbody">
 <div class="paragraph">
-<p>Manually trigger a pipeline run</p>
+<p>Connect to the gateway pod to load a new datapoint:</p>
 </div>
 <div class="paragraph">
-<p>check the app status and review the pipeline runs</p>
+<p>+</p>
 </div>
+<div class="listingblock console-input">
+<div class="content">
+<pre class="highlightjs highlight"><code class="language-bash hljs" data-lang="bash">curl -X POST localhost:8080/add/point -d="{name:'Null',description:'Null Island',coordinates:[0,0]}"</code></pre>
 </div>
-</div>
-<div class="sect1">
-<h2 id="gateway"><a class="anchor" href="#gateway"></a>Deploy the Gateway service</h2>
-<div class="sectionbody">
-<div class="paragraph">
-<p>Return to backstage to create the gateway component</p>
 </div>
 <div class="paragraph">
-<p>Click on the Github repo link.  Explore the newly created repo</p>
-</div>
-<div class="paragraph">
-<p>Make a minor change and commit it (via the GitHub web UI) to trigger a new pipeline run</p>
-</div>
-</div>
-</div>
-<div class="sect1">
-<h2 id="pipeline_triggers"><a class="anchor" href="#pipeline_triggers"></a>Pipeline Runs</h2>
-<div class="sectionbody">
-<div class="paragraph">
-<p>Return to web console to review the pipeline runs</p>
-</div>
-</div>
-</div>
-<div class="sect1">
-<h2 id="view_map"><a class="anchor" href="#view_map"></a>View the resulting Workloads</h2>
-<div class="sectionbody">
-<div class="paragraph">
-<p>Open a connection to the frontend web service using your web browser</p>
+<p>Reload the map to look for your new Point.</p>
 </div>
 </div>
 </div>
 <nav class="pagination">
-  <span class="prev"><a href="01-setup.html">1. Backstage Basics</a></span>
-  <span class="next"><a href="03-components.html">3. Components</a></span>
+  <span class="prev"><a href="03-components.html">3. Components</a></span>
 </nav>
 </article>
 <aside class="toc sidebar" data-title="Contents" data-levels="2">

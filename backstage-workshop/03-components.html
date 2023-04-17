@@ -3,10 +3,10 @@
   <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width,initial-scale=1">
-    <title>Templates :: Backstage Workshop</title>
-    <link rel="canonical" href="https://redhat-scholars.github.io/backstage-workshop/backstage-workshop/02-templates.html">
-    <link rel="prev" href="01-setup.html">
-    <link rel="next" href="03-components.html">
+    <title>Components :: Backstage Workshop</title>
+    <link rel="canonical" href="https://redhat-scholars.github.io/backstage-workshop/backstage-workshop/03-components.html">
+    <link rel="prev" href="02-templates.html">
+    <link rel="next" href="04-development.html">
     <meta name="generator" content="Antora 3.0.0">
     <link rel="stylesheet" href="../_/css/site.css">
   </head>
@@ -69,48 +69,48 @@
   </li>
 </ul>
   </li>
-  <li class="nav-item is-current-page" data-depth="1">
+  <li class="nav-item" data-depth="1">
     <button class="nav-item-toggle"></button>
     <a class="nav-link" href="02-templates.html">2. Templates</a>
 <ul class="nav-list">
   <li class="nav-item" data-depth="2">
-    <a class="nav-link" href="#templates">Templates Introduction</a>
+    <a class="nav-link" href="02-templates.html#templates">Templates Introduction</a>
   </li>
   <li class="nav-item" data-depth="2">
-    <a class="nav-link" href="#frontend">Deploy the Front End Template</a>
+    <a class="nav-link" href="02-templates.html#frontend">Deploy the Front End Template</a>
   </li>
   <li class="nav-item" data-depth="2">
-    <a class="nav-link" href="#github">Front End Template Repo</a>
+    <a class="nav-link" href="02-templates.html#github">Front End Template Repo</a>
   </li>
   <li class="nav-item" data-depth="2">
-    <a class="nav-link" href="#pipelines">Front End Build Pipeline</a>
+    <a class="nav-link" href="02-templates.html#pipelines">Front End Build Pipeline</a>
   </li>
   <li class="nav-item" data-depth="2">
-    <a class="nav-link" href="#gateway">Deploy the Gateway Template</a>
+    <a class="nav-link" href="02-templates.html#gateway">Deploy the Gateway Template</a>
   </li>
   <li class="nav-item" data-depth="2">
-    <a class="nav-link" href="#pipeline_triggers">Gateway Build Pipeline</a>
+    <a class="nav-link" href="02-templates.html#pipeline_triggers">Gateway Build Pipeline</a>
   </li>
   <li class="nav-item" data-depth="2">
-    <a class="nav-link" href="#view_map">Access the resulting Workloads</a>
+    <a class="nav-link" href="02-templates.html#view_map">Access the resulting Workloads</a>
   </li>
 </ul>
   </li>
-  <li class="nav-item" data-depth="1">
+  <li class="nav-item is-current-page" data-depth="1">
     <button class="nav-item-toggle"></button>
     <a class="nav-link" href="03-components.html">3. Components</a>
 <ul class="nav-list">
   <li class="nav-item" data-depth="2">
-    <a class="nav-link" href="03-components.html#software_catalog">View the resulting Components</a>
+    <a class="nav-link" href="#software_catalog">View the resulting Components</a>
   </li>
   <li class="nav-item" data-depth="2">
-    <a class="nav-link" href="03-components.html#plugins">About Plugins</a>
+    <a class="nav-link" href="#plugins">About Plugins</a>
   </li>
   <li class="nav-item" data-depth="2">
-    <a class="nav-link" href="03-components.html#backend">Deploy the Backend Template</a>
+    <a class="nav-link" href="#backend">Deploy the Backend Template</a>
   </li>
   <li class="nav-item" data-depth="2">
-    <a class="nav-link" href="03-components.html#backend_view">View the Backend Component</a>
+    <a class="nav-link" href="#backend_view">View the Backend Component</a>
   </li>
 </ul>
   </li>
@@ -150,83 +150,55 @@
 <nav class="breadcrumbs" aria-label="breadcrumbs">
   <ul>
     <li><a href="index.html">Backstage Workshop</a></li>
-    <li><a href="02-templates.html">2. Templates</a></li>
+    <li><a href="03-components.html">3. Components</a></li>
   </ul>
 </nav>
-  <div class="edit-this-page"><a href="https://github.com/redhat-scholars/backstage-workshop/edit/master/documentation/modules/ROOT/pages/02-templates.adoc">Edit this Page</a></div>
+  <div class="edit-this-page"><a href="https://github.com/redhat-scholars/backstage-workshop/edit/master/documentation/modules/ROOT/pages/03-components.adoc">Edit this Page</a></div>
   </div>
   <div class="content">
 <article class="doc">
-<h1 class="page">Templates</h1>
-<div class="sect1">
-<h2 id="templates"><a class="anchor" href="#templates"></a>Introducing Templates</h2>
+<h1 class="page">Components</h1>
+<div id="preamble">
 <div class="sectionbody">
-
-</div>
-</div>
-<div class="sect1">
-<h2 id="frontend"><a class="anchor" href="#frontend"></a>Deploying the Front End service</h2>
-<div class="sectionbody">
-<div class="paragraph">
-<p>Invoke the Angular SPA frontend template in backstage</p>
+<div id="software_catalog" class="paragraph">
+<p>==View the components in the Software Catalog
+Return to backstage to check the status of the frontend and gateway components</p>
 </div>
 </div>
 </div>
 <div class="sect1">
-<h2 id="github"><a class="anchor" href="#github"></a>View the resulting Components</h2>
+<h2 id="plugins"><a class="anchor" href="#plugins"></a>About Plugins</h2>
 <div class="sectionbody">
-<div class="paragraph">
-<p>Click on the Github repo link.  Explore the newly created repo</p>
+<div id="component_frontend" class="paragraph">
+<p>==View the FrontEnd Component</p>
 </div>
-<div class="paragraph">
-<p>Return to web console to check the app status and review the pipeline runs</p>
+<div id="component_gateway" class="paragraph">
+<p>==View the Gateway Component</p>
 </div>
 </div>
 </div>
 <div class="sect1">
-<h2 id="pipelines"><a class="anchor" href="#pipelines"></a>Trigger a Pipeline Run</h2>
+<h2 id="backend"><a class="anchor" href="#backend"></a>Deploying the Back End service</h2>
 <div class="sectionbody">
 <div class="paragraph">
-<p>Manually trigger a pipeline run</p>
-</div>
-<div class="paragraph">
-<p>check the app status and review the pipeline runs</p>
+<p>Invoke the backend component using the Backend template</p>
 </div>
 </div>
 </div>
 <div class="sect1">
-<h2 id="gateway"><a class="anchor" href="#gateway"></a>Deploy the Gateway service</h2>
+<h2 id="backend_view"><a class="anchor" href="#backend_view"></a>View the resulting Components</h2>
 <div class="sectionbody">
 <div class="paragraph">
-<p>Return to backstage to create the gateway component</p>
+<p>View the resulting component and plugins</p>
 </div>
 <div class="paragraph">
-<p>Click on the Github repo link.  Explore the newly created repo</p>
-</div>
-<div class="paragraph">
-<p>Make a minor change and commit it (via the GitHub web UI) to trigger a new pipeline run</p>
-</div>
-</div>
-</div>
-<div class="sect1">
-<h2 id="pipeline_triggers"><a class="anchor" href="#pipeline_triggers"></a>Pipeline Runs</h2>
-<div class="sectionbody">
-<div class="paragraph">
-<p>Return to web console to review the pipeline runs</p>
-</div>
-</div>
-</div>
-<div class="sect1">
-<h2 id="view_map"><a class="anchor" href="#view_map"></a>View the resulting Workloads</h2>
-<div class="sectionbody">
-<div class="paragraph">
-<p>Open a connection to the frontend web service using your web browser</p>
+<p>View the resulting changes to the application</p>
 </div>
 </div>
 </div>
 <nav class="pagination">
-  <span class="prev"><a href="01-setup.html">1. Backstage Basics</a></span>
-  <span class="next"><a href="03-components.html">3. Components</a></span>
+  <span class="prev"><a href="02-templates.html">2. Templates</a></span>
+  <span class="next"><a href="04-development.html">4. Development</a></span>
 </nav>
 </article>
 <aside class="toc sidebar" data-title="Contents" data-levels="2">
