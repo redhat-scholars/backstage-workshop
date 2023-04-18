@@ -161,9 +161,16 @@
 <div class="sect1">
 <h2 id="introduction"><a class="anchor" href="#introduction"></a>Introducing Backstage</h2>
 <div class="sectionbody">
+<div class="imageblock">
+<div class="content">
+<img src="_images/kubelogo.png" alt="kubelogo">
+</div>
+</div>
 <div class="paragraph">
-<p>Screenshot of slides
-link to slides</p>
+<p>Screenshot of slides</p>
+</div>
+<div class="paragraph">
+<p>link to slides</p>
 </div>
 </div>
 </div>
@@ -173,18 +180,16 @@ link to slides</p>
 <div class="paragraph">
 <p>You will need a GitHub account in order to follow along with this workshop.  Account activation is free and requires fewer than five minutes to complete.  If you do not have a github account, or are not prepared to authenticate using your existing account, please sign up for a new account now at github.com</p>
 </div>
+<div class="paragraph">
+<p>Enter your github username in the onboarding doc then alert a lab assistant, and we will add you to the GitHub Org.  You will need to receive <strong>and accept</strong> an invite from our team before continuing on to the next step!</p>
+</div>
 </div>
 </div>
 <div class="sect1">
 <h2 id="cluster_access"><a class="anchor" href="#cluster_access"></a>Cluster Access</h2>
 <div class="sectionbody">
 <div class="paragraph">
-<p>Check the onboarding doc for the latest cluster access urls and credentials</p>
-</div>
-<div class="imageblock">
-<div class="content">
-<img src="_images/kubelogo.png" alt="kubelogo">
-</div>
+<p>Check the onboarding doc for the latest cluster access urls and credentials ✅</p>
 </div>
 <div class="paragraph">
 <p>Open the provided web console url in your browser to connect to the openshift web console. Choose the "Login with Github" option to proceed.</p>
@@ -192,31 +197,34 @@ link to slides</p>
 <div class="sect2">
 <h3 id="project_access"><a class="anchor" href="#project_access"></a>Project Access</h3>
 <div class="paragraph">
-<p>Establish a project namespace for your work.</p>
+<p>This OpenShift cluster has been configured to automatically establish an initial project namespace for your work.</p>
 </div>
 <div class="paragraph">
-<p>Select "create a new project" from the main openshift page.  The project name must be unique. Enter your github username in the first two inputs, then click "Create".</p>
+<p>After logging in with Github, you should see a list of Projects with one result.  The project name should match your github id.</p>
 </div>
 <div class="paragraph">
-<p>Remember this project name!  You will need to enter it into several template inputs as your "Namespace" value.</p>
+<p>Remember this project name!  You will need to enter it into several template inputs as your "Namespace" value in the next chapter.</p>
 </div>
 <div class="paragraph">
-<p>In the next section, we will learn how to populate this project namespace with fresh content from the Backstage catalog. But first, the final step in this section involves connecting to our instance of Backstage.</p>
+<p>Next, you will begin to populate this project namespace with new software components, generated via templates, as you build a three-tier GeoSpatial mapping demo application.</p>
+</div>
+<div class="paragraph">
+<p>But first, the final step in this section involves connecting to our instance of Backstage.</p>
 </div>
 </div>
 </div>
 </div>
 <div class="sect1">
-<h2 id="backstage_access"><a class="anchor" href="#backstage_access"></a>Login to Backstage</h2>
+<h2 id="backstage_access"><a class="anchor" href="#backstage_access"></a>Logging in to Backstage</h2>
 <div class="sectionbody">
 <div class="paragraph">
 <p>Click on the app launcher link in the header menu and select "Backstage" to connect to your backstage instance.</p>
 </div>
 <div class="paragraph">
-<p>You will be prompted to authenticate.  Use the GitHub signin option.</p>
+<p>You will be prompted to authenticate.  Again, use the GitHub signin option.</p>
 </div>
 <div class="paragraph">
-<p>Now that we have a project namespace and a successful connection to backstage, we can start to create our workloads using the template system.</p>
+<p>Now that we have established a project namespace on the cluster and a successful connection to backstage, you can start to create your workloads using Templates to populate the Service Catalog.</p>
 </div>
 </div>
 </div>

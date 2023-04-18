@@ -239,14 +239,21 @@
 <p>When prompted, make sure to “Grant” access to your team&#8217;s GitHub Org when approving DevSpaces access via GH Auth!</p>
 </div>
 <div class="paragraph">
-<p>Open <code>/src/main/java/com/rhdevelopers/summit/workshop/poi/PoiResource.java</code></p>
+<p>Open <code>/src/main/java/com/rhdevelopers/summit/workshop/SummitBackendResource.java</code></p>
 </div>
 <div class="paragraph">
-<p>Add the following code near the bottom of the file:</p>
+<p>Uncomment the following code block near the bottom of the file:</p>
 </div>
 <div class="listingblock console-input">
 <div class="content">
-<pre class="highlightjs highlight"><code class="language-bash hljs" data-lang="bash">Example code needed...</code></pre>
+<pre class="highlightjs highlight"><code class="language-java hljs" data-lang="java">    @POST
+    @Path("poi/add/point")
+    public Response loadCustomPoi(PoiRecord record) {
+        SUMMIT_POI_RECORDS.add(record);
+        return Response.created(
+            UriBuilder.fromPath("fake/poi/find/"+(SUMMIT_POI_RECORDS.size()-1)).build()
+        ).entity("inserted custom data point").build();
+    }</code></pre>
 </div>
 </div>
 <div class="paragraph">
