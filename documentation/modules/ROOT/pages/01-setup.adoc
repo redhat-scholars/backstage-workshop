@@ -4,37 +4,42 @@ include::_attributes.adoc[]
 [#introduction]
 == Introducing Backstage
 
+image::kubelogo.png[]
+
 Screenshot of slides
+
 link to slides
 
 == Prerequisites
 You will need a GitHub account in order to follow along with this workshop.  Account activation is free and requires fewer than five minutes to complete.  If you do not have a github account, or are not prepared to authenticate using your existing account, please sign up for a new account now at github.com
 
+Enter your github username in the onboarding doc then alert a lab assistant, and we will add you to the GitHub Org.  You will need to receive **and accept** an invite from our team before continuing on to the next step!
+
 [#cluster_access]
 == Cluster Access
 
-Check the onboarding doc for the latest cluster access urls and credentials
-
-image::kubelogo.png[]
+Check the onboarding doc for the latest cluster access urls and credentials ✅
 
 Open the provided web console url in your browser to connect to the openshift web console. Choose the "Login with Github" option to proceed.
 
 [#project_access]
 === Project Access
 
-Establish a project namespace for your work. 
+This OpenShift cluster has been configured to automatically establish an initial project namespace for your work. 
 
-Select "create a new project" from the main openshift page.  The project name must be unique. Enter your github username in the first two inputs, then click "Create".
+After logging in with Github, you should see a list of Projects with one result.  The project name should match your github id.
 
-Remember this project name!  You will need to enter it into several template inputs as your "Namespace" value.
+Remember this project name!  You will need to enter it into several template inputs as your "Namespace" value in the next chapter.
 
-In the next section, we will learn how to populate this project namespace with fresh content from the Backstage catalog. But first, the final step in this section involves connecting to our instance of Backstage.
+Next, you will begin to populate this project namespace with new software components, generated via templates, as you build a three-tier GeoSpatial mapping demo application. 
+
+But first, the final step in this section involves connecting to our instance of Backstage.
 
 [#backstage_access]
-== Login to Backstage
+== Logging in to Backstage
 
 Click on the app launcher link in the header menu and select "Backstage" to connect to your backstage instance.  
 
-You will be prompted to authenticate.  Use the GitHub signin option.
+You will be prompted to authenticate.  Again, use the GitHub signin option.
 
-Now that we have a project namespace and a successful connection to backstage, we can start to create our workloads using the template system.
+Now that we have established a project namespace on the cluster and a successful connection to backstage, you can start to create your workloads using Templates to populate the Service Catalog.
