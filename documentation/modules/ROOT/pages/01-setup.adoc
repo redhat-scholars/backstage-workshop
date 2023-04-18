@@ -4,8 +4,6 @@ include::_attributes.adoc[]
 [#introduction]
 == Introducing Backstage
 
-image::kubelogo.png[]
-
 Screenshot of slides
 
 link to slides
@@ -22,12 +20,17 @@ Check the onboarding doc for the latest cluster access urls and credentials ✅
 
 Open the provided web console url in your browser to connect to the openshift web console. Choose the "Login with Github" option to proceed.
 
+image::cluster_login.png[]
+image::cluster_auth.png[]
+
 [#project_access]
 === Project Access
 
 This OpenShift cluster has been configured to automatically establish an initial project namespace for your work. 
 
 After logging in with Github, you should see a list of Projects with one result.  The project name should match your github id.
+
+image::project_list.png[]
 
 Remember this project name!  You will need to enter it into several template inputs as your "Namespace" value in the next chapter.
 
@@ -40,6 +43,16 @@ But first, the final step in this section involves connecting to our instance of
 
 Click on the app launcher link in the header menu and select "Backstage" to connect to your backstage instance.  
 
+image::console_backstage_link.png[]
+
 You will be prompted to authenticate.  Again, use the GitHub signin option.
+
+image::backstage_login.png[]
+
+image::backstage_auth.png[]
+
+After authenticating via GitHub, Backstage will greet you with a cheerful "Welcome back!"
+
+image::backstage_welcome.png[]
 
 Now that we have established a project namespace on the cluster and a successful connection to backstage, you can start to create your workloads using Templates to populate the Service Catalog.
