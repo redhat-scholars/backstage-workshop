@@ -161,11 +161,6 @@
 <div class="sect1">
 <h2 id="introduction"><a class="anchor" href="#introduction"></a>Introducing Backstage</h2>
 <div class="sectionbody">
-<div class="imageblock">
-<div class="content">
-<img src="_images/kubelogo.png" alt="kubelogo">
-</div>
-</div>
 <div class="paragraph">
 <p>Screenshot of slides</p>
 </div>
@@ -194,6 +189,16 @@
 <div class="paragraph">
 <p>Open the provided web console url in your browser to connect to the openshift web console. Choose the "Login with Github" option to proceed.</p>
 </div>
+<div class="imageblock">
+<div class="content">
+<img src="_images/cluster_login.png" alt="cluster login">
+</div>
+</div>
+<div class="imageblock">
+<div class="content">
+<img src="_images/cluster_auth.png" alt="cluster auth">
+</div>
+</div>
 <div class="sect2">
 <h3 id="project_access"><a class="anchor" href="#project_access"></a>Project Access</h3>
 <div class="paragraph">
@@ -201,6 +206,11 @@
 </div>
 <div class="paragraph">
 <p>After logging in with Github, you should see a list of Projects with one result.  The project name should match your github id.</p>
+</div>
+<div class="imageblock">
+<div class="content">
+<img src="_images/project_list.png" alt="project list">
+</div>
 </div>
 <div class="paragraph">
 <p>Remember this project name!  You will need to enter it into several template inputs as your "Namespace" value in the next chapter.</p>
@@ -220,8 +230,31 @@
 <div class="paragraph">
 <p>Click on the app launcher link in the header menu and select "Backstage" to connect to your backstage instance.</p>
 </div>
+<div class="imageblock">
+<div class="content">
+<img src="_images/console_backstage_link.png" alt="console backstage link">
+</div>
+</div>
 <div class="paragraph">
 <p>You will be prompted to authenticate.  Again, use the GitHub signin option.</p>
+</div>
+<div class="imageblock">
+<div class="content">
+<img src="_images/backstage_login.png" alt="backstage login">
+</div>
+</div>
+<div class="imageblock">
+<div class="content">
+<img src="_images/backstage_auth.png" alt="backstage auth">
+</div>
+</div>
+<div class="paragraph">
+<p>After authenticating via GitHub, Backstage will greet you with a cheerful "Welcome back!"</p>
+</div>
+<div class="imageblock">
+<div class="content">
+<img src="_images/backstage_welcome.png" alt="backstage welcome">
+</div>
 </div>
 <div class="paragraph">
 <p>Now that we have established a project namespace on the cluster and a successful connection to backstage, you can start to create your workloads using Templates to populate the Service Catalog.</p>
