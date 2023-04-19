@@ -33,9 +33,9 @@ link to slides
 == Workshop Outline
 
 [.tile]
-.xref:01-setup.adoc[Backstage]
-* xref:01-setup.adoc#introduction[Introducing Backstage]
-* xref:01-setup.adoc#cluster_access[OpenShift Cluster Access]
+.xref:01-setup.adoc[OpenShift and Backstage Authentication]
+* xref:01-setup.adoc#prerequisites[Prerequisites]
+* xref:01-setup.adoc#cluster_access[Accessing OpenShift]
 * xref:01-setup.adoc#backstage_access[Accessing Backstage]
 
 [.tile]

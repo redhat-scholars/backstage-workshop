@@ -1,13 +1,14 @@
 = Getting Started with Backstage
 include::_attributes.adoc[]
 
+[#prerequisites]
 == Prerequisites
 You need a GitHub account for this workshop to authenticate with the provided infrastructure and to store your source code. The account is free of charge and it takes about five minutes to register. If you do not have a GitHub account, or would like to use a dedicated account for this workshop, please create one now at <https://github.com>.
 
 Enter your github username in the onboarding doc and let an instructor know. We will add you to the GitHub Org for today's workshop. You must receive **and accept** an email invitation to our GitHub Org before continuing.
 
 [#cluster_access]
-== OpenShift Cluster Access
+== Accessing OpenShift
 
 Check the onboarding doc for the latest cluster URL ✅
 
@@ -17,7 +18,7 @@ image::cluster_login.png[]
 image::cluster_auth.png[]
 
 [#project_access]
-=== Project Access
+=== OpenShift Project
 
 Your user will have an OpenShift _Project_ for your exclusive use. Projects are a superset of the base Kubernetes _namespace_, and isolate resource names and access rights from other Projects on the cluster. Your OpenShift user and Project names both match the GitHub ID you used to log in.
 
