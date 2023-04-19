@@ -1,1 +1,23 @@
 # Backstage Workshop for Red Hat Summit 2023
+
+## Development
+
+Setup:
+
+```bash
+npm install
+```
+
+Run a development server:
+
+```bash
+npm start
+```
+
+## Production
+
+Add and commit your changes, then run `git push` to trigger a new deployment:
+
+```bash
+git push origin master
+```
