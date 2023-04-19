@@ -1,61 +1,6 @@
 = Development
 include::_attributes.adoc[]
 
-[#configuration]
-== Service Binding and Configuration
-
-Connect to a terminal on the gateway pod
-
-1. List gateway backends:
-+
-[.console-input]
-[source,bash,subs="+macros,+attributes"]
-----
-curl localhost:8080/backend/list
-----
-
-2. Register your new backend service:
-+
-[.console-input]
-[source,bash,subs="+macros,+attributes"]
-----
-curl localhost:8080/backend/register/poi-backend?endpoint=http://poi-backend-app:8080
-----
-
-3. List gateway backends:
-+
-[.console-input]
-[source,bash,subs="+macros,+attributes"]
-----
-curl localhost:8080/backend/list
-----
-
-4. Check the backend database for records. The result should be empty:
-+
-[.console-input]
-[source,bash,subs="+macros,+attributes"]
-----
-curl http://poi-backend-app:8080/ws/data/all
-----
-
-5. Populate the backend database:
-+
-[.console-input]
-[source,bash,subs="+macros,+attributes"]
-----
-curl http://poi-backend-app:8080/ws/data/load
-----
-
-6. Check the backend database for new records:
-+
-[.console-input]
-[source,bash,subs="+macros,+attributes"]
-----
-curl http://poi-backend-app:8080/ws/data/all
-----
-
-Check the map for results!
-
 [#devspaces]
 == Introducing DevSpaces
 

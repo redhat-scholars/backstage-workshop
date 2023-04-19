@@ -2,28 +2,70 @@
 include::_attributes.adoc[]
 
 [#software_catalog]
-== View the components in the Software Catalog
-Return to backstage to check the status of the frontend and gateway components
+== Software Catalog
+Return to backstage to check the status of the frontend and gateway entities in the Catalog.
 
 [#plugins]
 == About Plugins
 
-[#component_frontend]
-== View the FrontEnd Component
+[#frontend]
+== View the FrontEnd
 
-[#component_gateway]
-== View the Gateway Component
+[#gateway]
+== View the Gateway
 
-[#backend]
-== Deploying the Back End service
+[#backend_template]
+== Use the Back End Template
 
 Invoke the backend component using the Backend template
 
 image::backstage_create_backend.png[]
 
-[#backend_view]
+[#backend]
 == View the resulting Components
 
 View the resulting component and plugins
 
 View the resulting changes to the application
+
+
+[#configuration]
+== Service Binding and Configuration
+
+Connect to a terminal on the backend pod
+
+1. Check the backend database for records. The result should be empty:
++
+[.console-input]
+[source,bash,subs="+macros,+attributes"]
+----
+curl localhost:8080/ws/data/all
+----
+
+2. Populate the backend database with the National Parks dataset:
++
+[.console-input]
+[source,bash,subs="+macros,+attributes"]
+----
+curl localhost:8080/ws/data/load
+----
+
+3. List registered gateway backends. The only result should be the gateway's built-in "Red Hat Summit POI" dataset:
++
+[.console-input]
+[source,bash,subs="+macros,+attributes"]
+----
+curl poi-gateway-app:8080/backend/list
+----
+
+4. Register the new backend component with the gateway component:
++
+[.console-input]
+[source,bash,subs="+macros,+attributes"]
+----
+curl poi-gateway-app:8080/backend/register/poi-backend?endpoint=http://poi-backend-app:8080
+----
+
+Check the map for results!
+
+image::map_3.png[]

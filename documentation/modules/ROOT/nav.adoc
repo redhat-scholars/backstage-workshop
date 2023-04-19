@@ -13,14 +13,15 @@
 ** xref:02-templates.adoc#view_map[Access the resulting Workloads]
 
 * xref:03-components.adoc[3. Components]
-** xref:03-components.adoc#software_catalog[View the resulting Components]
+** xref:03-components.adoc#software_catalog[Software Catalog]
 ** xref:03-components.adoc#plugins[About Plugins]
-** xref:03-components.adoc#backend[Deploy the Backend Template]
-** xref:03-components.adoc#backend_view[View the Backend Component]
+** xref:03-components.adoc#frontend[View the Backend Component]
+** xref:03-components.adoc#gateway[View the Gateway Component]
+** xref:03-components.adoc#backend_template[Launch the Backend Template]
+** xref:03-components.adoc#backend[View the Backend Component]
+** xref:03-components.adoc#configuration[Service Binding]
 
 * xref:04-development.adoc[4. Development]
-** xref:04-development.adoc#configuration[Service Binding]
 ** xref:04-development.adoc#devspaces[DevSpaces]
 ** xref:04-development.adoc#gateway_update[Update the Gateway Service]
 ** xref:04-development.adoc#validate_changes[Validate your Changes]
-
