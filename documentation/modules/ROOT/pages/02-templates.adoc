@@ -4,40 +4,60 @@ include::_attributes.adoc[]
 [#templates]
 == Introducing Templates
 
+image::backstage_create_frontend.png[]
+
 [#frontend]
 == Deploying the Front End service
 
 Invoke the Angular SPA frontend template in backstage
+
+image::frontend_1.png[]
+image::frontend_2.png[]
+image::frontend_3.png[]
+image::frontend_4.png[]
+image::frontend_5.png[]
 
 [#github]
 == View the resulting Components
 
 Click on the Github repo link.  Explore the newly created repo
 
+image::github_repo.png[]
+image::github_component.png[]
+image::github_gitops.png[]
+
 Return to web console to check the app status and review the pipeline runs
 
-[#pipelines]
-== Trigger a Pipeline Run
+image::backstage_create_gateway.png[]
 
-Manually trigger a pipeline run
-
-check the app status and review the pipeline runs
 
 [#gateway]
 == Deploy the Gateway service
 
 Return to backstage to create the gateway component
 
-Click on the Github repo link.  Explore the newly created repo
+image::gateway_1.png[]
+image::gateway_2.png[]
+image::gateway_3.png[]
+image::gateway_4.png[]
+image::gateway_5.png[]
 
-Make a minor change and commit it (via the GitHub web UI) to trigger a new pipeline run
+[#pipelines]
+== Tekton Pipelines
 
-[#pipeline_triggers]
-== Pipeline Runs
+Check the status of your pipeline run
 
-Return to web console to review the pipeline runs
+image::pipelines.png[]
+image::pipeline_run.png[]
+image::pipeline_run_logs.png[]
+image::pipeline_run_done.png[]
+image::pipelines_done.png[]
 
 [#view_map]
 == View the resulting Workloads
 
+image::console_top_2.png[]
+
 Open a connection to the frontend web service using your web browser
+
+image::map_2.png[]

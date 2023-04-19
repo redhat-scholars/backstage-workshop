@@ -19,6 +19,8 @@ Return to backstage to check the status of the frontend and gateway components
 
 Invoke the backend component using the Backend template
 
+image::backstage_create_backend.png[]
+
 [#backend_view]
 == View the resulting Components
 
