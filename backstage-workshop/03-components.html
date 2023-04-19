@@ -98,16 +98,25 @@
     <a class="nav-link" href="03-components.html">3. Components</a>
 <ul class="nav-list">
   <li class="nav-item" data-depth="2">
-    <a class="nav-link" href="#software_catalog">View the resulting Components</a>
+    <a class="nav-link" href="#software_catalog">Software Catalog</a>
   </li>
   <li class="nav-item" data-depth="2">
     <a class="nav-link" href="#plugins">About Plugins</a>
   </li>
   <li class="nav-item" data-depth="2">
-    <a class="nav-link" href="#backend">Deploy the Backend Template</a>
+    <a class="nav-link" href="#frontend">View the Backend Component</a>
   </li>
   <li class="nav-item" data-depth="2">
-    <a class="nav-link" href="#backend_view">View the Backend Component</a>
+    <a class="nav-link" href="#gateway">View the Gateway Component</a>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="#backend_template">Launch the Backend Template</a>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="#backend">View the Backend Component</a>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="#configuration">Service Binding</a>
   </li>
 </ul>
   </li>
@@ -115,9 +124,6 @@
     <button class="nav-item-toggle"></button>
     <a class="nav-link" href="04-development.html">4. Development</a>
 <ul class="nav-list">
-  <li class="nav-item" data-depth="2">
-    <a class="nav-link" href="04-development.html#configuration">Service Binding</a>
-  </li>
   <li class="nav-item" data-depth="2">
     <a class="nav-link" href="04-development.html#devspaces">DevSpaces</a>
   </li>
@@ -153,10 +159,10 @@
 <article class="doc">
 <h1 class="page">Components</h1>
 <div class="sect1">
-<h2 id="software_catalog"><a class="anchor" href="#software_catalog"></a>View the components in the Software Catalog</h2>
+<h2 id="software_catalog"><a class="anchor" href="#software_catalog"></a>Software Catalog</h2>
 <div class="sectionbody">
 <div class="paragraph">
-<p>Return to backstage to check the status of the frontend and gateway components</p>
+<p>Return to backstage to check the status of the frontend and gateway entities in the Catalog.</p>
 </div>
 </div>
 </div>
@@ -167,19 +173,19 @@
 </div>
 </div>
 <div class="sect1">
-<h2 id="component_frontend"><a class="anchor" href="#component_frontend"></a>View the FrontEnd Component</h2>
+<h2 id="frontend"><a class="anchor" href="#frontend"></a>View the FrontEnd</h2>
 <div class="sectionbody">
 
 </div>
 </div>
 <div class="sect1">
-<h2 id="component_gateway"><a class="anchor" href="#component_gateway"></a>View the Gateway Component</h2>
+<h2 id="gateway"><a class="anchor" href="#gateway"></a>View the Gateway</h2>
 <div class="sectionbody">
 
 </div>
 </div>
 <div class="sect1">
-<h2 id="backend"><a class="anchor" href="#backend"></a>Deploying the Back End service</h2>
+<h2 id="backend_template"><a class="anchor" href="#backend_template"></a>Use the Back End Template</h2>
 <div class="sectionbody">
 <div class="paragraph">
 <p>Invoke the backend component using the Backend template</p>
@@ -192,13 +198,65 @@
 </div>
 </div>
 <div class="sect1">
-<h2 id="backend_view"><a class="anchor" href="#backend_view"></a>View the resulting Components</h2>
+<h2 id="backend"><a class="anchor" href="#backend"></a>View the resulting Components</h2>
 <div class="sectionbody">
 <div class="paragraph">
 <p>View the resulting component and plugins</p>
 </div>
 <div class="paragraph">
 <p>View the resulting changes to the application</p>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="configuration"><a class="anchor" href="#configuration"></a>Service Binding and Configuration</h2>
+<div class="sectionbody">
+<div class="paragraph">
+<p>Connect to a terminal on the backend pod</p>
+</div>
+<div class="olist arabic">
+<ol class="arabic">
+<li>
+<p>Check the backend database for records. The result should be empty:</p>
+<div class="listingblock console-input">
+<div class="content">
+<pre class="highlightjs highlight"><code class="language-bash hljs" data-lang="bash">curl localhost:8080/ws/data/all</code></pre>
+</div>
+</div>
+</li>
+<li>
+<p>Populate the backend database with the National Parks dataset:</p>
+<div class="listingblock console-input">
+<div class="content">
+<pre class="highlightjs highlight"><code class="language-bash hljs" data-lang="bash">curl localhost:8080/ws/data/load</code></pre>
+</div>
+</div>
+</li>
+<li>
+<p>List registered gateway backends. The only result should be the gateway&#8217;s built-in "Red Hat Summit POI" dataset:</p>
+<div class="listingblock console-input">
+<div class="content">
+<pre class="highlightjs highlight"><code class="language-bash hljs" data-lang="bash">curl poi-gateway-app:8080/backend/list</code></pre>
+</div>
+</div>
+</li>
+<li>
+<p>Register the new backend component with the gateway component:</p>
+<div class="listingblock console-input">
+<div class="content">
+<pre class="highlightjs highlight"><code class="language-bash hljs" data-lang="bash">curl poi-gateway-app:8080/backend/register/poi-backend?endpoint=http://poi-backend-app:8080</code></pre>
+</div>
+</div>
+</li>
+</ol>
+</div>
+<div class="paragraph">
+<p>Check the map for results!</p>
+</div>
+<div class="imageblock">
+<div class="content">
+<img src="_images/map_3.png" alt="map 3">
+</div>
 </div>
 </div>
 </div>

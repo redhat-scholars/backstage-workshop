@@ -97,16 +97,25 @@
     <a class="nav-link" href="03-components.html">3. Components</a>
 <ul class="nav-list">
   <li class="nav-item" data-depth="2">
-    <a class="nav-link" href="03-components.html#software_catalog">View the resulting Components</a>
+    <a class="nav-link" href="03-components.html#software_catalog">Software Catalog</a>
   </li>
   <li class="nav-item" data-depth="2">
     <a class="nav-link" href="03-components.html#plugins">About Plugins</a>
   </li>
   <li class="nav-item" data-depth="2">
-    <a class="nav-link" href="03-components.html#backend">Deploy the Backend Template</a>
+    <a class="nav-link" href="03-components.html#frontend">View the Backend Component</a>
   </li>
   <li class="nav-item" data-depth="2">
-    <a class="nav-link" href="03-components.html#backend_view">View the Backend Component</a>
+    <a class="nav-link" href="03-components.html#gateway">View the Gateway Component</a>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="03-components.html#backend_template">Launch the Backend Template</a>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="03-components.html#backend">View the Backend Component</a>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="03-components.html#configuration">Service Binding</a>
   </li>
 </ul>
   </li>
@@ -114,9 +123,6 @@
     <button class="nav-item-toggle"></button>
     <a class="nav-link" href="04-development.html">4. Development</a>
 <ul class="nav-list">
-  <li class="nav-item" data-depth="2">
-    <a class="nav-link" href="#configuration">Service Binding</a>
-  </li>
   <li class="nav-item" data-depth="2">
     <a class="nav-link" href="#devspaces">DevSpaces</a>
   </li>
@@ -151,69 +157,6 @@
   <div class="content">
 <article class="doc">
 <h1 class="page">Development</h1>
-<div class="sect1">
-<h2 id="configuration"><a class="anchor" href="#configuration"></a>Service Binding and Configuration</h2>
-<div class="sectionbody">
-<div class="paragraph">
-<p>Connect to a terminal on the gateway pod</p>
-</div>
-<div class="olist arabic">
-<ol class="arabic">
-<li>
-<p>List gateway backends:</p>
-<div class="listingblock console-input">
-<div class="content">
-<pre class="highlightjs highlight"><code class="language-bash hljs" data-lang="bash">curl localhost:8080/backend/list</code></pre>
-</div>
-</div>
-</li>
-<li>
-<p>Register your new backend service:</p>
-<div class="listingblock console-input">
-<div class="content">
-<pre class="highlightjs highlight"><code class="language-bash hljs" data-lang="bash">curl localhost:8080/backend/register/poi-backend?endpoint=http://poi-backend-app:8080</code></pre>
-</div>
-</div>
-</li>
-<li>
-<p>List gateway backends:</p>
-<div class="listingblock console-input">
-<div class="content">
-<pre class="highlightjs highlight"><code class="language-bash hljs" data-lang="bash">curl localhost:8080/backend/list</code></pre>
-</div>
-</div>
-</li>
-<li>
-<p>Check the backend database for records. The result should be empty:</p>
-<div class="listingblock console-input">
-<div class="content">
-<pre class="highlightjs highlight"><code class="language-bash hljs" data-lang="bash">curl <a href="http://poi-backend-app:8080/ws/data/all" class="bare">http://poi-backend-app:8080/ws/data/all</a></code></pre>
-</div>
-</div>
-</li>
-<li>
-<p>Populate the backend database:</p>
-<div class="listingblock console-input">
-<div class="content">
-<pre class="highlightjs highlight"><code class="language-bash hljs" data-lang="bash">curl <a href="http://poi-backend-app:8080/ws/data/load" class="bare">http://poi-backend-app:8080/ws/data/load</a></code></pre>
-</div>
-</div>
-</li>
-<li>
-<p>Check the backend database for new records:</p>
-<div class="listingblock console-input">
-<div class="content">
-<pre class="highlightjs highlight"><code class="language-bash hljs" data-lang="bash">curl <a href="http://poi-backend-app:8080/ws/data/all" class="bare">http://poi-backend-app:8080/ws/data/all</a></code></pre>
-</div>
-</div>
-</li>
-</ol>
-</div>
-<div class="paragraph">
-<p>Check the map for results!</p>
-</div>
-</div>
-</div>
 <div class="sect1">
 <h2 id="devspaces"><a class="anchor" href="#devspaces"></a>Introducing DevSpaces</h2>
 <div class="sectionbody">
