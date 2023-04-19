@@ -1,11 +1,8 @@
 = Development
 include::_attributes.adoc[]
 
-[#backend_pipeline]
-== Run the Backend Pipeline
-
 [#configuration]
-== Service Binding
+== Service Binding and Configuration
 
 Connect to a terminal on the gateway pod
 
@@ -56,6 +53,8 @@ curl http://poi-backend-app:8080/ws/data/load
 ----
 curl http://poi-backend-app:8080/ws/data/all
 ----
+
+Check the map for results!
 
 [#devspaces]
 == Introducing DevSpaces

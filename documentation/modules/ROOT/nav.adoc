@@ -8,9 +8,8 @@
 ** xref:02-templates.adoc#templates[Templates Introduction]
 ** xref:02-templates.adoc#frontend[Deploy the Front End Template]
 ** xref:02-templates.adoc#github[Front End Template Repo]
-** xref:02-templates.adoc#pipelines[Front End Build Pipeline]
 ** xref:02-templates.adoc#gateway[Deploy the Gateway Template]
-** xref:02-templates.adoc#pipeline_triggers[Gateway Build Pipeline]
+** xref:02-templates.adoc#pipelines[Tekton Pipelines]
 ** xref:02-templates.adoc#view_map[Access the resulting Workloads]
 
 * xref:03-components.adoc[3. Components]
@@ -20,7 +19,6 @@
 ** xref:03-components.adoc#backend_view[View the Backend Component]
 
 * xref:04-development.adoc[4. Development]
-** xref:04-development.adoc#backend_pipeline[Run the Backend Pipeline]
 ** xref:04-development.adoc#configuration[Service Binding]
 ** xref:04-development.adoc#devspaces[DevSpaces]
 ** xref:04-development.adoc#gateway_update[Update the Gateway Service]
