@@ -2,25 +2,32 @@
 :page-layout: home
 :!sectids:
 
-[.text-center.strong]
-== Internal Developer Platforms
+[#introduction]
+== An Internal Developer Platform (IDP)
 
-Live a day in the life of a happy developer in this hands-on journey through Red Hat’s latest incarnation of the Internal Developer Platform (IDP).
+Every team and every project evolves a tailored development environment. This collection of tools, services and configuration is often maintained by convention and transmitted by osmosis.
 
-Every team and every project evolves a tailored development environment. This collection of tools, services and configuration is usually maintained by convention and transmitted – you hope – by osmosis. Often it sprawls across each programmer’s laptop, and when details don’t match, problems happen.
+IDPs help teams curate, manage and replicate these environments. Backstage is an open source CNCF project for building developer platforms, and for encapsulating tools, services, documentation and best practices in “golden paths” to ease onboarding and daily development work.
 
-IDPs help teams curate, manage and replicate these environments. The platform your team stands atop is a product, and you can manage it like one. Backstage is an open source CNCF project for building developer platforms, and for encapsulating tools, services, documentation and best practices in “golden paths” to ease onboarding and daily development work.
+In this end-to-end developer experience, you’ll start on a golden path we’ve paved to show how Red Hat products center on the OpenShift Container Platform to supply a complete foundation for cloud-native development.
 
-In this end-to-end developer experience, you’ll start on a golden path we’ve laid out to show how Red Hat products center on the OpenShift Container Platform to supply a complete foundation for cloud-native development, and how Backstage tools let you mount your team’s scaffolding and best practices atop it.
+You will build and deploy a three-tier web application. You’ll be guided into OpenShift DevSpaces, a web-based Integrated Development Environment (IDE), to view and modify source code. OpenShift GitOps will automate the build, test and deploy cycle as you iterate your application with new features or fixes.
 
-Team members can immediately deploy the right tools and components to get to work. Presented with obvious choices for getting started, each participant will build and deploy a three-tier web application. Backstage will support you with immediate signposts to components, resources and relevant documentation.
+Backstage will support you from the start with signposts to components in a single place connecting the three key developer views: an IDE to code, pipelines to build, and orchestration to deploy your application.
 
-You’ll be guided right into OpenShift DevSpaces, a web-based Integrated Development Environment (IDE), to view and modify source code. OpenShift GitOps and build/test pipeline modules are available in the path, and you’ll use them to automate the build, test and deploy cycle as you iterate your application with new features and fixes.
+== Backstage Glossary
 
-In this hands-on session, you'll use headline Red Hat products and technologies and see the philosophy that ties them together to construct flexible foundations for cloud-native development.
+Enough Backstage to use it.
+
+* Create+ in left nav
+* _Template_ selection
+* Catalog: Entities
+* Deployed _Components_
 
 
+Screenshot of slides
 
+link to slides
 
 [.tiles.browse]
 == Workshop Outline
