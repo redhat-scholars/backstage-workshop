@@ -1,24 +1,17 @@
 = Getting Started with Backstage
 include::_attributes.adoc[]
 
-[#introduction]
-== Introducing Backstage
-
-Screenshot of slides
-
-link to slides
-
 == Prerequisites
-You will need a GitHub account in order to follow along with this workshop.  Account activation is free and requires fewer than five minutes to complete.  If you do not have a github account, or are not prepared to authenticate using your existing account, please sign up for a new account now at github.com
+You need a GitHub account for this workshop to authenticate with the provided infrastructure and to store your source code. The account is free of charge and it takes about five minutes to register. If you do not have a GitHub account, or would like to use a dedicated account for this workshop, please create one now at <https://github.com>.
 
-Enter your github username in the onboarding doc then alert a lab assistant, and we will add you to the GitHub Org.  You will need to receive **and accept** an invite from our team before continuing on to the next step!
+Enter your github username in the onboarding doc and let an instructor know. We will add you to the GitHub Org for today's workshop. You must receive **and accept** an email invitation to our GitHub Org before continuing.
 
 [#cluster_access]
-== Cluster Access
+== OpenShift Cluster Access
 
-Check the onboarding doc for the latest cluster access urls and credentials ✅
+Check the onboarding doc for the latest cluster URL ✅
 
-Open the provided web console url in your browser to connect to the openshift web console. Choose the "Login with Github" option to proceed.
+Point a web browser to the OpenShift Web Console URL. Choose the *Login with Github* option.
 
 image::cluster_login.png[]
 image::cluster_auth.png[]
@@ -26,26 +19,22 @@ image::cluster_auth.png[]
 [#project_access]
 === Project Access
 
-This OpenShift cluster has been configured to automatically establish an initial project namespace for your work. 
-
-After logging in with Github, you should see a list of Projects with one result.  The project name should match your github id.
+Your user will have an OpenShift _Project_ for your exclusive use. Projects are a superset of the base Kubernetes _namespace_, and isolate resource names and access rights from other Projects on the cluster. Your OpenShift user and Project names both match the GitHub ID you used to log in.
 
 image::project_list.png[]
 
-Remember this project name!  You will need to enter it into several template inputs as your "Namespace" value in the next chapter.
+Remember your Project name. You'll specify it in Template forms as your "Namespace" value as you deploy components.
 
-Next, you will begin to populate this project namespace with new software components, generated via templates, as you build a three-tier GeoSpatial mapping demo application. 
-
-But first, the final step in this section involves connecting to our instance of Backstage.
+Next, you'll connect to Backstage and discover the starting point for developing your application. Once that's done, Backstage _Templates_ will help you generate software components as you build a three-tier GeoSpatial mapping demo application.
 
 [#backstage_access]
 == Logging in to Backstage
 
-Click on the app launcher link in the header menu and select "Backstage" to connect to your backstage instance.  
+Click on the app launcher link in the OpenShift Web Console header menu and select "Backstage". 
 
 image::console_backstage_link.png[]
 
-You will be prompted to authenticate.  Again, use the GitHub signin option.
+You will be prompted to authenticate. Use the GitHub login option.
 
 image::backstage_login.png[]
 
@@ -55,4 +44,4 @@ After authenticating via GitHub, Backstage will greet you with a cheerful "Welco
 
 image::backstage_welcome.png[]
 
-Now that we have established a project namespace on the cluster and a successful connection to backstage, you can start to create your workloads using Templates to populate the Service Catalog.
+Having established a Project on the OpenShift cluster and access to Backstage, you can start to build your app. First up: Instantiating Backstage _Templates_ to populate the Backstage Catalog.
