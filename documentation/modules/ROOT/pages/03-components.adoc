@@ -5,14 +5,25 @@ include::_attributes.adoc[]
 == Software Catalog
 Return to backstage to check the status of the frontend and gateway entities in the Catalog.
 
-[#plugins]
-== About Plugins
+image::catalog_search.png[]
+image::catalog_results.png[]
+
+image::login_3.png[]
+image::auth_3.png[]
+
 
 [#frontend]
 == View the FrontEnd
 
+image::frontend_overview.png[]
+
+[#plugins]
+== About Plugins
+
 [#gateway]
 == View the Gateway
+
+image::gateway_overview.png[]
 
 [#backend_template]
 == Use the Back End Template
@@ -20,19 +31,35 @@ Return to backstage to check the status of the frontend and gateway entities in 
 Invoke the backend component using the Backend template
 
 image::backstage_create_backend.png[]
+image::backend_1.png[]
+image::backend_2.png[]
+image::backend_3.png[]
+image::backend_4.png[]
+image::backend_5.png[]
 
 [#backend]
 == View the resulting Components
 
 View the resulting component and plugins
 
-View the resulting changes to the application
+image::backend_overview.png[]
 
+When you're ready to proceed, click on the `Deployment` link to begin configuring your backend service.
 
 [#configuration]
 == Service Binding and Configuration
 
-Connect to a terminal on the backend pod
+On the Deployment Detail page, click on the Pods tab to find a list of Pod resources that are attached to this Deployment
+
+image::deploy_1.png[]
+
+Select one of the Pods
+
+image::deploy_2.png[]
+
+Then, open the `Terminal` tab from the Pod Detail page
+
+image::pod_terminal.png[]
 
 1. Check the backend database for records. The result should be empty:
 +

@@ -7,57 +7,100 @@ include::_attributes.adoc[]
 image::backstage_create_frontend.png[]
 
 [#frontend]
-== Deploying the Front End service
+== Launch the Frontend template
 
-Invoke the Angular SPA frontend template in backstage
+Invoke the Angular Single Page Application frontend template in backstage
 
 image::frontend_1.png[]
+
+Insert your NAMESPACE value (from the previous chapter... it should be your username) into the form inputs in place of the `<NAMESPACE>` string. Click `NEXT STEP` to proceed.
+
 image::frontend_2.png[]
+
+Insert your `NAMESPACE` value, then click `NEXT STEP` to proceed
+
 image::frontend_3.png[]
+
+Review the input selections, click `CREATE` when ready
+
 image::frontend_4.png[]
+
+Review the template output.  Click on the `Source Code Repository` link to view the newly scaffolded frontend repo
+
 image::frontend_5.png[]
 
 [#github]
-== View the resulting Components
+== View the Source
 
-Click on the Github repo link.  Explore the newly created repo
+Explore the newly created repo, paying special attention to the `catalog-info.yaml` file
 
 image::github_repo.png[]
+
+The resulting component yaml is available in the `catalog-info.yaml` file at the root of the repo.
+
 image::github_component.png[]
+
+If you read this file carefully, you will notice a link to a second "gitops" repo is available.  Add "-gitops" to the end of the url to view the contents of this repo
+
 image::github_gitops.png[]
 
-Return to web console to check the app status and review the pipeline runs
+[#gateway]
+== Launch the Gateway Template
+
+Return to backstage to invoke the Gateway template
 
 image::backstage_create_gateway.png[]
 
-
-[#gateway]
-== Deploy the Gateway service
-
-Return to backstage to create the gateway component
+Insert your `NAMESPACE` value, then click `NEXT STEP` to proceed
 
 image::gateway_1.png[]
+
+Insert your `NAMESPACE` value, then click `NEXT STEP` to proceed
+
 image::gateway_2.png[]
+
+Insert your `NAMESPACE` value, then click `NEXT STEP` to proceed
+
 image::gateway_3.png[]
+
+Review the input selections, click `CREATE` when ready
+
 image::gateway_4.png[]
+
+Review the template output.  Click on Pipeline status to view the build pipelines for the app.
+
 image::gateway_5.png[]
 
 [#pipelines]
 == Tekton Pipelines
 
-Check the status of your pipeline run
+Check the status of your pipelines.  Select one of your pipeline runs, preferrably one that is active
 
 image::pipelines.png[]
+
+Select `Logs` to watch the build process
+
 image::pipeline_run.png[]
-image::pipeline_run_logs.png[]
+
+Monitor the build output.  When the build has completed, select `Pipelines` from the side menu to check the status of the other pipeline run
+
 image::pipeline_run_done.png[]
+
+When both builds have finished successfully, proceed to the `Topology` view
+
 image::pipelines_done.png[]
 
 [#view_map]
 == View the resulting Workloads
 
+Open a connection to the frontend web service by clicking on the Route decorator, located on the top right corner of the Angular Frontend component
+
 image::console_top_2.png[]
 
-Open a connection to the frontend web service using your web browser
+Having successfully deployed the Frontend and Gateway components, you will see two points on the resulting map application:
 
 image::map_2.png[]
+
+Congratulations on completing Chapter 2!
+
+In the next chapter, you will view the these new components through the Backstage Software Catalog to learn more about what backstage has to offer.
