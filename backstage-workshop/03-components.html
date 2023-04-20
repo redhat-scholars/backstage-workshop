@@ -104,7 +104,7 @@
     <a class="nav-link" href="#plugins">About Plugins</a>
   </li>
   <li class="nav-item" data-depth="2">
-    <a class="nav-link" href="#frontend">View the Backend Component</a>
+    <a class="nav-link" href="#frontend">View the Frontend Component</a>
   </li>
   <li class="nav-item" data-depth="2">
     <a class="nav-link" href="#gateway">View the Gateway Component</a>
@@ -286,17 +286,20 @@
 </div>
 </div>
 <div class="paragraph">
-<p>Then, open the <code>Terminal</code> tab from the Pod Detail page</p>
+<p>Open the <code>Terminal</code> tab from the Pod Detail page</p>
 </div>
 <div class="imageblock">
 <div class="content">
 <img src="_images/pod_terminal.png" alt="pod terminal">
 </div>
 </div>
+<div class="paragraph">
+<p>Complete these four commands to register the backend with the gateway component:</p>
+</div>
 <div class="olist arabic">
 <ol class="arabic">
 <li>
-<p>Check the backend database for records. The result should be empty:</p>
+<p>Check the backend dataservice for records. The result should be an empty set:</p>
 <div class="listingblock console-input">
 <div class="content">
 <pre class="highlightjs highlight"><code class="language-bash hljs" data-lang="bash">curl localhost:8080/ws/data/all</code></pre>
@@ -304,7 +307,7 @@
 </div>
 </li>
 <li>
-<p>Populate the backend database with the National Parks dataset:</p>
+<p>Populate the backend with the National Parks dataset:</p>
 <div class="listingblock console-input">
 <div class="content">
 <pre class="highlightjs highlight"><code class="language-bash hljs" data-lang="bash">curl localhost:8080/ws/data/load</code></pre>
