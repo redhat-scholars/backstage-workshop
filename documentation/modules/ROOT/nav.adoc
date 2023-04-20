@@ -15,7 +15,7 @@
 * xref:03-components.adoc[3. Components]
 ** xref:03-components.adoc#software_catalog[Software Catalog]
 ** xref:03-components.adoc#plugins[About Plugins]
-** xref:03-components.adoc#frontend[View the Backend Component]
+** xref:03-components.adoc#frontend[View the Frontend Component]
 ** xref:03-components.adoc#gateway[View the Gateway Component]
 ** xref:03-components.adoc#backend_template[Launch the Backend Template]
 ** xref:03-components.adoc#backend[View the Backend Component]

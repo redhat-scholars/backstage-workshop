@@ -57,11 +57,13 @@ Select one of the Pods
 
 image::deploy_2.png[]
 
-Then, open the `Terminal` tab from the Pod Detail page
+Open the `Terminal` tab from the Pod Detail page
 
 image::pod_terminal.png[]
 
-1. Check the backend database for records. The result should be empty:
+Complete these four commands to register the backend with the gateway component:
+
+1. Check the backend dataservice for records. The result should be an empty set:
 +
 [.console-input]
 [source,bash,subs="+macros,+attributes"]
@@ -69,7 +71,7 @@ image::pod_terminal.png[]
 curl localhost:8080/ws/data/all
 ----
 
-2. Populate the backend database with the National Parks dataset:
+2. Populate the backend with the National Parks dataset:
 +
 [.console-input]
 [source,bash,subs="+macros,+attributes"]
