@@ -6,9 +6,29 @@ include::_attributes.adoc[]
 
 [#gateway_update]
 == Update the Gateway Service
-Open the Gateway component in DevSpaces
+Enter your <NAMESPACE> into the search input of the Software Catalog to find your Gateway component entity
 
-When prompted, make sure to “Grant” access to your team's GitHub Org when approving DevSpaces access via GH Auth!
+image::catalog_3.png[]
+
+From the Gateway Component Overview page, click on "OpenShift Dev Spaces (VS Code)"
+
+image::gateway_devspaces.png[]
+
+Click on "Log in with OpenShift"
+
+image::login_4.png[]
+
+Select the "GitHub" login option
+
+image::login_5.png[]
+
+Make sure to click on *Grant* next to the "Summit23DevLab" GitHub Org before approving DevSpaces access
+
+image::auth_4.png[]
+
+Grant DevSpaces access to your OpenShift account
+
+image::auth_6.png[]
 
 Open `/src/main/java/com/rhdevelopers/summit/workshop/SummitBackendResource.java`
 
@@ -36,12 +56,18 @@ Verify that your change has been published
 [#validate_your_change]
 == Validate your Changes
 
-Connect to the gateway pod to load a new datapoint:
+Connect to a Pod in the Gateway Deployment to test the new API endpoint:
 
 [.console-input]
 [source,bash,subs="+macros,+attributes"]
 ----
-curl -X POST localhost:8080/add/point -d="{name:'Null',description:'Null Island',coordinates:[0,0]}"
+curl --location 'http://localhost:8080/fake/poi/add/point/' \
+--header 'Content-Type: application/json' \
+--data '{
+"name":"Milano, Italy",
+"description":"example city",
+"coordinates":[45.464203,9.189982]
+}'
 ----
 
 Reload the map to look for your new Point.
