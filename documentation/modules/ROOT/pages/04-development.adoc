@@ -2,7 +2,7 @@
 include::_attributes.adoc[]
 
 [#devspaces]
-== Introducing DevSpaces
+== OpenShift DevSpaces
 
 While there are many ways to craft a Golden Path for your development staff, the option to include OpenShift DevSpaces provides a quick path to success with zero laptop installation effort.
 
@@ -75,7 +75,7 @@ image::pipelines_3.png[]
 
 Verify that your change has been published via a new image
 
-[#validate_your_change]
+[#validate_changes]
 == Validate your Changes
 
 Connect to a Pod in the Gateway Deployment to test the new API endpoint
@@ -101,7 +101,7 @@ Open a terminal connection on the new pod
 
 image::gateway_pod_terminal.png[]
 
-Use the following curl command to test the new API endpoint:
+Paste the following curl command into the terminal to test the new API endpoint:
 
 [.console-input]
 [source,bash,subs="+macros,+attributes"]
@@ -116,3 +116,12 @@ curl --location 'http://localhost:8080/fake/poi/add/point/' \
 ----
 
 Reload the map to look for your new Point.
+
+
+Optionally reconnect the backend component with the gateway component to make the National Parks dataset visible again:
+
+[.console-input]
+[source,bash,subs="+macros,+attributes"]
+----
+curl poi-gateway-app:8080/backend/register/poi-backend?endpoint=http://poi-backend-app:8080
+----
