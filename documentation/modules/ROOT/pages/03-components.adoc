@@ -23,6 +23,8 @@ image::frontend_overview.png[]
 [#gateway]
 == View the Gateway
 
+image::catalog_search.png[]
+image::catalog_results_1.png[]
 image::gateway_overview.png[]
 
 [#backend_template]

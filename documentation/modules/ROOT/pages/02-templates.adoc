@@ -40,7 +40,7 @@ The resulting component yaml is available in the `catalog-info.yaml` file at the
 
 image::github_component.png[]
 
-If you read this file carefully, you will notice a link to a second "gitops" repo is available.  Add "-gitops" to the end of the url to view the contents of this repo
+If you the GitHub org carefully, you will notice a second "gitops" repo has been created.  Add "-gitops" to the end of the repo url to explore the contents of the other repo
 
 image::github_gitops.png[]
 

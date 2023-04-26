@@ -22,13 +22,17 @@ Select the "GitHub" login option
 
 image::login_5.png[]
 
+Grant DevSpaces access to your OpenShift account
+
+image::auth_6.png[]
+
 Make sure to click on *Grant* next to the "Summit23DevLab" GitHub Org before approving DevSpaces access
 
 image::auth_4.png[]
 
-Grant DevSpaces access to your OpenShift account
+Select "Yes, I trust the authors"
 
-image::auth_6.png[]
+image::trust_the_authors.png[]
 
 Open `/src/main/java/com/rhdevelopers/summit/workshop/SummitBackendResource.java`
 
@@ -47,16 +51,49 @@ Uncomment the following code block near the bottom of the file:
     }
 ----
 
-Commit your change and sync
+### Commit your change and sync
+
+Click on the plus icon to add your changes to the changeset, then enter a commit message.  When you're done, click on "Commit"
+
+image::commit.png[]
+
+Click on "Sync Changes" to publish your changes to GitHub
+
+image::sync.png[]
 
 Check the resulting pipelines and deployments for activity
 
-Verify that your change has been published
+image::pipelines_3.png[]
+
+Verify that your change has been published via a new image
 
 [#validate_your_change]
 == Validate your Changes
 
-Connect to a Pod in the Gateway Deployment to test the new API endpoint:
+Connect to a Pod in the Gateway Deployment to test the new API endpoint
+
+First, use the Topology view to examine the Gateway component
+
+image::top_3.png[]
+
+Click on the running pod
+
+image::top_3_gateway.png[]
+
+If needed, delete the Running pod in order to trigger a redeploy
+
+image::gateway_pod_delete.png[]
+
+Return to the Topology view to open a connection to the new Gateway pod
+
+image::top_3.png[]
+image::top_3_gateway.png[]
+
+Open a terminal connection on the new pod
+
+image::gateway_pod_terminal.png[]
+
+Use the following curl command to test the new API endpoint:
 
 [.console-input]
 [source,bash,subs="+macros,+attributes"]
