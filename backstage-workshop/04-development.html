@@ -199,6 +199,14 @@
 </div>
 </div>
 <div class="paragraph">
+<p>Grant DevSpaces access to your OpenShift account</p>
+</div>
+<div class="imageblock">
+<div class="content">
+<img src="_images/auth_6.png" alt="auth 6">
+</div>
+</div>
+<div class="paragraph">
 <p>Make sure to click on <strong>Grant</strong> next to the "Summit23DevLab" GitHub Org before approving DevSpaces access</p>
 </div>
 <div class="imageblock">
@@ -207,11 +215,11 @@
 </div>
 </div>
 <div class="paragraph">
-<p>Grant DevSpaces access to your OpenShift account</p>
+<p>Select "Yes, I trust the authors"</p>
 </div>
 <div class="imageblock">
 <div class="content">
-<img src="_images/auth_6.png" alt="auth 6">
+<img src="_images/trust_the_authors.png" alt="trust the authors">
 </div>
 </div>
 <div class="paragraph">
@@ -232,14 +240,35 @@
     }</code></pre>
 </div>
 </div>
+<div class="sect2">
+<h3 id="_commit_your_change_and_sync"><a class="anchor" href="#_commit_your_change_and_sync"></a>Commit your change and sync</h3>
 <div class="paragraph">
-<p>Commit your change and sync</p>
+<p>Click on the plus icon to add your changes to the changeset, then enter a commit message.  When you&#8217;re done, click on "Commit"</p>
+</div>
+<div class="imageblock">
+<div class="content">
+<img src="_images/commit.png" alt="commit">
+</div>
+</div>
+<div class="paragraph">
+<p>Click on "Sync Changes" to publish your changes to GitHub</p>
+</div>
+<div class="imageblock">
+<div class="content">
+<img src="_images/sync.png" alt="sync">
+</div>
 </div>
 <div class="paragraph">
 <p>Check the resulting pipelines and deployments for activity</p>
 </div>
+<div class="imageblock">
+<div class="content">
+<img src="_images/pipelines_3.png" alt="pipelines 3">
+</div>
+</div>
 <div class="paragraph">
-<p>Verify that your change has been published</p>
+<p>Verify that your change has been published via a new image</p>
+</div>
 </div>
 </div>
 </div>
@@ -247,7 +276,55 @@
 <h2 id="validate_your_change"><a class="anchor" href="#validate_your_change"></a>Validate your Changes</h2>
 <div class="sectionbody">
 <div class="paragraph">
-<p>Connect to a Pod in the Gateway Deployment to test the new API endpoint:</p>
+<p>Connect to a Pod in the Gateway Deployment to test the new API endpoint</p>
+</div>
+<div class="paragraph">
+<p>First, use the Topology view to examine the Gateway component</p>
+</div>
+<div class="imageblock">
+<div class="content">
+<img src="_images/top_3.png" alt="top 3">
+</div>
+</div>
+<div class="paragraph">
+<p>Click on the running pod</p>
+</div>
+<div class="imageblock">
+<div class="content">
+<img src="_images/top_3_gateway.png" alt="top 3 gateway">
+</div>
+</div>
+<div class="paragraph">
+<p>If needed, delete the Running pod in order to trigger a redeploy</p>
+</div>
+<div class="imageblock">
+<div class="content">
+<img src="_images/gateway_pod_delete.png" alt="gateway pod delete">
+</div>
+</div>
+<div class="paragraph">
+<p>Return to the Topology view to open a connection to the new Gateway pod</p>
+</div>
+<div class="imageblock">
+<div class="content">
+<img src="_images/top_3.png" alt="top 3">
+</div>
+</div>
+<div class="imageblock">
+<div class="content">
+<img src="_images/top_3_gateway.png" alt="top 3 gateway">
+</div>
+</div>
+<div class="paragraph">
+<p>Open a terminal connection on the new pod</p>
+</div>
+<div class="imageblock">
+<div class="content">
+<img src="_images/gateway_pod_terminal.png" alt="gateway pod terminal">
+</div>
+</div>
+<div class="paragraph">
+<p>Use the following curl command to test the new API endpoint:</p>
 </div>
 <div class="listingblock console-input">
 <div class="content">
