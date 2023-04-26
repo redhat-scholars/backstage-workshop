@@ -115,8 +115,7 @@ curl --location 'http://localhost:8080/fake/poi/add/point/' \
 }'
 ----
 
-Reload the map to look for your new Point.
-
+A successful `POST` to your new API endpoint will return `inserted custom data point`. Reload the map to look for your new Point.
 
 Optionally reconnect the backend component with the gateway component to make the National Parks dataset visible again:
 
