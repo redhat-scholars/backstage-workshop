@@ -6,7 +6,7 @@ include::_attributes.adoc[]
 
 While there are many ways to craft a Golden Path for your development staff, the option to include OpenShift DevSpaces provides a quick path to success with zero laptop installation effort.
 
-In this chapter you will use DevSpaces to introduce a new API endpoint on your Gateway component.  The goal will be to add a custom datapoint to the "Red Hat Summit POI" dataset, which is stored in-memory within the Gateway component.
+In this chapter you will use DevSpaces to introduce a new API endpoint to your Gateway component.  The goal will be to add a custom datapoint to the "Red Hat Summit POI" dataset, which is stored in-memory within the Gateway component.
 
 [#gateway_update]
 == Use DevSpaces to update the Gateway
@@ -30,7 +30,7 @@ Grant DevSpaces access to your OpenShift account
 
 image::auth_6.png[]
 
-Make sure to click on *Grant* next to the "Summit23DevLab" GitHub Org before approving DevSpaces access
+Make sure to click on *`Grant`* next to the **Summit23DevRHEL** GitHub Org before approving DevSpaces access
 
 image::auth_4.png[]
 
@@ -38,7 +38,7 @@ Wait for your workspace to load.  This may take several minutes...
 
 image::devspaces_loading.png[]
 
-Select "Yes, I trust the authors"
+After DevSpaces has loaded your workspace, select "Yes, I trust the authors" to open the code editor
 
 image::trust_the_authors.png[]
 
