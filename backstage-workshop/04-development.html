@@ -158,7 +158,7 @@
 <article class="doc">
 <h1 class="page">Development</h1>
 <div class="sect1">
-<h2 id="devspaces"><a class="anchor" href="#devspaces"></a>Introducing DevSpaces</h2>
+<h2 id="devspaces"><a class="anchor" href="#devspaces"></a>OpenShift DevSpaces</h2>
 <div class="sectionbody">
 <div class="paragraph">
 <p>While there are many ways to craft a Golden Path for your development staff, the option to include OpenShift DevSpaces provides a quick path to success with zero laptop installation effort.</p>
@@ -286,7 +286,7 @@
 </div>
 </div>
 <div class="sect1">
-<h2 id="validate_your_change"><a class="anchor" href="#validate_your_change"></a>Validate your Changes</h2>
+<h2 id="validate_changes"><a class="anchor" href="#validate_changes"></a>Validate your Changes</h2>
 <div class="sectionbody">
 <div class="paragraph">
 <p>Connect to a Pod in the Gateway Deployment to test the new API endpoint</p>
@@ -337,7 +337,7 @@
 </div>
 </div>
 <div class="paragraph">
-<p>Use the following curl command to test the new API endpoint:</p>
+<p>Paste the following curl command into the terminal to test the new API endpoint:</p>
 </div>
 <div class="listingblock console-input">
 <div class="content">
@@ -352,6 +352,14 @@
 </div>
 <div class="paragraph">
 <p>Reload the map to look for your new Point.</p>
+</div>
+<div class="paragraph">
+<p>Optionally reconnect the backend component with the gateway component to make the National Parks dataset visible again:</p>
+</div>
+<div class="listingblock console-input">
+<div class="content">
+<pre class="highlightjs highlight"><code class="language-bash hljs" data-lang="bash">curl poi-gateway-app:8080/backend/register/poi-backend?endpoint=http://poi-backend-app:8080</code></pre>
+</div>
 </div>
 </div>
 </div>
