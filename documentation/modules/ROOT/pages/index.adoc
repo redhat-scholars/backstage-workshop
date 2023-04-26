@@ -23,11 +23,6 @@ Enough Backstage to use it.
 * Catalog: Entities
 * Deployed _Components_
 
-
-Screenshot of slides
-
-link to slides
-
 [.tiles.browse]
 == Workshop Outline
 
@@ -38,27 +33,26 @@ link to slides
 * xref:01-setup.adoc#backstage_access[Accessing Backstage]
 
 [.tile]
-.xref:02-templates.adoc[Templates]
-* xref:02-templates.adoc#templates[Introducing Templates]
+.xref:02-templates.adoc[Software Templates]
+* xref:02-templates.adoc#templates[Templates and Golden Paths]
 * xref:02-templates.adoc#frontend[Deploy the Front End Template]
 * xref:02-templates.adoc#github[View the resulting Repos]
-* xref:02-templates.adoc#pipelines[View the resulting Pipelines]
 * xref:02-templates.adoc#gateway[Deploy the Gateway Template]
-* xref:02-templates.adoc#pipeline_triggers[Trigger a Pipeline Run]
+* xref:02-templates.adoc#pipelines[View the resulting Pipelines]
+* xref:02-templates.adoc#view_map[Access the resulting Workloads]
 
 [.tile]
 .xref:03-components.adoc[Components]
 * xref:03-components.adoc#software_catalog[Software Catalog]
-* xref:03-components.adoc#plugins[Plugins]
 * xref:03-components.adoc#component_frontend[View the FrontEnd Component]
+* xref:03-components.adoc#plugins[Plugins]
 * xref:03-components.adoc#component_gateway[View the Gateway Component]
 * xref:03-components.adoc#backend[Deploy the Backend Template]
 * xref:03-components.adoc#backend_view[View the Backend Component]
+* xref:03-components.adoc#configuration[Service Binding and Configuration]
 
 [.tile]
 .xref:04-development.adoc[Development]
-* xref:04-development.adoc#backend_pipeline[Run the Backend Pipeline]
-* xref:04-development.adoc#configuration[Service Binding]
-* xref:04-development.adoc#devspaces[Using DevSpaces]
-* xref:04-development.adoc#gateway_update[Update the Gateway Service]
+* xref:04-development.adoc#devspaces[OpenShift DevSpaces]
+* xref:04-development.adoc#gateway_update[Update the Gateway Component]
 * xref:04-development.adoc#validate_changes[Validate your Changes]
