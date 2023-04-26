@@ -62,7 +62,7 @@
     <a class="nav-link" href="#cluster_access">Accessing OpenShift</a>
   </li>
   <li class="nav-item" data-depth="2">
-    <a class="nav-link" href="#project_access">OpenShift Project</a>
+    <a class="nav-link" href="#project_access">OpenShift Projects</a>
   </li>
   <li class="nav-item" data-depth="2">
     <a class="nav-link" href="#backstage_access">Accessing Backstage</a>
@@ -74,16 +74,16 @@
     <a class="nav-link" href="02-templates.html">2. Templates</a>
 <ul class="nav-list">
   <li class="nav-item" data-depth="2">
-    <a class="nav-link" href="02-templates.html#templates">Templates Introduction</a>
+    <a class="nav-link" href="02-templates.html#templates">Software Templates</a>
   </li>
   <li class="nav-item" data-depth="2">
-    <a class="nav-link" href="02-templates.html#frontend">Deploy the Front End Template</a>
+    <a class="nav-link" href="02-templates.html#frontend">Launch the Front End Template</a>
   </li>
   <li class="nav-item" data-depth="2">
-    <a class="nav-link" href="02-templates.html#github">Front End Template Repo</a>
+    <a class="nav-link" href="02-templates.html#github">Front End Component Repo</a>
   </li>
   <li class="nav-item" data-depth="2">
-    <a class="nav-link" href="02-templates.html#gateway">Deploy the Gateway Template</a>
+    <a class="nav-link" href="02-templates.html#gateway">Launch the Gateway Template</a>
   </li>
   <li class="nav-item" data-depth="2">
     <a class="nav-link" href="02-templates.html#pipelines">Tekton Pipelines</a>
@@ -101,10 +101,10 @@
     <a class="nav-link" href="03-components.html#software_catalog">Software Catalog</a>
   </li>
   <li class="nav-item" data-depth="2">
-    <a class="nav-link" href="03-components.html#plugins">About Plugins</a>
+    <a class="nav-link" href="03-components.html#frontend">View the Frontend Component</a>
   </li>
   <li class="nav-item" data-depth="2">
-    <a class="nav-link" href="03-components.html#frontend">View the Frontend Component</a>
+    <a class="nav-link" href="03-components.html#plugins">About Plugins</a>
   </li>
   <li class="nav-item" data-depth="2">
     <a class="nav-link" href="03-components.html#gateway">View the Gateway Component</a>
@@ -116,7 +116,7 @@
     <a class="nav-link" href="03-components.html#backend">View the Backend Component</a>
   </li>
   <li class="nav-item" data-depth="2">
-    <a class="nav-link" href="03-components.html#configuration">Service Binding</a>
+    <a class="nav-link" href="03-components.html#configuration">Service Binding and Configuration</a>
   </li>
 </ul>
   </li>
@@ -125,13 +125,13 @@
     <a class="nav-link" href="04-development.html">4. Development</a>
 <ul class="nav-list">
   <li class="nav-item" data-depth="2">
-    <a class="nav-link" href="04-development.html#devspaces">DevSpaces</a>
+    <a class="nav-link" href="04-development.html#devspaces">OpenShift DevSpaces</a>
   </li>
   <li class="nav-item" data-depth="2">
-    <a class="nav-link" href="04-development.html#gateway_update">Update the Gateway Service</a>
+    <a class="nav-link" href="04-development.html#gateway_update">Update the Gateway Component</a>
   </li>
   <li class="nav-item" data-depth="2">
-    <a class="nav-link" href="04-development.html#validate_changes">Validate your Changes</a>
+    <a class="nav-link" href="04-development.html#validate_changes">Validate your changes</a>
   </li>
 </ul>
   </li>
@@ -198,8 +198,29 @@
 <img src="_images/project_list.png" alt="project list">
 </div>
 </div>
-<div class="paragraph">
-<p>Remember your Project name. You&#8217;ll specify it in Template forms as your "Namespace" value as you deploy components.</p>
+<div class="admonitionblock tip">
+<table>
+<tr>
+<td class="icon">
+<i class="fa icon-tip" title="Tip"></i>
+</td>
+<td class="content">
+If you do not find a project, try reloading your browser to check again
+</td>
+</tr>
+</table>
+</div>
+<div class="admonitionblock important">
+<table>
+<tr>
+<td class="icon">
+<i class="fa icon-important" title="Important"></i>
+</td>
+<td class="content">
+Remember your Project name. You&#8217;ll specify it in Template forms as your "Namespace" value as you deploy components.
+</td>
+</tr>
+</table>
 </div>
 <div class="paragraph">
 <p>Next, you&#8217;ll connect to Backstage and discover the starting point for developing your application. Once that&#8217;s done, Backstage <em>Templates</em> will help you generate software components as you build a three-tier GeoSpatial mapping demo application.</p>
