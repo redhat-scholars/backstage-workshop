@@ -123,4 +123,4 @@ image::map_3.png[]
 
 Congratulations on completing Chapter 3!
 
-In the next chapter, we will complete our Golden Path by using OpenShift DevSpaces to make a simple code contribution.
+In the next chapter, we will complete our Golden Path by using OpenShift Dev Spaces to make a simple code contribution.

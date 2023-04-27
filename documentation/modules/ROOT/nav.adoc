@@ -22,6 +22,6 @@
 ** xref:03-components.adoc#configuration[Service Binding and Configuration]
 
 * xref:04-development.adoc[4. Development]
-** xref:04-development.adoc#devspaces[OpenShift DevSpaces]
+** xref:04-development.adoc#devspaces[OpenShift Dev Spaces]
 ** xref:04-development.adoc#gateway_update[Update the Gateway Component]
 ** xref:04-development.adoc#validate_changes[Validate your changes]
