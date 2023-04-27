@@ -3,17 +3,26 @@ include::_attributes.adoc[]
 
 [#software_catalog]
 == Software Catalog
-Return to backstage to check the status of the frontend and gateway entities in the Catalog.
+Return to backstage to check the status of the frontend and gateway entities in the Catalog. Enter your NAMESPACE into the search box to filter the results.
 
 image::catalog_search.png[]
+
+Select your Frontend component entity from the list of results
+
 image::catalog_results.png[]
 
+You will be prompted for authentication by the github plugin on your first visit.  Click "LOG IN"
+
 image::login_3.png[]
+
+Backstage would like to access your GitHub profile information and repositories.  Click "Authorize" to continue
+
 image::auth_3.png[]
 
 
 [#frontend]
-== View the FrontEnd
+== View the FrontEnd Component
+Take your time exploring the Component Overview page and each of the tabs
 
 image::frontend_overview.png[]
 
@@ -23,16 +32,27 @@ image::frontend_overview.png[]
 [#gateway]
 == View the Gateway
 
+Return to the Backstage Software Catalog to check the status of the gateway entity. Enter your NAMESPACE into the search box to filter the results.
+
 image::catalog_search.png[]
+
+Select your Gateway component entity from the list of results
+
 image::catalog_results_1.png[]
+
+Take your time exploring the Component Overview page and each of the tabs
+
 image::gateway_overview.png[]
 
 [#backend_template]
 == Use the Back End Template
 
-Invoke the backend component using the Backend template
+Return to the `Create...` menu to Choose the Backend Template
 
 image::backstage_create_backend.png[]
+
+Insert your NAMESPACE as directed in the following examples:
+
 image::backend_1.png[]
 image::backend_2.png[]
 image::backend_3.png[]
@@ -51,7 +71,7 @@ When you're ready to proceed, click on the `Deployment` link to begin configurin
 [#configuration]
 == Service Binding and Configuration
 
-On the Deployment Detail page, click on the Pods tab to find a list of Pod resources that are attached to this Deployment
+On the Deployment Detail page, click on the Pods tab to find a list of Pod resources that are attached to this Deployment. If there are no pods, you may need to wait for your Pipeline Build to finish first.
 
 image::deploy_1.png[]
 
@@ -63,7 +83,7 @@ Open the `Terminal` tab from the Pod Detail page
 
 image::pod_terminal.png[]
 
-Complete these four commands to register the backend with the gateway component:
+Complete these four commands to load the backend dataset and to register the backend with the gateway component:
 
 1. Check the backend dataservice for records. The result should be an empty set:
 +
@@ -100,3 +120,7 @@ curl poi-gateway-app:8080/backend/register/poi-backend?endpoint=http://poi-backe
 Check the map for results!
 
 image::map_3.png[]
+
+Congratulations on completing Chapter 3!
+
+In the next chapter, we will complete our Golden Path by using OpenShift DevSpaces to make a simple code contribution.
