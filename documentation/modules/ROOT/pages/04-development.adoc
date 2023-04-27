@@ -124,3 +124,18 @@ Optionally reconnect the backend component with the gateway component to make th
 ----
 curl poi-gateway-app:8080/backend/register/poi-backend?endpoint=http://poi-backend-app:8080
 ----
+
+[#next_steps]
+== Next Steps
+
+You have made it to the end of this particular Golden Path.  Congratulations!!
+
+Now it's your turn to begin crafting your own Golden Path experiences using Backstage Software Templates and related platform services, such as ArgoCD, Tekton, DevSpaces, and OpenShift.
+
+For information on setting up your own Backstage / Janus demo environment, see https://janus-idp.io/demo-setup/install/
+
+To learn about the Software Templates that were used in this workshop, visit: https://github.com/hpgrahsl/rhsummit23-backstage-gpts
+
+To share your feedback, open an issue here: https://github.com/redhat-scholars/backstage-workshop/issues
+
+Thank you for helping review this content - your feedback is appreciated!
