@@ -56,3 +56,4 @@ Enough Backstage to use it.
 * xref:04-development.adoc#devspaces[OpenShift Dev Spaces]
 * xref:04-development.adoc#gateway_update[Update the Gateway Component]
 * xref:04-development.adoc#validate_changes[Validate your Changes]
+* xref:04-development.adoc#next_steps[Next Steps]
