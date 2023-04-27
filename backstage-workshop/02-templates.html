@@ -159,20 +159,24 @@
 <article class="doc">
 <h1 class="page">Templates</h1>
 <div class="sect1">
-<h2 id="templates"><a class="anchor" href="#templates"></a>Introducing Templates</h2>
+<h2 id="templates"><a class="anchor" href="#templates"></a>Software Templates</h2>
 <div class="sectionbody">
-<div class="imageblock">
-<div class="content">
-<img src="_images/backstage_create_frontend.png" alt="backstage create frontend">
-</div>
-</div>
+
 </div>
 </div>
 <div class="sect1">
 <h2 id="frontend"><a class="anchor" href="#frontend"></a>Launch the Frontend template</h2>
 <div class="sectionbody">
 <div class="paragraph">
-<p>Invoke the Angular Single Page Application frontend template in backstage</p>
+<p>Click on <code>Create&#8230;&#8203;</code> in the sidebar menu, then invoke the Angular Single Page Application frontend template</p>
+</div>
+<div class="imageblock">
+<div class="content">
+<img src="_images/backstage_create_frontend.png" alt="backstage create frontend">
+</div>
+</div>
+<div class="paragraph">
+<p>Keep all the default values, while inserting your NAMESPACE value into the form inputs in place of the <code>&lt;NAMESPACE&gt;</code> string.</p>
 </div>
 <div class="imageblock">
 <div class="content">
@@ -180,7 +184,7 @@
 </div>
 </div>
 <div class="paragraph">
-<p>Insert your NAMESPACE value (from the previous chapter&#8230;&#8203; it should be your username) into the form inputs in place of the <code>&lt;NAMESPACE&gt;</code> string. Click <code>NEXT STEP</code> to proceed.</p>
+<p>Insert your <code>&lt;NAMESPACE&gt;</code> value in the <code>Namespace</code> input and <code>user:&lt;NAMESPACE&gt;</code> into the <code>Owner</code> input, then click <code>NEXT STEP</code> to proceed</p>
 </div>
 <div class="imageblock">
 <div class="content">
@@ -188,7 +192,7 @@
 </div>
 </div>
 <div class="paragraph">
-<p>Insert your <code>NAMESPACE</code> value, then click <code>NEXT STEP</code> to proceed</p>
+<p>Provide your NAMESPACE as directed, then click <code>NEXT STEP</code> to proceed.</p>
 </div>
 <div class="imageblock">
 <div class="content">
@@ -196,7 +200,7 @@
 </div>
 </div>
 <div class="paragraph">
-<p>Review the input selections, click <code>CREATE</code> when ready</p>
+<p>Review the input selections, making sure that your own NAMESPACE has been used. Click <code>CREATE</code> when you are ready to create your first Component</p>
 </div>
 <div class="imageblock">
 <div class="content">
@@ -233,7 +237,7 @@
 </div>
 </div>
 <div class="paragraph">
-<p>If you the GitHub org carefully, you will notice a second "gitops" repo has been created.  Add "-gitops" to the end of the repo url to explore the contents of the other repo</p>
+<p>If you examine the GitHub org carefully, you will notice a second "gitops" repo has been created.  Add "-gitops" to the end of the repo url to explore the assets in the other repo</p>
 </div>
 <div class="imageblock">
 <div class="content">
@@ -247,6 +251,9 @@
 <div class="sectionbody">
 <div class="paragraph">
 <p>Return to backstage to invoke the Gateway template</p>
+</div>
+<div class="paragraph">
+<p>Click on <code>Create&#8230;&#8203;</code> in the sidebar menu, then choose the "Quarkus Gateway Application" component from the template list.</p>
 </div>
 <div class="imageblock">
 <div class="content">
@@ -262,7 +269,7 @@
 </div>
 </div>
 <div class="paragraph">
-<p>Insert your <code>NAMESPACE</code> value, then click <code>NEXT STEP</code> to proceed</p>
+<p>Insert your <code>NAMESPACE</code> values and owner info, then click <code>NEXT STEP</code> to proceed</p>
 </div>
 <div class="imageblock">
 <div class="content">
@@ -299,7 +306,7 @@
 <h2 id="pipelines"><a class="anchor" href="#pipelines"></a>Tekton Pipelines</h2>
 <div class="sectionbody">
 <div class="paragraph">
-<p>Check the status of your pipelines.  Select one of your pipeline runs, preferrably one that is active</p>
+<p>Check the status of your Builds using Tekton Pipelines.  Select one of your pipeline runs, preferrably one that is still active</p>
 </div>
 <div class="imageblock">
 <div class="content">
