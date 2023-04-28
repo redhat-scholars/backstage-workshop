@@ -27,22 +27,22 @@ Review the input selections, making sure that your own NAMESPACE has been used. 
 
 image::frontend_4.png[]
 
-Review the template output.  Click on the `Source Code Repository` link to view the newly scaffolded frontend repo
+Review the template output.  Click on the `Source Code Repository` link to view the newly scaffolded frontend repository
 
 image::frontend_5.png[]
 
 [#github]
 == View the Source
 
-Explore the newly created repo, paying special attention to the `catalog-info.yaml` file
+Explore the newly created repository, paying special attention to the `catalog-info.yaml` file
 
 image::github_repo.png[]
 
-The resulting component yaml is available in the `catalog-info.yaml` file at the root of the repo.
+The resulting component yaml is available in the `catalog-info.yaml` file at the root of the repository.
 
 image::github_component.png[]
 
-If you examine the GitHub org carefully, you will notice a second "gitops" repo has been created.  Add "-gitops" to the end of the repo url to explore the assets in the other repo
+If you examine the GitHub org carefully, you will notice a second "gitops" repository has been created.  Add "-gitops" to the end of the repository url to explore the assets in the other repository
 
 image::github_gitops.png[]
 
