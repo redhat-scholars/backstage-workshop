@@ -62,16 +62,18 @@ image::backend_5.png[]
 [#backend]
 == View the resulting Components
 
-View the resulting component and plugins
+View the resulting component and plugins.
+
+Check the resulting pipelines for activity.
 
 image::backend_overview.png[]
 
-When you're ready to proceed, click on the `Deployment` link to begin configuring your backend service.
+When the build has completed successfully, return to the Backend Component overview page and click on the `Deployment` link to begin configuring your backend service.
 
 [#configuration]
 == Service Binding and Configuration
 
-On the Deployment Detail page, click on the Pods tab to find a list of Pod resources that are attached to this Deployment. If there are no pods, you may need to wait for your Pipeline Build to finish first.
+From the Deployment Detail page, click on the Pods tab to find a list of Pod resources that are attached to this Deployment. If there are no pods, you may need to wait for your Pipeline Build to finish first.
 
 image::deploy_1.png[]
 
