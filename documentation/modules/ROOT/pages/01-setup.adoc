@@ -26,7 +26,7 @@ image::project_list.png[]
 
 TIP: If you do not find a project, try reloading your browser to check again
 
-IMPORTANT: Remember your Project name. You'll specify it in Template forms as your "Namespace" value as you deploy components.
+IMPORTANT: Remember your Project names! You will need enter it into the Template forms as your *<Namespace>* value as you deploy components in the next two chapters.
 
 Next, you'll connect to Backstage and discover the starting point for developing your application. Once that's done, Backstage _Templates_ will help you generate software components as you build a three-tier GeoSpatial mapping demo application.
 
