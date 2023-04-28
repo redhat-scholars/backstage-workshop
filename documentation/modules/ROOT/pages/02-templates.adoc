@@ -42,10 +42,6 @@ The resulting component yaml is available in the `catalog-info.yaml` file at the
 
 image::github_component.png[]
 
-If you examine the GitHub org carefully, you will notice a second "gitops" repository has been created.  Add "-gitops" to the end of the repository url to explore the assets in the other repository.
-
-image::github_gitops.png[]
-
 [#gateway]
 == Launch the Gateway Template
 
