@@ -7,7 +7,7 @@ include::_attributes.adoc[]
 
 [#frontend]
 == Launch the Frontend template
-Click on `Create...` in the sidebar menu, then invoke the Angular Single Page Application frontend template
+Click on `Create...` in the sidebar menu, then invoke the Angular Single Page Application frontend template.
 
 image::backstage_create_frontend.png[]
 
@@ -15,7 +15,7 @@ Keep all the default values, while inserting your NAMESPACE value into the form 
 
 image::frontend_1.png[]
 
-Insert your `<NAMESPACE>` value in the `Namespace` input and `user:<NAMESPACE>` into the `Owner` input, then click `NEXT STEP` to proceed
+Insert your `<NAMESPACE>` value in the `Namespace` input and `user:<NAMESPACE>` into the `Owner` input, then click `NEXT STEP` to proceed.
 
 image::frontend_2.png[]
 
@@ -23,18 +23,18 @@ Provide your NAMESPACE as directed, then click `NEXT STEP` to proceed.
 
 image::frontend_3.png[]
 
-Review the input selections, making sure that your own NAMESPACE has been used. Click `CREATE` when you are ready to create your first Component
+Review the input selections, making sure that your own NAMESPACE has been used. Click `CREATE` when you are ready to create your first Component.
 
 image::frontend_4.png[]
 
-Review the template output.  Click on the `Source Code Repository` link to view the newly scaffolded frontend repository
+Review the template output.  Click on the `Source Code Repository` link to view the newly scaffolded frontend repository.
 
 image::frontend_5.png[]
 
 [#github]
 == View the Source
 
-Explore the newly created repository, paying special attention to the `catalog-info.yaml` file
+Explore the newly created repository, paying special attention to the `catalog-info.yaml` file.
 
 image::github_repo.png[]
 
@@ -42,32 +42,32 @@ The resulting component yaml is available in the `catalog-info.yaml` file at the
 
 image::github_component.png[]
 
-If you examine the GitHub org carefully, you will notice a second "gitops" repository has been created.  Add "-gitops" to the end of the repository url to explore the assets in the other repository
+If you examine the GitHub org carefully, you will notice a second "gitops" repository has been created.  Add "-gitops" to the end of the repository url to explore the assets in the other repository.
 
 image::github_gitops.png[]
 
 [#gateway]
 == Launch the Gateway Template
 
-Return to backstage to invoke the Gateway template
+Return to backstage to invoke the Gateway template.
 
 Click on `Create...` in the sidebar menu, then choose the "Quarkus Gateway Application" component from the template list.
 
 image::backstage_create_gateway.png[]
 
-Insert your `NAMESPACE` value, then click `NEXT STEP` to proceed
+Insert your `NAMESPACE` value, then click `NEXT STEP` to proceed.
 
 image::gateway_1.png[]
 
-Insert your `NAMESPACE` values and owner info, then click `NEXT STEP` to proceed
+Insert your `NAMESPACE` values and owner info, then click `NEXT STEP` to proceed.
 
 image::gateway_2.png[]
 
-Insert your `NAMESPACE` value, then click `NEXT STEP` to proceed
+Insert your `NAMESPACE` value, then click `NEXT STEP` to proceed.
 
 image::gateway_3.png[]
 
-Review the input selections, click `CREATE` when ready
+Review the input selections, click `CREATE` when ready.
 
 image::gateway_4.png[]
 
@@ -78,7 +78,7 @@ image::gateway_5.png[]
 [#pipelines]
 == Tekton Pipelines
 
-Check the status of your Builds using Tekton Pipelines.  Select one of your pipeline runs, preferrably one that is still active
+Check the status of your Builds using Tekton Pipelines.  Select one of your pipeline runs, preferrably one that is still active.
 
 image::pipelines.png[]
 
@@ -86,18 +86,18 @@ Select `Logs` to watch the build process
 
 image::pipeline_run.png[]
 
-Monitor the build output.  When the build has completed, select `Pipelines` from the side menu to check the status of the other pipeline run
+Monitor the build output.  When the build has completed, select `Pipelines` from the side menu to check the status of the other pipeline run.
 
 image::pipeline_run_done.png[]
 
-When both builds have finished successfully, proceed to the `Topology` view
+When both builds have finished successfully, proceed to the `Topology` view.
 
 image::pipelines_done.png[]
 
 [#view_map]
 == View the resulting Workloads
 
-Open a connection to the frontend web service by clicking on the Route decorator, located on the top right corner of the Angular Frontend component
+Open a connection to the frontend web service by clicking on the Route decorator, located on the top right corner of the Angular Frontend component.
 
 image::console_top_2.png[]
 
