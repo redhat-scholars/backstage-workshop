@@ -128,16 +128,16 @@ curl poi-gateway-app:8080/backend/register/poi-backend?endpoint=http://poi-backe
 If you see more than two points in the "Red Hat Summit POI" dataset, then you have successfully completed our Golden Path onboarding experience by pushing, testing, and verifying your change.
 
 [#next_steps]
-== Next Steps
+== Paving your own Golden Path
 
-You have made it to the end of this particular Golden Path.  Congratulations!!
+You have made it to the end of this particular Golden Path.  _Congratulations!_
 
 Now, it's your turn to begin crafting your own Golden Path experiences using Backstage Software Templates and related platform services such as ArgoCD, Tekton, Dev Spaces, and OpenShift.
 
-For information on setting up your own Backstage / Janus demo environment, see https://janus-idp.io/demo-setup/install/
+* For information about setting up your own Backstage / Janus demo environment, see: https://janus-idp.io/demo-setup/install/
 
-To learn about the Software Templates that were used in this workshop, visit: https://github.com/hpgrahsl/rhsummit23-backstage-gpts
+* To learn about the Software Templates that were used in this workshop, visit: https://github.com/hpgrahsl/rhsummit23-backstage-gpts
 
-To share your feedback on this workshop, open an issue here: https://github.com/redhat-scholars/backstage-workshop/issues
+* To share your feedback on this workshop, open an issue here: https://github.com/redhat-scholars/backstage-workshop/issues
 
-Thank you for helping review this content - your feedback is appreciated!
+_Thank you for helping review this content. Your feedback is appreciated!_
