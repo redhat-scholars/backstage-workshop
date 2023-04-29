@@ -64,11 +64,15 @@ image::backend_5.png[]
 
 View the resulting component and plugins.
 
-Check the resulting pipelines for activity.
-
 image::backend_overview.png[]
 
+Check the resulting pipelines for activity.
+
+image::backend_view_pipelines.png[]
+
 When the build has completed successfully, return to the Backend Component overview page and click on the `Deployment` link to begin configuring your backend service.
+
+image::backend_view_deployment.png[]
 
 [#configuration]
 == Service Binding and Configuration

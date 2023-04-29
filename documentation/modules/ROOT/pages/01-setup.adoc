@@ -43,7 +43,11 @@ image::backstage_login.png[]
 
 image::backstage_auth.png[]
 
-After authenticating via GitHub, Backstage will greet you with a cheerful "Welcome back!"
+You may be prompted to provide your First and Last name. If so, complete the form and then click "Submit"
+
+image::backstage_login_2.png[]
+
+After successfully authenticating via GitHub, Backstage will greet you with a cheerful "Welcome back!"
 
 image::backstage_welcome.png[]
 
