@@ -61,7 +61,7 @@ Uncomment the following code block near the bottom of the file:
 
 ### Commit your change and sync
 
-Click on the plus icon to add your changes to the changeset, then enter a commit message.  When you're done, click on "Commit"
+Click on the Source Control tab in the side menu, then select the plus icon to add your change to the changeset. Enter your commit message in the top input box.  When you're done, click "Commit"
 
 image::commit.png[]
 
