@@ -69,7 +69,7 @@ Click on "Sync Changes" to publish your changes to GitHub
 
 image::sync.png[]
 
-Check the resulting pipelines and deployments for activity
+Check the resulting pipelines for activity by selecting *Pipelines* from the side menu in the OpenShift web console
 
 image::pipelines_3.png[]
 
@@ -117,15 +117,15 @@ curl --location 'http://localhost:8080/fake/poi/add/point/' \
 
 A successful `POST` to your new API endpoint will return `inserted custom data point`. Reload the map to look for your new Point.
 
-Optionally, reconnect the backend component with the gateway component to make the National Parks dataset visible again:
+If you see more than two points in the "Red Hat Summit POI" dataset, then you have successfully completed our Golden Path onboarding experience by pushing, testing, and verifying your change.
+
+As a final step, reconnect the backend component with the gateway component to make the National Parks dataset visible again:
 
 [.console-input]
 [source,bash,subs="+macros,+attributes"]
 ----
 curl poi-gateway-app:8080/backend/register/poi-backend?endpoint=http://poi-backend-app:8080
 ----
-
-If you see more than two points in the "Red Hat Summit POI" dataset, then you have successfully completed our Golden Path onboarding experience by pushing, testing, and verifying your change.
 
 [#next_steps]
 == Paving your own Golden Path
