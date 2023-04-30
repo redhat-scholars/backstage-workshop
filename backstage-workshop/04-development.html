@@ -275,7 +275,7 @@
 </div>
 </div>
 <div class="paragraph">
-<p>Check the resulting pipelines and deployments for activity</p>
+<p>Check the resulting pipelines for activity by selecting <strong>Pipelines</strong> from the side menu in the OpenShift web console</p>
 </div>
 <div class="imageblock">
 <div class="content">
@@ -357,15 +357,15 @@
 <p>A successful <code>POST</code> to your new API endpoint will return <code>inserted custom data point</code>. Reload the map to look for your new Point.</p>
 </div>
 <div class="paragraph">
-<p>Optionally, reconnect the backend component with the gateway component to make the National Parks dataset visible again:</p>
+<p>If you see more than two points in the "Red Hat Summit POI" dataset, then you have successfully completed our Golden Path onboarding experience by pushing, testing, and verifying your change.</p>
+</div>
+<div class="paragraph">
+<p>As a final step, reconnect the backend component with the gateway component to make the National Parks dataset visible again:</p>
 </div>
 <div class="listingblock console-input">
 <div class="content">
 <pre class="highlightjs highlight"><code class="language-bash hljs" data-lang="bash">curl poi-gateway-app:8080/backend/register/poi-backend?endpoint=http://poi-backend-app:8080</code></pre>
 </div>
-</div>
-<div class="paragraph">
-<p>If you see more than two points in the "Red Hat Summit POI" dataset, then you have successfully completed our Golden Path onboarding experience by pushing, testing, and verifying your change.</p>
 </div>
 </div>
 </div>
