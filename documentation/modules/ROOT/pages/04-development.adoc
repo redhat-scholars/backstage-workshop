@@ -73,12 +73,12 @@ Check the resulting pipelines for activity by selecting *Pipelines* from the sid
 
 image::pipelines_3.png[]
 
-Verify that your change has been published via a new image
+Verify that your change has been published as a new image
 
 [#validate_changes]
 == Validate your change
 
-Connect to a Pod in the Gateway Deployment to test the new API endpoint
+Connect to a Pod in the Gateway Deployment to test the new API endpoint.
 
 First, use the Topology view to examine the Gateway component
 
@@ -88,7 +88,7 @@ Click on the running pod
 
 image::top_3_gateway.png[]
 
-If needed, delete the Running pod in order to trigger a redeploy
+Delete the Running pod to trigger OpenShift to replace it with a Pod running your new gateway image. 
 
 image::gateway_pod_delete.png[]
 
