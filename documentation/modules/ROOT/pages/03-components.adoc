@@ -70,60 +70,7 @@ Check the resulting pipelines for activity.
 
 image::backend_view_pipelines.png[]
 
-When the build has completed successfully, return to the Backend Component overview page and click on the `Deployment` link to begin configuring your backend service.
-
-image::backend_view_deployment.png[]
-
-[#configuration]
-== Service binding and configuration
-
-From the Deployment Detail page, click on the Pods tab to find a list of Pod resources that are attached to this Deployment. If there are no pods, you may need to wait for your Pipeline Build to finish first.
-
-image::deploy_1.png[]
-
-Select one of the Pods
-
-image::deploy_2.png[]
-
-Open the `Terminal` tab from the Pod Detail page
-
-image::pod_terminal.png[]
-
-Complete these four commands to load the backend dataset and to register the backend with the gateway component:
-
-1. Check the backend dataservice for records. The result should be an empty set:
-+
-[.console-input]
-[source,bash,subs="+macros,+attributes"]
-----
-curl localhost:8080/ws/data/all
-----
-
-2. Populate the backend with the National Parks dataset:
-+
-[.console-input]
-[source,bash,subs="+macros,+attributes"]
-----
-curl localhost:8080/ws/data/load
-----
-
-3. List registered gateway backends. The only result should be the gateway's built-in "Red Hat Summit POI" dataset:
-+
-[.console-input]
-[source,bash,subs="+macros,+attributes"]
-----
-curl poi-gateway-app:8080/backend/list
-----
-
-4. Register the new backend component with the gateway component:
-+
-[.console-input]
-[source,bash,subs="+macros,+attributes"]
-----
-curl poi-gateway-app:8080/backend/register/poi-backend?endpoint=http://poi-backend-app:8080
-----
-
-Check the map for results!
+When the build has completed successfully, reload the map to check for results!
 
 image::map_3.png[]
 

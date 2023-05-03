@@ -52,11 +52,10 @@ In section 4, you'll extend your map app with a lower-level feature. Backstage l
 * xref:03-components.adoc#component_gateway[View the Gateway Component]
 * xref:03-components.adoc#backend[Deploy the Backend Template]
 * xref:03-components.adoc#backend_view[View the Backend Component]
-* xref:03-components.adoc#configuration[Service binding and configuration]
 
 [.tile]
 .xref:04-development.adoc[Development]
 * xref:04-development.adoc#devspaces[OpenShift Dev Spaces]
 * xref:04-development.adoc#gateway_update[Update the Gateway Component]
 * xref:04-development.adoc#validate_changes[Validate your changes]
-* xref:04-development.adoc#next_steps[Next steps]
+* xref:04-development.adoc#next_steps[Paving your own Golden Path]

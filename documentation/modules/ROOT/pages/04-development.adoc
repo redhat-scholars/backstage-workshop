@@ -119,14 +119,6 @@ A successful `POST` to your new API endpoint will return `inserted custom data p
 
 If you see more than two points in the "Red Hat Summit POI" dataset, then you have successfully completed our Golden Path onboarding experience by pushing, testing, and verifying your change.
 
-As a final step, reconnect the backend component with the gateway component to make the National Parks dataset visible again:
-
-[.console-input]
-[source,bash,subs="+macros,+attributes"]
-----
-curl poi-gateway-app:8080/backend/register/poi-backend?endpoint=http://poi-backend-app:8080
-----
-
 [#next_steps]
 == Paving your own Golden Path
 
