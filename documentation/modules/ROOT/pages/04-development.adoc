@@ -76,7 +76,7 @@ image::pipelines_3.png[]
 Verify that your change has been published via a new image
 
 [#validate_changes]
-== Validate your Changes
+== Validate your change
 
 Connect to a Pod in the Gateway Deployment to test the new API endpoint
 

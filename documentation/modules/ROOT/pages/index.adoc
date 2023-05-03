@@ -8,11 +8,11 @@ Every team and every project evolves a tailored development environment. This co
 
 IDPs help teams curate, manage and replicate these environments. Backstage is an open source CNCF project for building developer platforms, and for encapsulating tools, services, documentation and best practices in “golden paths” to ease onboarding and daily development work.
 
-In this end-to-end developer experience, you’ll start on a golden path we’ve paved to show how Red Hat products center on the OpenShift Container Platform to supply a complete foundation for cloud-native development.
+In this end-to-end developer experience, you’ll start on a golden path we’ve paved to show how Red Hat products center on the OpenShift Container Platform to supply a foundation for cloud-native development.
 
 Backstage will support you from the start with signposts to components in a single place connecting the three key developer views: an IDE to code, pipelines to build, and orchestration to deploy your application.
 
-== Workshop Brief
+== Workshop brief
 
 In these exercises you will use Backstage _Templates_ to deploy three application tiers: the user interface frontend, the data-bridging gateway, and the data storage backend. You'll pair Backstage and OpenShift facilities to edit code and add features to the browser-based mapping application.
 
@@ -52,11 +52,11 @@ In section 4, you'll extend your map app with a lower-level feature. Backstage l
 * xref:03-components.adoc#component_gateway[View the Gateway Component]
 * xref:03-components.adoc#backend[Deploy the Backend Template]
 * xref:03-components.adoc#backend_view[View the Backend Component]
-* xref:03-components.adoc#configuration[Service Binding and Configuration]
+* xref:03-components.adoc#configuration[Service binding and configuration]
 
 [.tile]
 .xref:04-development.adoc[Development]
 * xref:04-development.adoc#devspaces[OpenShift Dev Spaces]
 * xref:04-development.adoc#gateway_update[Update the Gateway Component]
-* xref:04-development.adoc#validate_changes[Validate your Changes]
-* xref:04-development.adoc#next_steps[Next Steps]
+* xref:04-development.adoc#validate_changes[Validate your changes]
+* xref:04-development.adoc#next_steps[Next steps]

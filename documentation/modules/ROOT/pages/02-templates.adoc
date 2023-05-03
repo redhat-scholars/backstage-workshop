@@ -32,7 +32,7 @@ Review the template output.  Click on the `Source Code Repository` link to view 
 image::frontend_5.png[]
 
 [#github]
-== View the Source
+== View the source
 
 Explore the newly created repository, paying special attention to the `catalog-info.yaml` file.
 
@@ -91,7 +91,7 @@ When both builds have finished successfully, proceed to the `Topology` view.
 image::pipelines_done.png[]
 
 [#view_map]
-== View the resulting Workloads
+== View the running workloads
 
 Open a connection to the frontend web service by clicking on the Route decorator, located on the top right corner of the Angular Frontend component.
 

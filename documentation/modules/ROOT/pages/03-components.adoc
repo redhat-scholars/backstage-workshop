@@ -21,7 +21,7 @@ image::auth_3.png[]
 
 
 [#frontend]
-== View the FrontEnd Component
+== View the Frontend Component
 Take your time exploring the Component Overview page and each of the tabs
 
 image::frontend_overview.png[]
@@ -45,7 +45,7 @@ Take your time exploring the Component Overview page and each of the tabs
 image::gateway_overview.png[]
 
 [#backend_template]
-== Use the Back End Template
+== Use the Backend Template
 
 Return to the `Create...` menu to Choose the Backend Template
 
@@ -75,7 +75,7 @@ When the build has completed successfully, return to the Backend Component overv
 image::backend_view_deployment.png[]
 
 [#configuration]
-== Service Binding and Configuration
+== Service binding and configuration
 
 From the Deployment Detail page, click on the Pods tab to find a list of Pod resources that are attached to this Deployment. If there are no pods, you may need to wait for your Pipeline Build to finish first.
 
