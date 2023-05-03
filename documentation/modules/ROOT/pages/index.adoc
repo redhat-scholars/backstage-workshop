@@ -10,22 +10,25 @@ IDPs help teams curate, manage and replicate these environments. Backstage is an
 
 In this end-to-end developer experience, you’ll start on a golden path we’ve paved to show how Red Hat products center on the OpenShift Container Platform to supply a complete foundation for cloud-native development.
 
-You will build and deploy a three-tier web application. You’ll be guided into OpenShift Dev Spaces, a web-based Integrated Development Environment (IDE), to view and modify source code. OpenShift GitOps will automate the build, test and deploy cycle as you iterate your application with new features or fixes.
-
 Backstage will support you from the start with signposts to components in a single place connecting the three key developer views: an IDE to code, pipelines to build, and orchestration to deploy your application.
 
-== Backstage Glossary
+== Workshop Brief
 
-Enough Backstage to use it.
+In these exercises you will use Backstage _Templates_ to deploy three application tiers: the user interface frontend, the data-bridging gateway, and the data storage backend. You'll pair Backstage and OpenShift facilities to edit code and add features to the browser-based mapping application.
 
-* Create+ in left nav
-* _Template_ selection
-* Catalog: Entities
-* Deployed _Components_
+In the first section, you'll sign in to OpenShift and to Backstage with your GitHub ID. Throughout the exercises, you'll note that your GitHub ID is your user name in both OpenShift and Backstage, and that your application components are deployed to an OpenShift _Project_ with the same name. Both your user name and your Project name will match the GitHub ID you use to authenticate.
+
+In section 2, you'll get to know Backstage Templates as you use two provided Templates to fork, build, and deploy the graphical map interface frontend and the API gateway that supports it.
+
+While those two components are enough to establish the absolute minimum viable product of a global, dynamic map diplaying arbitrary locations, you'll soon want to iterate a more robust data source for points on the map.
+
+In section 3, you'll use Backstage's tools for exploring application _Components_ and their connections to examine the deployed frontend and gateway to understand their places in the application architecture. The gateway provides a for-purpose map location API used by the frontend. It also expects to consume a more database-centric backend API.
+
+You'll use another template to create and deploy that backend component. At that point, you'll have a map application displaying many location points around the world. Backstage lets Platform Engineers devise _Golden Paths_ like this one that encapsulate the basic components of applications a team might work on and guides developers in their quick deployment.
+
+In section 4, you'll extend your map app with a lower-level feature. Backstage links you from app components to the OpenShift Dev Spaces web IDE, where you can edit the gateway's source code. Then you'll see how Backstage helps you or your teammates discover, navigate and test your modified gateway API.
 
 [.tiles.browse]
-== Workshop Outline
-
 [.tile]
 .xref:01-setup.adoc[OpenShift and Backstage Authentication]
 * xref:01-setup.adoc#prerequisites[Prerequisites]
