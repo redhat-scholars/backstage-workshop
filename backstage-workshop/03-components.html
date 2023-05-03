@@ -115,9 +115,6 @@
   <li class="nav-item" data-depth="2">
     <a class="nav-link" href="#backend">View the Backend Component</a>
   </li>
-  <li class="nav-item" data-depth="2">
-    <a class="nav-link" href="#configuration">Service Binding and Configuration</a>
-  </li>
 </ul>
   </li>
   <li class="nav-item" data-depth="1">
@@ -307,83 +304,7 @@
 </div>
 </div>
 <div class="paragraph">
-<p>When the build has completed successfully, return to the Backend Component overview page and click on the <code>Deployment</code> link to begin configuring your backend service.</p>
-</div>
-<div class="imageblock">
-<div class="content">
-<img src="_images/backend_view_deployment.png" alt="backend view deployment">
-</div>
-</div>
-</div>
-</div>
-<div class="sect1">
-<h2 id="configuration"><a class="anchor" href="#configuration"></a>Service binding and configuration</h2>
-<div class="sectionbody">
-<div class="paragraph">
-<p>From the Deployment Detail page, click on the Pods tab to find a list of Pod resources that are attached to this Deployment. If there are no pods, you may need to wait for your Pipeline Build to finish first.</p>
-</div>
-<div class="imageblock">
-<div class="content">
-<img src="_images/deploy_1.png" alt="deploy 1">
-</div>
-</div>
-<div class="paragraph">
-<p>Select one of the Pods</p>
-</div>
-<div class="imageblock">
-<div class="content">
-<img src="_images/deploy_2.png" alt="deploy 2">
-</div>
-</div>
-<div class="paragraph">
-<p>Open the <code>Terminal</code> tab from the Pod Detail page</p>
-</div>
-<div class="imageblock">
-<div class="content">
-<img src="_images/pod_terminal.png" alt="pod terminal">
-</div>
-</div>
-<div class="paragraph">
-<p>Complete these four commands to load the backend dataset and to register the backend with the gateway component:</p>
-</div>
-<div class="olist arabic">
-<ol class="arabic">
-<li>
-<p>Check the backend dataservice for records. The result should be an empty set:</p>
-<div class="listingblock console-input">
-<div class="content">
-<pre class="highlightjs highlight"><code class="language-bash hljs" data-lang="bash">curl localhost:8080/ws/data/all</code></pre>
-</div>
-</div>
-</li>
-<li>
-<p>Populate the backend with the National Parks dataset:</p>
-<div class="listingblock console-input">
-<div class="content">
-<pre class="highlightjs highlight"><code class="language-bash hljs" data-lang="bash">curl localhost:8080/ws/data/load</code></pre>
-</div>
-</div>
-</li>
-<li>
-<p>List registered gateway backends. The only result should be the gateway&#8217;s built-in "Red Hat Summit POI" dataset:</p>
-<div class="listingblock console-input">
-<div class="content">
-<pre class="highlightjs highlight"><code class="language-bash hljs" data-lang="bash">curl poi-gateway-app:8080/backend/list</code></pre>
-</div>
-</div>
-</li>
-<li>
-<p>Register the new backend component with the gateway component:</p>
-<div class="listingblock console-input">
-<div class="content">
-<pre class="highlightjs highlight"><code class="language-bash hljs" data-lang="bash">curl poi-gateway-app:8080/backend/register/poi-backend?endpoint=http://poi-backend-app:8080</code></pre>
-</div>
-</div>
-</li>
-</ol>
-</div>
-<div class="paragraph">
-<p>Check the map for results!</p>
+<p>When the build has completed successfully, reload the map to check for results!</p>
 </div>
 <div class="imageblock">
 <div class="content">
