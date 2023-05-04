@@ -30,7 +30,7 @@ Grant Dev Spaces access to your OpenShift account
 
 image::auth_6.png[]
 
-Make sure to click on *`Grant`* next to the **Summit23DevRHEL** GitHub Org before approving Dev Spaces access
+Make sure to click on *`Grant`* next to the **Summit23JanusN** GitHub Org before approving Dev Spaces access
 
 image::auth_4.png[]
 
