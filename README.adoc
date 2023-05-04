@@ -1,6 +1,6 @@
 # Backstage Workshop for Red Hat Summit 2023
 
-## Development
+## Workshop Content Development
 
 Setup:
 
@@ -14,10 +14,16 @@ Run a development server:
 npm start
 ```
 
-## Production
+### Promoting your changes
 
 Add and commit your changes, then run `git push` to trigger a new deployment:
 
 ```bash
 git push origin master
 ```
+
+## Workshop Cluster Setup
+
+For information about setting up your own Backstage / Janus demo environment, see: https://janus-idp.io/demo-setup/install/
+
+To learn about the Software Templates that were used in this workshop, visit: https://github.com/hpgrahsl/rhsummit23-backstage-gpts
