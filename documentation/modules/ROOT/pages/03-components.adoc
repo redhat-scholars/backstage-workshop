@@ -26,8 +26,18 @@ Take your time exploring the Component Overview page and each of the tabs
 
 image::frontend_overview.png[]
 
+Click on the "DEPENDENCIES" tab to inspect the component relationship graph
+
+image::frontend_relations.png[]
+
 [#plugins]
 == About Plugins
+
+image::frontend_k8s.png[]
+
+image::frontend_topology.png[]
+
+
 
 [#gateway]
 == View the Gateway
@@ -43,6 +53,9 @@ image::catalog_results_1.png[]
 Take your time exploring the Component Overview page and each of the tabs
 
 image::gateway_overview.png[]
+image::gateway_apis.png[]
+image::gateway_api_overview.png[]
+image::gateway_api_definition.png[]
 
 [#backend_template]
 == Use the Backend Template
@@ -65,10 +78,14 @@ image::backend_5.png[]
 View the resulting component and plugins.
 
 image::backend_overview.png[]
+image::backend_dependencies.png[]
+image::backend_api.png[]
 
 Check the resulting pipelines for activity.
 
 image::backend_view_pipelines.png[]
+
+image::backend_pipeline.png[]
 
 When the build has completed successfully, reload the map to check for results!
 
