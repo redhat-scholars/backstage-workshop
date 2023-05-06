@@ -26,11 +26,11 @@ Select the "GitHub" login option
 
 image::login_5.png[]
 
-Grant Dev Spaces access to your OpenShift account
+Click on "Allow selected permissions" to grant Dev Spaces access to your OpenShift account
 
 image::auth_6.png[]
 
-Make sure to click on *`Grant`* next to the **Summit23JanusN** GitHub Org before approving Dev Spaces access
+IMPORTANT: Make sure to click on *`Grant`* next to the **Summit23JanusN** GitHub Org before approving Dev Spaces access (where "N" matches your cluster's GitHub Org ID)
 
 image::auth_4.png[]
 
@@ -63,11 +63,15 @@ Uncomment the following code block near the bottom of the file:
 
 Click on the Source Control tab in the side menu, then select the plus icon to add your change to the changeset. Enter your commit message in the top input box.  When you're done, click "Commit"
 
+image::add_changes.png[]
+
 image::commit.png[]
 
 Click on "Sync Changes" to publish your changes to GitHub
 
 image::sync.png[]
+
+image::push.png[]
 
 Check the resulting pipelines for activity by selecting *Pipelines* from the side menu in the OpenShift web console
 
@@ -95,7 +99,7 @@ image::gateway_pod_delete.png[]
 Return to the Topology view to open a connection to the new Gateway pod
 
 image::top_3.png[]
-image::top_3_gateway.png[]
+image::top_3_gateway_2.png[]
 
 Open a terminal connection on the new pod
 
@@ -118,6 +122,8 @@ curl --location 'http://localhost:8080/fake/poi/add/point/' \
 A successful `POST` to your new API endpoint will return `inserted custom data point`. Reload the map to look for your new Point.
 
 If you see more than two points in the "Red Hat Summit POI" dataset, then you have successfully completed our Golden Path onboarding experience by pushing, testing, and verifying your change.
+
+image::map_point.png[]
 
 [#next_steps]
 == Paving your own Golden Path
