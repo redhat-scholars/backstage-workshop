@@ -177,7 +177,7 @@
 <h2 id="frontend"><a class="anchor" href="#frontend"></a>Launch the Frontend template</h2>
 <div class="sectionbody">
 <div class="paragraph">
-<p>Click on <code>Create&#8230;&#8203;</code> in the sidebar menu, then invoke the Angular Single Page Application frontend template.</p>
+<p>Click on <code>Create&#8230;&#8203;</code> in the sidebar menu. <strong>CHOOSE</strong> the <em>Angular Single Page Application (SPA) for Points of Interest (POI) Map</em> template.</p>
 </div>
 <div class="imageblock">
 <div class="content">
@@ -185,7 +185,7 @@
 </div>
 </div>
 <div class="paragraph">
-<p>Keep all the default values, while inserting your NAMESPACE value into the form inputs in place of the <code>&lt;NAMESPACE&gt;</code> string.</p>
+<p>Keep default values in every field except the <em>Repository Name</em> in the first section, the <em>Namespace</em> and <em>Owner</em> fields in the second section, and the <em>Image Name</em> field in the third section of the template create form. You will adapt each of those fields for your own user and Project/namespace. Recall from chapter 1 that some Backstage forms refer to a Namespace that is equivalent to your OpenShift Project.</p>
 </div>
 <div class="imageblock">
 <div class="content">
@@ -193,7 +193,7 @@
 </div>
 </div>
 <div class="paragraph">
-<p>Insert your <code>&lt;NAMESPACE&gt;</code> value in the <code>Namespace</code> input and <code>user:&lt;NAMESPACE&gt;</code> into the <code>Owner</code> input, then click <code>NEXT STEP</code> to proceed.</p>
+<p>Type or paste your Project/namespace name to replace the NAMESPACE placeholder in the <em>Repository Name</em> field. The result should be something like <code>myprojectname-frontend</code>. Click NEXT STEP to continue.</p>
 </div>
 <div class="imageblock">
 <div class="content">
@@ -201,7 +201,13 @@
 </div>
 </div>
 <div class="paragraph">
-<p>Provide your NAMESPACE as directed, then click <code>NEXT STEP</code> to proceed.</p>
+<p>In the second section of the template create form, type or paste your Project/namespace name to replace the NAMESPACE placeholder in the <em>Namespace</em> field. The result should be something like <code>myprojectname</code>.</p>
+</div>
+<div class="paragraph">
+<p>Fill in the <em>Owner</em> field by either <strong>A)</strong> Clicking the Owner field and selecting your <code>user:NAMESPACE</code> matching your user/Project name from the pull-down menu, <strong>or</strong> <strong>B)</strong> if your Project name does not appear in the pull-down menu, typing the literal string <code>user</code>, followed by a colon <code>:</code>, followed by your Project name. The resulting string should be something like <code>user:myprojectname</code>.</p>
+</div>
+<div class="paragraph">
+<p>Click NEXT STEP to proceed to the third section of the template create form.</p>
 </div>
 <div class="imageblock">
 <div class="content">
@@ -209,7 +215,7 @@
 </div>
 </div>
 <div class="paragraph">
-<p>Review the input selections, making sure that your own NAMESPACE has been used. Click <code>CREATE</code> when you are ready to create your first Component.</p>
+<p>Type or paste your Project name to replace the NAMESPACE placeholder in the <em>Image Name</em> field of the create form&#8217;s third section. The result should be something like <code>myprojectname/poi-map-app</code>. Click NEXT STEP to continue to review the configuration you&#8217;ve set in the frontend template.</p>
 </div>
 <div class="imageblock">
 <div class="content">
@@ -217,12 +223,15 @@
 </div>
 </div>
 <div class="paragraph">
-<p>Review the template output.  Click on the <code>Source Code Repository</code> link to view the newly scaffolded frontend repository.</p>
+<p>Review your configuration, making sure that your own Project name is as expected in the fields you adjusted:_Repo Name_, <em>Namespace</em>, <em>Owner</em>, and <em>Image Name</em>. Click <code>CREATE</code> to deploy your frontend component.</p>
 </div>
 <div class="imageblock">
 <div class="content">
 <img src="_images/frontend_5.png" alt="frontend 5">
 </div>
+</div>
+<div class="paragraph">
+<p>Review the output from deploying the template.  Click on the <em>Source Code Repository</em> link to view the newly scaffolded frontend source code repository.</p>
 </div>
 </div>
 </div>
