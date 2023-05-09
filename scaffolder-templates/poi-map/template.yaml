@@ -46,7 +46,7 @@ spec:
           title: Cluster Id
           type: string
           description: Id of the cluster
-          default: .apps.summit23.0x74.p1.openshiftapps.com
+          default: .apps.cluster-xxxxx.xxxxx.sandbox123.opentlc.com
         namespace: 
           title: Namespace
           type: string
