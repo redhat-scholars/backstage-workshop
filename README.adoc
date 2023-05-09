@@ -23,7 +23,80 @@ git push origin master
 ```
 
 ## Workshop Cluster Setup
+To learn about the Software Templates that were used in this workshop, explore the `scaffolder-templates` folder
 
-For information about setting up your own Backstage / Janus demo environment, see: https://janus-idp.io/demo-setup/install/
+To set up your own workshop cluster, link:https://janus-idp.io/demo-setup/install/[begin with the demo-setup installation instructions] while implementing the following changes:
+1. When asked to fork the `janus-idp/software-templates` repo, use this repo instead: `https://github.com/redhat-scholars/backstage-workshop`.  Make sure that the resulting repo is named "software-templates"
+2. Use this modified `template.yaml` file:
+3. Use this modified `site.yaml` file:
+4. Complete all Post Install instructions in the next section
 
-To learn about the Software Templates that were used in this workshop, visit: https://github.com/hpgrahsl/rhsummit23-backstage-gpts
+### Post Install
+
+TODO: Automate this section using Ansible
+
+This section includes creating three console links, and installing the Namespace Configuration Operator
+
+#### Installing the Console Links
+
+Create three console links for the header menu:
+
+```bash
+cat <<EOF > consolelink.github.yaml
+apiVersion: console.openshift.io/v1
+kind: ConsoleLink
+metadata:
+  name: application-menu-github
+spec:
+  href: 'https://github.com/$GITHUB_ORGANIZATION'
+  location: ApplicationMenu
+  text: $GITHUB_ORGANIZATION
+  applicationMenu:
+    section: Workshop Resources
+    imageURL: https://github.githubassets.com/images/modules/logos_page/GitHub-Mark.png
+EOF
+```
+
+```bash
+cat <<EOF > consolelink.content.yaml
+apiVersion: console.openshift.io/v1
+kind: ConsoleLink
+metadata:
+  name: application-menu-content
+spec:
+  href: 'https://redhat-scholars.github.io/backstage-workshop'
+  location: ApplicationMenu
+  text: Workshop Content
+  applicationMenu:
+    section: Workshop Resources
+    # TODO: Get better source URL, or add to GitHub
+    imageURL: https://yt3.ggpht.com/ytc/AKedOLRI9AQ_w5yyklg6BhPexpyq9ZPbAXZnXTnzEcyx5Q=s88-c-k-c0x00ffffff-no-rj
+EOF
+```
+
+```bash
+cat <<EOF > consolelink.backstage.yaml
+apiVersion: console.openshift.io/v1
+kind: ConsoleLink
+metadata:
+  name: application-menu-backstage
+spec:
+  href: 'https://janus-demo.apps$OPENSHIFT_CLUSTER_INFO'
+  location: ApplicationMenu
+  text: Backstage
+  applicationMenu:
+    section: Workshop Resources
+    # TODO: Get better source URL, or add to GitHub
+    imageURL: https://janus-idp.io/images/favicon/favicon.ico
+EOF
+```
+
+Install your newly generated console links:
+
+```bash
+oc create -f consolelink.*
+```
+
+#### Installing the Namespace Configuration Operator
+
+
