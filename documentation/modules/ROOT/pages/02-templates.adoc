@@ -22,21 +22,21 @@ image::frontend_2.png[]
 
 In the second section of the template create form, type or paste your Project/namespace name to replace the NAMESPACE placeholder in the _Namespace_ field. The result should be something like `projectname`.
 
-Fill in the _Owner_ field by either *A)* Clicking the Owner field and selecting your `user:NAMESPACE` matching your user/Project name from the pull-down menu, *or* *B)* if your Project name does not appear in the pull-down menu, typing the literal string `user`, followed by a colon `:`, followed by your Project name. The resulting string should be something like `user:projectname`.
+Fill in the _Owner_ field by either *A)* Clicking the Owner field and selecting the `user:NAMESPACE` matching your Project name from the pull-down menu, *or* *B)* if your Project name does not appear in the Owners pull-down menu, typing the literal string `user`, followed by a colon `:`, followed by your Project name. The resulting string should be something like `user:projectname`.
 
 Click NEXT STEP to proceed to the third section of the template create form.
 
 image::frontend_3.png[]
 
-Type or paste your Project name to replace the NAMESPACE placeholder in the _Image Name_ field of the create form's third section. The result should be something like `projectname/poi-map-app`. Click NEXT STEP to continue to review the configuration you've set in the frontend template.
+Type or paste your Project name to replace the NAMESPACE placeholder in the _Image Name_ field of the create form's third section. The result should be something like `projectname/poi-map-app`. Click NEXT STEP to review the configuration you've set in the frontend template.
 
 image::frontend_4.png[]
 
-Review your configuration, making sure that your own Project name is as expected in the fields you adjusted:_Repo Name_, _Namespace_, _Owner_, and _Image Name_. Click `CREATE` to deploy your frontend component.
+Review your configuration, making sure that your own Project name is as expected in the fields you adjusted: _Repo Name_, _Namespace_, _Owner_, and _Image Name_. Click `CREATE` to deploy your frontend component.
 
 image::frontend_5.png[]
 
-Review the output from deploying the template.  Click on the _Source Code Repository_ link to view the newly scaffolded frontend source code repository.
+Review the output from deploying the template.  Click on the _Source Code Repository_ link to view the scaffolded frontend source code repository.
 
 [#github]
 == View the source
