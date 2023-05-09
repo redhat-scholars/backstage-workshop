@@ -28,10 +28,11 @@ To learn about the Software Templates that were used in this workshop, explore t
 
 To set up your own workshop cluster, link:https://janus-idp.io/demo-setup/install/[begin with the demo-setup installation instructions] while implementing the following changes:
 
-1. When asked to fork the `janus-idp/software-templates` repo to your new GH Org, use this repo instead: `https://github.com/redhat-scholars/backstage-workshop`.  Make sure that the resulting repo is named "software-templates"
-2. When running the `template` playbook, use this modified `template.yaml` file instead: https://github.com/ryanj/janus-platforms/blob/workshop/ansible/cluster-setup/template.yaml
-3. When running the `site` playbook, use this modified `site.yaml` file instead: https://github.com/ryanj/janus-platforms/blob/workshop/ansible/cluster-setup/site.yaml
-4. After the ansible installation has finished successfully, complete all Post Install instructions in the next section
+1. After creating your new GH Org, visit the `settings/member_privileges` admin page, and change the Base permissions for all repos to "Write"
+2. When asked to fork the `janus-idp/software-templates` repo to your new GH Org, use this repo instead: `https://github.com/redhat-scholars/backstage-workshop`.  Make sure that the resulting repo is named "software-templates"
+3. When running the `template` playbook, use this modified `template.yaml` file instead: https://github.com/ryanj/janus-platforms/blob/workshop/ansible/cluster-setup/template.yaml
+4. When running the `site` playbook, use this modified `site.yaml` file instead: https://github.com/ryanj/janus-platforms/blob/workshop/ansible/cluster-setup/site.yaml
+5. After the ansible installation has finished successfully, complete all Post Install instructions in the next section
 
 === Post Install
 
@@ -44,7 +45,7 @@ This section includes creating three console links, and installing the Namespace
 Create three console links for the header menu:
 
 ```bash
-cat <<EOF > consolelink.github.yaml
+cat <<EOF | oc apply -f -
 apiVersion: console.openshift.io/v1
 kind: ConsoleLink
 metadata:
@@ -60,7 +61,7 @@ EOF
 ```
 
 ```bash
-cat <<EOF > consolelink.content.yaml
+cat <<EOF | oc apply -f -
 apiVersion: console.openshift.io/v1
 kind: ConsoleLink
 metadata:
@@ -77,7 +78,7 @@ EOF
 ```
 
 ```bash
-cat <<EOF > consolelink.backstage.yaml
+cat <<EOF | oc apply -f -
 apiVersion: console.openshift.io/v1
 kind: ConsoleLink
 metadata:
@@ -93,19 +94,19 @@ spec:
 EOF
 ```
 
-Install your newly generated console links:
-
-```bash
-oc create -f consolelink.*
-```
-
 ==== Installing the Namespace Configuration Operator
 
-Install the CoP Namespace Configuration Operator from the OperatorHub using the Administrative view in the OpenShift Web Console.
+Install the CoP Namespace Configuration Operator from the OperatorHub:
+
+```bash
+oc new-project namespace-configuration-operator
+oc create -f https://raw.githubusercontent.com/redhat-cop/namespace-configuration-operator/master/config/operatorhub/operator.yaml
+```
 
 After the operator installation has completed, install the following UserConfig yaml:
 
-```yaml
+```bash
+cat <<EOF | oc create -f -
 kind: UserConfig
 apiVersion: redhatcop.redhat.io/v1alpha1
 metadata:
@@ -138,4 +139,5 @@ spec:
           - apiGroup: rbac.authorization.k8s.io
             kind: User
             name: {{ .Name }}
+EOF
 ```
