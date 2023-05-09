@@ -1,0 +1,139 @@
+---
+openapi: 3.0.3
+info:
+  title: Points-of-Interest Gateway API
+  description: API surface exposed to interact with Backends (summit POIs + parks data) via the Gateway
+  license:
+    name: Apache 2.0
+    url: https://www.apache.org/licenses/LICENSE-2.0.html
+  version: 1.0.0
+servers:
+  - url: http://${{values.component_id}}-${{values.namespace}}${{values.cluster_id}}/
+    description: (backstage component deployment)
+  - url: http://localhost:8080/
+    description: (localhost testing)
+paths:
+  /backend/list:
+    get:
+      tags:
+      - Backend Resource
+      responses:
+        "200":
+          description: OK
+          content:
+            application/json:
+              schema:
+                type: array
+                items:
+                  $ref: '#/components/schemas/Backend'
+  /backend/register/{backendId}:
+    get:
+      tags:
+      - Backend Resource
+      parameters:
+      - name: backendId
+        in: path
+        required: true
+        schema:
+          type: string
+      - name: endpoint
+        in: query
+        schema:
+          type: string
+      responses:
+        "200":
+          description: OK
+  /backend/unregister/{backendId}:
+    get:
+      tags:
+      - Backend Resource
+      parameters:
+      - name: backendId
+        in: path
+        required: true
+        schema:
+          type: string
+      responses:
+        "200":
+          description: OK
+  /fake/poi/find/all:
+    get:
+      tags:
+      - Summit Backend Resource
+      responses:
+        "200":
+          description: OK
+  /fake/poi/find/{id}:
+    get:
+      tags:
+      - Summit Backend Resource
+      parameters:
+      - name: id
+        in: path
+        required: true
+        schema:
+          format: int32
+          type: integer
+      responses:
+        "200":
+          description: OK
+  /fake/ws/info:
+    get:
+      tags:
+      - Summit Backend Resource
+      responses:
+        "200":
+          description: OK
+  /ws/data/all:
+    get:
+      tags:
+      - Gateway Resource
+      parameters:
+      - name: service
+        in: query
+        schema:
+          type: string
+      responses:
+        "200":
+          description: OK
+          content:
+            application/json:
+              schema:
+                type: array
+                items:
+                  $ref: '#/components/schemas/PoiRecord'
+components:
+  schemas:
+    Backend:
+      type: object
+      properties:
+        id:
+          type: string
+        displayName:
+          type: string
+        coordinates:
+          $ref: '#/components/schemas/Coordinates'
+        zoom:
+          format: int32
+          type: integer
+    Coordinates:
+      type: object
+      properties:
+        lat:
+          format: double
+          type: number
+        lng:
+          format: double
+          type: number
+    PoiRecord:
+      type: object
+      properties:
+        name:
+          type: string
+        description:
+          type: string
+        coordinates:
+          type: array
+          items:
+            format: double
+            type: number
