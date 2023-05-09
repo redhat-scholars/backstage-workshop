@@ -27,9 +27,10 @@ git push origin master
 To learn about the Software Templates that were used in this workshop, explore the `scaffolder-templates` folder
 
 To set up your own workshop cluster, link:https://janus-idp.io/demo-setup/install/[begin with the demo-setup installation instructions] while implementing the following changes:
-1. When asked to fork the `janus-idp/software-templates` repo, use this repo instead: `https://github.com/redhat-scholars/backstage-workshop`.  Make sure that the resulting repo is named "software-templates"
-2. Use this modified `template.yaml` file: https://github.com/ryanj/janus-platforms/blob/workshop/ansible/cluster-setup/template.yaml
-3. Use this modified `site.yaml` file: https://github.com/ryanj/janus-platforms/blob/workshop/ansible/cluster-setup/site.yaml
+
+1. When asked to fork the `janus-idp/software-templates` repo to your new GH Org, use this repo instead: `https://github.com/redhat-scholars/backstage-workshop`.  Make sure that the resulting repo is named "software-templates"
+2. When running the `template` playbook, use this modified `template.yaml` file instead: https://github.com/ryanj/janus-platforms/blob/workshop/ansible/cluster-setup/template.yaml
+3. When running the `site` playbook, use this modified `site.yaml` file instead: https://github.com/ryanj/janus-platforms/blob/workshop/ansible/cluster-setup/site.yaml
 4. After the ansible installation has finished successfully, complete all Post Install instructions in the next section
 
 === Post Install
