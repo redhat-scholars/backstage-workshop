@@ -1,7 +1,8 @@
-# Backstage Workshop for Red Hat Summit 2023
+= Backstage Workshop for Red Hat Summit 2023
 
-## Workshop Content Development
+== Workshop Content Development
 
+=== Local Development with Gulp
 Setup:
 
 ```bash
@@ -14,7 +15,7 @@ Run a development server:
 npm start
 ```
 
-### Promoting your changes
+=== Promoting your changes
 
 Add and commit your changes, then run `git push` to trigger a new deployment:
 
@@ -22,22 +23,22 @@ Add and commit your changes, then run `git push` to trigger a new deployment:
 git push origin master
 ```
 
-## Workshop Cluster Setup
+== Workshop Cluster Setup
 To learn about the Software Templates that were used in this workshop, explore the `scaffolder-templates` folder
 
 To set up your own workshop cluster, link:https://janus-idp.io/demo-setup/install/[begin with the demo-setup installation instructions] while implementing the following changes:
 1. When asked to fork the `janus-idp/software-templates` repo, use this repo instead: `https://github.com/redhat-scholars/backstage-workshop`.  Make sure that the resulting repo is named "software-templates"
-2. Use this modified `template.yaml` file:
-3. Use this modified `site.yaml` file:
+2. Use this modified `template.yaml` file: ...
+3. Use this modified `site.yaml` file: ...
 4. Complete all Post Install instructions in the next section
 
-### Post Install
+=== Post Install
 
 TODO: Automate this section using Ansible
 
 This section includes creating three console links, and installing the Namespace Configuration Operator
 
-#### Installing the Console Links
+==== Installing the Console Links
 
 Create three console links for the header menu:
 
@@ -97,6 +98,43 @@ Install your newly generated console links:
 oc create -f consolelink.*
 ```
 
-#### Installing the Namespace Configuration Operator
+==== Installing the Namespace Configuration Operator
 
+Install the CoP Namespace Configuration Operator from the OperatorHub.
 
+After the operator installation has completed, install the following UserConfig yaml:
+
+```yaml
+kind: UserConfig
+apiVersion: redhatcop.redhat.io/v1alpha1
+metadata:
+  name: test-user-config
+spec:
+  annotationSelector: {}
+  identityExtraFieldSelector: {}
+  labelSelector: {}
+  providerName: GitHub
+  templates:
+    - excludedPaths:
+        - .spec.replicas
+        - .metadata
+        - .status
+      objectTemplate: |
+        - apiVersion: project.openshift.io/v1
+          kind: Project
+          metadata:
+            name: {{ .Name }}
+        - apiVersion: rbac.authorization.k8s.io/v1
+          kind: RoleBinding
+          metadata:
+            name: {{ .Name }}-rolebinding
+            namespace: {{ .Name }}
+          roleRef:
+            apiGroup: rbac.authorization.k8s.io
+            kind: ClusterRole
+            name: admin
+          subjects:
+          - apiGroup: rbac.authorization.k8s.io
+            kind: User
+            name: {{ .Name }}
+```
