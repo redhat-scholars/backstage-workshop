@@ -9,7 +9,7 @@ Enter your github username in the onboarding doc and let an instructor know. We 
 
 === Where's my invite?
 
-Hate waiting and searching for email? When logged in to GitHub with an invited account, you'll see a button on the link:{https://github.com/Summit23JanusN}[Workshop GitHub Org home page] to accept the invite and join the Org.
+Hate waiting and searching for email? When logged in to GitHub with an invited account, you'll see a button on the https://github.com/Summit23JanusN[Workshop GitHub Org home page] to accept the invite and join the Org.
 
 [#cluster_access]
 == Accessing OpenShift
