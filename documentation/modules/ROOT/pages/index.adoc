@@ -6,7 +6,7 @@
 
 Every team and every project evolves a tailored development environment. This collection of tools, services and configuration is often maintained by convention and transmitted by osmosis.
 
-IDPs help teams curate, manage and replicate these environments. Backstage is an open source CNCF project for building developer platforms, and for encapsulating tools, services, documentation and best practices in “golden paths” to ease onboarding and daily development work.
+IDPs help teams curate, manage and replicate these environments. _Backstage_ is an open source CNCF project for building developer platforms, and for encapsulating tools, services, documentation and best practices in “golden paths” to ease onboarding and daily development work. _Janus_ is Red Hat's community project for working on and with the Backstage core. The IDP presented in this workshop is referred to by both names. Usually, fundamental Backstage features are described as such, while the deployment you'll work with is a running Janus instance and is labeled with that name.
 
 In this end-to-end developer experience, you’ll start on a golden path we’ve paved to show how Red Hat products center on the OpenShift Container Platform to supply a foundation for cloud-native development.
 
@@ -14,7 +14,7 @@ Backstage will support you from the start with signposts to components in a sing
 
 == Workshop brief
 
-In these exercises you will use Backstage _Templates_ to deploy three application tiers: the user interface frontend, the data-bridging gateway, and the data storage backend. You'll pair Backstage and OpenShift facilities to edit code and add features to the browser-based mapping application.
+In these exercises you will use Backstage _Templates_ to deploy three application tiers: the user interface frontend, the data-bridging gateway, and the data storage backend. You'll pair Backstage and OpenShift facilities to edit code and add features to your browser-based mapping application.
 
 In the first section, you'll sign in to OpenShift and to Backstage with your GitHub ID. Throughout the exercises, you'll note that your GitHub ID is your user name in both OpenShift and Backstage, and that your application components are deployed to an OpenShift _Project_ with the same name. Both your user name and your Project name will match the GitHub ID you use to authenticate.
 
