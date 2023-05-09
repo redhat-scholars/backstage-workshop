@@ -97,6 +97,8 @@ EOF
 
 ==== Installing the Namespace Configuration Operator
 
+WARNING: This section is only intended for OpenShift clusters that are using GH Auth to authenticate cluster users.  See the `providerName` line in the yaml below:
+
 Install the CoP Namespace Configuration Operator from the OperatorHub:
 
 ```bash
