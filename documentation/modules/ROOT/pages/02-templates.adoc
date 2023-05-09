@@ -8,29 +8,35 @@ image::platform_diagram.png[]
 
 [#frontend]
 == Launch the Frontend template
-Click on `Create...` in the sidebar menu, then invoke the Angular Single Page Application frontend template.
+Click on `Create...` in the sidebar menu. *CHOOSE* the _Angular Single Page Application (SPA) for Points of Interest (POI) Map_ template.
 
 image::backstage_create_frontend.png[]
 
-Keep all the default values, while inserting your NAMESPACE value into the form inputs in place of the `<NAMESPACE>` string. 
+Keep default values in every field except the _Repository Name_ in the first section, the _Namespace_ and _Owner_ fields in the second section, and the _Image Name_ field in the third section of the template create form. You will adapt each of those fields for your own user and Project/namespace. Recall from chapter 1 that some Backstage forms refer to a Namespace that is equivalent to your OpenShift Project.
 
 image::frontend_1.png[]
 
-Insert your `<NAMESPACE>` value in the `Namespace` input and `user:<NAMESPACE>` into the `Owner` input, then click `NEXT STEP` to proceed.
+Type or paste your Project/namespace name to replace the NAMESPACE placeholder in the _Repository Name_ field. The result should be something like `myprojectname-frontend`. Click NEXT STEP to continue.
 
 image::frontend_2.png[]
 
-Provide your NAMESPACE as directed, then click `NEXT STEP` to proceed.
+In the second section of the template create form, type or paste your Project/namespace name to replace the NAMESPACE placeholder in the _Namespace_ field. The result should be something like `myprojectname`.
+
+Fill in the _Owner_ field by either *A)* Clicking the Owner field and selecting your `user:NAMESPACE` matching your user/Project name from the pull-down menu, *or* *B)* if your Project name does not appear in the pull-down menu, typing the literal string `user`, followed by a colon `:`, followed by your Project name. The resulting string should be something like `user:myprojectname`.
+
+Click NEXT STEP to proceed to the third section of the template create form.
 
 image::frontend_3.png[]
 
-Review the input selections, making sure that your own NAMESPACE has been used. Click `CREATE` when you are ready to create your first Component.
+Type or paste your Project name to replace the NAMESPACE placeholder in the _Image Name_ field of the create form's third section. The result should be something like `myprojectname/poi-map-app`. Click NEXT STEP to continue to review the configuration you've set in the frontend template.
 
 image::frontend_4.png[]
 
-Review the template output.  Click on the `Source Code Repository` link to view the newly scaffolded frontend repository.
+Review your configuration, making sure that your own Project name is as expected in the fields you adjusted:_Repo Name_, _Namespace_, _Owner_, and _Image Name_. Click `CREATE` to deploy your frontend component.
 
 image::frontend_5.png[]
+
+Review the output from deploying the template.  Click on the _Source Code Repository_ link to view the newly scaffolded frontend source code repository.
 
 [#github]
 == View the source
