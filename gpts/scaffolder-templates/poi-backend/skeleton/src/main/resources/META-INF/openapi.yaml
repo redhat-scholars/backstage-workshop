@@ -1,0 +1,80 @@
+---
+openapi: 3.0.3
+info:
+  title: Points-of-Interest Backend API
+  description: Workshop attendees API used to initialize and load parks data.
+  license:
+    name: Apache 2.0
+    url: https://www.apache.org/licenses/LICENSE-2.0.html
+  version: 1.0.0
+servers:
+  - url: http://${{values.component_id}}-${{values.namespace}}${{values.cluster_id}}/
+    description: (backstage component deployment)
+  - url: http://localhost:8080/
+    description: (localhost testing)
+paths:
+  /ws/data/all:
+    get:
+      tags:
+      - Park Resource
+      responses:
+        "200":
+          description: get all parks
+          content:
+            application/json:
+              schema:
+                type: array
+                items:
+                  $ref: '#/components/schemas/ParkRecord'
+  /ws/data/load:
+    get:
+      tags:
+      - Park Resource
+      responses:
+        "200":
+          description: preset parks data loaded
+          content:
+            text/plain: {}
+  /ws/info:
+    get:
+      tags:
+      - Backend Resource
+      responses:
+        "200":
+          description: get information about this registered backend
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Backend'
+components:
+  schemas:
+    Backend:
+      type: object
+      properties:
+        id:
+          type: string
+        displayName:
+          type: string
+        coordinates:
+          $ref: '#/components/schemas/Coordinates'
+        zoom:
+          format: int32
+          type: integer
+    Coordinates:
+      type: object
+      properties:
+        lat:
+          format: double
+          type: number
+        lng:
+          format: double
+          type: number
+    ParkRecord:
+      type: object
+      properties:
+        name:
+          type: string
+        latitude:
+          type: string
+        longitude:
+          type: string

@@ -1,0 +1,42 @@
+schemaVersion: 2.1.0
+metadata:
+  generateName: ${{values.repoName}}
+  icon: https://raw.githubusercontent.com/devfile-samples/devfile-stack-icons/main/angular.svg
+attributes:
+  controller.devfile.io/storage-type: ephemeral
+components:
+  - name: development-tooling
+    container:
+      endpoints:
+        - name: http-angular
+          targetPort: 4200
+          exposure: public
+          secure: false
+          protocol: http
+      image: registry.redhat.io/devspaces/udi-rhel8:3.4
+      memoryLimit: 2Gi
+      cpuLimit: 2000m
+      volumeMounts:
+        - name: npm
+          path: /home/user/.npm
+  - name: npm
+    volume:
+      size: 1G
+commands:
+  - exec:
+      commandLine: npm install
+      component: development-tooling
+      group:
+        isDefault: true
+        kind: build
+      workingDir: ${PROJECT_SOURCE}
+    id: install
+  - exec:
+      commandLine: npm run start
+      component: development-tooling
+      group:
+        isDefault: true
+        kind: run
+      hotReloadCapable: true
+      workingDir: ${PROJECT_SOURCE}
+    id: run

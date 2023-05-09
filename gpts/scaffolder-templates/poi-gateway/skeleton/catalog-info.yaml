@@ -1,0 +1,71 @@
+apiVersion: backstage.io/v1alpha1
+kind: Component
+metadata:
+  name: ${{values.namespace}}-${{values.component_id}}-dev
+  {%- if values.description %}
+  description: ${{values.description}}
+  {%- endif %}
+  annotations:
+    argocd/app-name: ${{values.namespace}}-${{values.component_id}}-dev
+    backstage.io/kubernetes-id: ${{values.namespace}}-${{values.component_id}}-dev
+    backstage.io/kubernetes-namespace: ${{values.namespace}}
+    backstage.io/kubernetes-label-selector: 'app.kubernetes.io/instance=${{values.namespace}}-${{values.component_id}}-dev'
+    backstage.io/techdocs-ref: dir:.
+    github.com/project-slug: ${{values.githubOrg}}/${{values.repoName}}
+  tags:
+    - java
+    - quarkus
+    - maven
+    - workshop
+  links:
+    - url: https://console-openshift-console${{values.cluster_id}}/dev-pipelines/ns/${{values.namespace}}/
+      title: Pipelines
+      icon: web
+    - url: https://console-openshift-console${{values.cluster_id}}/k8s/ns/${{values.namespace}}/deployments/${{values.component_id}}
+      title: Deployment
+      icon: web
+    - url: https://devspaces${{values.cluster_id}}/#https://github.com/${{values.githubOrg}}/${{values.repoName}}?che-editor=che-incubator/che-code/latest&devfilePath=.devfile-vscode.yaml
+      title: OpenShift Dev Spaces (VS Code)
+      icon: web
+spec:
+  type: service
+  lifecycle: production
+  owner: ${{values.owner | dump}}
+  system: workshop-system-${{values.namespace}}
+  providesApis:
+    - gateway-api-${{values.namespace}}
+  consumesApis:
+    - backend-api-${{values.namespace}}
+---
+apiVersion: backstage.io/v1alpha1
+kind: System
+metadata:
+  name: workshop-system-${{values.namespace}}
+  tags:
+    - backstage
+    - janus-idp
+    - openshift
+    - workshop
+    - rh-summit
+spec:
+  owner: ${{values.owner | dump}}
+---
+apiVersion: backstage.io/v1alpha1
+kind: API
+metadata:
+  name: gateway-api-${{values.namespace}}
+  description: API surface exposed to interact with Backends (summit POIs + parks data) via the Gateway
+  links:
+    - url: http://${{values.component_id}}-${{values.namespace}}${{values.cluster_id}}/q/swagger-ui
+      title: Swagger UI
+      icon: web
+    - url: https://github.com/${{values.githubOrg}}/${{values.repoName}}/tree/main/src/main/resources/META-INF/openapi.yaml
+      title: API Spec
+      icon: code
+spec:
+  type: openapi
+  lifecycle: production
+  owner: ${{values.owner | dump}}
+  system: workshop-system-${{values.namespace}}
+  definition:
+    $text: https://github.com/${{values.githubOrg}}/${{values.repoName}}/tree/main/src/main/resources/META-INF/openapi.yaml

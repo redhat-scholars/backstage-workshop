@@ -1,0 +1,164 @@
+apiVersion: scaffolder.backstage.io/v1beta3
+kind: Template
+metadata:
+  name: poi-backend-template
+  title: Quarkus Backend Application for Points-of-Interest Map
+  description: creates the quarkus poi backend app for the workshop
+  tags:
+    - java
+    - quarkus
+    - maven
+    - workshop
+spec:
+  owner: rhdeveloper-workshop-authors
+  type: service
+
+  parameters:
+    - title: Provide information about the GitHub location
+      required:
+        - githubOrg
+        - repoName
+      properties:
+        githubOrg:
+          title: GitHub Organization
+          type: string
+          default: Summit23DevLab
+        repoName:
+          title: Repository Name
+          type: string
+          default: NAMESPACE-backend
+        description:
+          title: Description
+          type: string
+          description: Help others understand what this component is for
+    - title: Provide information about the new component
+      required:
+        - component_id
+        - cluster_id
+        - namespace
+        - owner
+      properties:
+        component_id:
+          title: Component Id
+          type: string
+          description: Id of the component
+          default: poi-backend-app
+        cluster_id:
+          title: Cluster Id
+          type: string
+          description: Id of the cluster
+          default: .apps.summit23.0x74.p1.openshiftapps.com
+        namespace: 
+          title: Namespace
+          type: string
+          description: Namespace
+          default: NAMESPACE
+        owner:
+          title: Owner
+          type: string
+          description: Owner of the component
+          ui:field: EntityPicker
+          ui:options:
+            catalogFilter:
+              kind: [User]
+    - title: Provide Build Information
+      required:
+        - image_host
+        - image_name
+        - image_tag
+      properties:
+        image_host:
+          title: Image Host
+          type: string
+          description: Host for storing image (defaults to openshift internal)
+          default: image-registry.openshift-image-registry.svc:5000
+        image_name:
+          title: Image Name
+          type: string
+          default: NAMESPACE/poi-backend-app
+          description: Image name to use for storing in the internal registry
+        image_tag:
+          title: Image Tag
+          default: latest
+          type: string
+          description: Image tag to use for storing in the internal registry
+  steps:
+    - id: templateSource
+      name: Generating the source code component
+      action: fetch:template
+      input:
+        url: ./skeleton
+        targetPath: ./source
+        values:
+          githubOrg: ${{parameters.githubOrg}}
+          repoName: ${{parameters.repoName}}
+          owner: ${{parameters.owner}}
+          cluster_id: ${{parameters.cluster_id}}
+          namespace: ${{parameters.namespace}}
+          component_id: ${{parameters.component_id}}
+    - id: publishSource
+      name: Publishing to Source Code Repository
+      action: publish:github
+      input:
+        sourcePath: ./source
+        allowedHosts:
+          - github.com
+        description: ${{parameters.description}}
+        repoUrl: github.com?owner=${{parameters.githubOrg}}&repo=${{parameters.repoName}}
+        defaultBranch: main
+        protectDefaultBranch: false
+        repoVisibility: public    
+    - id: registerSource
+      name: Registering the Source Code Component
+      action: catalog:register
+      input:
+        repoContentsUrl: ${{steps.publishSource.output.repoContentsUrl}}
+        catalogInfoPath: /catalog-info.yaml
+    - id: templateGitops
+      name: Generating the deployment resources and artefacts
+      action: fetch:template
+      input:
+        url: ./manifests
+        copyWithoutTemplating: []
+        values:
+          component_id: ${{parameters.component_id}}
+          description: ${{parameters.description}}
+          destination: https://github.com/${{parameters.githubOrg}}/${{parameters.repoName}}-gitops
+          source_repository: https://github.com/${{parameters.githubOrg}}/${{parameters.repoName}}
+          repository_name: ${{parameters.repoName}}
+          git_owner: ${{parameters.githubOrg}}
+          cluster: ${{parameters.cluster_id}}
+          namespace: ${{parameters.namespace}}
+          image_host: ${{parameters.image_host}}
+          image_name: ${{parameters.image_name}}
+          image_tag: ${{parameters.image_tag}}
+        targetPath: ./tenant-gitops
+    - id: publishGitops
+      name: Publishing to Deployment Resource Repository
+      action: publish:github
+      input:
+        repoUrl: github.com?owner=${{parameters.githubOrg}}&repo=${{parameters.repoName}}-gitops
+        title: gitops resources for ${{parameters.component_id}}
+        description: gitops resources for ${{parameters.component_id}}
+        sourcePath: ./tenant-gitops
+        defaultBranch: main
+        protectDefaultBranch: false
+        repoVisibility: public
+    - id: createArgoResources
+      name: Create ArgoCD Resources
+      action: argocd:create-resources
+      input:
+        appName: ${{parameters.namespace}}-${{parameters.component_id}}-bootstrap
+        argoInstance: main
+        namespace: janus-argocd
+        repoUrl: https://github.com/${{parameters.githubOrg}}/${{parameters.repoName}}-gitops.git
+        path: 'argocd/'
+  output:
+    links:
+      - title: Source Code Repository
+        url: ${{steps.publishSource.output.remoteUrl}}
+      - title: Pipeline status
+        url: https://console-openshift-console${{parameters.cluster_id}}/dev-pipelines/ns/${{parameters.namespace}}/
+      - title: Open Component in catalog
+        icon: catalog
+        entityRef: ${{steps.registerSource.output.entityRef}}

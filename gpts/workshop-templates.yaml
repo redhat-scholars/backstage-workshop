@@ -1,0 +1,11 @@
+apiVersion: backstage.io/v1alpha1
+kind: Location
+metadata:
+  name: software-templates
+  description: Backstage templates for Janus-IDP & OpenShift workshop at Red Hat Summit 2023
+spec:
+  type: url
+  targets:
+    - https://github.com/hpgrahsl/rhsummit23-backstage-gpts/blob/main/scaffolder-templates/poi-gateway/template.yaml
+    - https://github.com/hpgrahsl/rhsummit23-backstage-gpts/blob/main/scaffolder-templates/poi-backend/template.yaml
+    - https://github.com/hpgrahsl/rhsummit23-backstage-gpts/blob/main/scaffolder-templates/poi-map/template.yaml
