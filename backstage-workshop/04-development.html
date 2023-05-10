@@ -157,14 +157,29 @@
   <div class="content">
 <article class="doc">
 <h1 class="page">Development</h1>
+<div id="preamble">
+<div class="sectionbody">
+<div class="paragraph">
+<p>IDP productivity is achieved by aligning platform services with developer experiences.  This final chapter in our Golden Path workshop involves using OpenShift Dev Spaces to iterate on our three-tier example application.</p>
+</div>
+</div>
+</div>
 <div class="sect1">
 <h2 id="devspaces"><a class="anchor" href="#devspaces"></a>OpenShift Dev Spaces</h2>
 <div class="sectionbody">
 <div class="paragraph">
-<p>While there are many ways to craft a Golden Path for your development staff, the option to include OpenShift Dev Spaces provides a quick path to success with zero laptop installation effort.</p>
+<p>The goal of this chapter will be to add a custom datapoint to the "Red Hat Summit POI" dataset, which is stored in-memory within the Gateway component.</p>
 </div>
 <div class="paragraph">
-<p>In this chapter you will use Dev Spaces to introduce a new API endpoint to your Gateway component.  The goal will be to add a custom datapoint to the "Red Hat Summit POI" dataset, which is stored in-memory within the Gateway component.</p>
+<p>Use Dev Spaces to introduce a new API endpoint to your Gateway component.</p>
+</div>
+<div class="imageblock">
+<div class="content">
+<img src="_images/platform_diagram.png" alt="platform diagram">
+</div>
+</div>
+<div class="paragraph">
+<p>While there are many ways to craft a Golden Path for your development staff, the option to include OpenShift Dev Spaces provides a quick path to success with zero laptop installation effort.</p>
 </div>
 </div>
 </div>
@@ -172,7 +187,7 @@
 <h2 id="gateway_update"><a class="anchor" href="#gateway_update"></a>Use Dev Spaces to update the Gateway</h2>
 <div class="sectionbody">
 <div class="paragraph">
-<p>Enter your &lt;NAMESPACE&gt; into the search input of the Software Catalog to find your Gateway component entity</p>
+<p>Enter your NAMESPACE into the search input of the Software Catalog to find your Gateway component entity</p>
 </div>
 <div class="imageblock">
 <div class="content">
@@ -265,12 +280,15 @@ Make sure to click on <strong><code>Grant</code></strong> next to the <strong>Su
 <div class="sect2">
 <h3 id="_commit_your_change_and_sync"><a class="anchor" href="#_commit_your_change_and_sync"></a>Commit your change and sync</h3>
 <div class="paragraph">
-<p>Click on the Source Control tab in the side menu, then select the plus icon to add your change to the changeset. Enter your commit message in the top input box.  When you&#8217;re done, click "Commit"</p>
+<p>Click on the Source Control tab in the side menu, then select the plus icon to add your change to the changeset.</p>
 </div>
 <div class="imageblock">
 <div class="content">
 <img src="_images/add_changes.png" alt="add changes">
 </div>
+</div>
+<div class="paragraph">
+<p>Enter your commit message in the top input box.  Click "Commit" when done.</p>
 </div>
 <div class="imageblock">
 <div class="content">
@@ -397,7 +415,7 @@ Make sure to click on <strong><code>Grant</code></strong> next to the <strong>Su
 <p>For information about setting up your own Backstage / Janus demo environment, see: <a href="https://janus-idp.io/demo-setup/install/" class="bare">https://janus-idp.io/demo-setup/install/</a></p>
 </li>
 <li>
-<p>To learn about the Software Templates that were used in this workshop, visit: <a href="https://github.com/hpgrahsl/rhsummit23-backstage-gpts" class="bare">https://github.com/hpgrahsl/rhsummit23-backstage-gpts</a></p>
+<p>To learn about the Software Templates that were used in this workshop, visit: <a href="https://github.com/redhat-scholars/backstage-workshop" class="bare">https://github.com/redhat-scholars/backstage-workshop</a></p>
 </li>
 <li>
 <p>To share your feedback on this workshop, open an issue here: <a href="https://github.com/redhat-scholars/backstage-workshop/issues" class="bare">https://github.com/redhat-scholars/backstage-workshop/issues</a></p>
