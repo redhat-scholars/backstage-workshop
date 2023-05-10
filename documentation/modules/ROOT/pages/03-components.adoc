@@ -83,7 +83,13 @@ Insert your NAMESPACE as directed in the following examples:
 image::backend_1.png[]
 image::backend_2.png[]
 image::backend_3.png[]
+
+Review and create your backend component:
+
 image::backend_4.png[]
+
+Open the new Backend component using the Software Catalog:
+
 image::backend_5.png[]
 
 [#backend]
@@ -92,12 +98,20 @@ image::backend_5.png[]
 View the resulting component and plugins.
 
 image::backend_overview.png[]
+
+Select the DEPENDENCIES tab to view the component relationship graph:
+
 image::backend_dependencies.png[]
+
+Select the API tab to browse the provided APIs:
+
 image::backend_api.png[]
 
-Check the resulting pipelines for activity.
+Return to the OVERVIEW tab to check the resulting pipelines for activity:
 
 image::backend_view_pipelines.png[]
+
+View Tekton Pipelines in the OpenShift Web Console:
 
 image::backend_pipeline.png[]
 
