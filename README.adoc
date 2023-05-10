@@ -29,8 +29,12 @@ git push origin master
 
 To set up your own workshop cluster, link:https://janus-idp.io/demo-setup/install/[begin with the demo-setup installation instructions] while implementing the following changes:
 
-1. After creating your new GH Org, visit the `settings/member_privileges` admin page, and change the Base permissions for all repos to "Write"
-2. When asked to fork the `janus-idp/software-templates` repo to your new GH Org, use this repo instead: `https://github.com/redhat-scholars/backstage-workshop`.  Make sure that the resulting repo is named "software-templates"
+1. After creating your new GH Org, visit the `org/settings/member_privileges` admin page, and change the Base permissions for all repos to "Write"
++
+```bash
+open "https://github.com/organizations/$GITHUB_ORGANIZATION/settings/member_privileges/"
+```
+2. When asked to fork the `janus-idp/software-templates` repo to your new GH Org, fork this repo instead: `https://github.com/redhat-scholars/backstage-workshop`.  Make sure that the resulting repo is named "software-templates"
 3. When running the `template` playbook, use this modified `template.yaml` file instead: https://github.com/ryanj/janus-platforms/blob/workshop/ansible/cluster-setup/template.yaml
 4. When running the `site` playbook, use this modified `site.yaml` file instead: https://github.com/ryanj/janus-platforms/blob/workshop/ansible/cluster-setup/site.yaml
 5. After the ansible installation has finished successfully, complete all Post Install instructions in the next section
@@ -39,7 +43,7 @@ To set up your own workshop cluster, link:https://janus-idp.io/demo-setup/instal
 
 TODO: Automate this section using Ansible
 
-This section includes creating three console links, and installing the Namespace Configuration Operator
+This section includes creating three console links, and installing the Namespace Configuration Operator.
 
 ==== Installing the Console Links
 
@@ -97,7 +101,7 @@ EOF
 
 ==== Installing the Namespace Configuration Operator
 
-WARNING: This section is only intended for OpenShift clusters that are using GH Auth to authenticate cluster users.  See the `providerName` line in the yaml below:
+WARNING: This section is only intended for OpenShift clusters that are using GH Auth to authenticate cluster users. Skip this section if you are not using GH Auth to log in to your OpenShift cluster. (See the providerName config line in the below yaml)
 
 Install the CoP Namespace Configuration Operator from the OperatorHub:
 
