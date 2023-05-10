@@ -1,16 +1,23 @@
 = Development
 include::_attributes.adoc[]
 
+IDP productivity is achieved by aligning platform services with developer experiences.  This final chapter in our Golden Path workshop involves using OpenShift Dev Spaces to iterate on our three-tier example application.
+
 [#devspaces]
 == OpenShift Dev Spaces
 
+The goal of this chapter will be to add a custom datapoint to the "Red Hat Summit POI" dataset, which is stored in-memory within the Gateway component.
+
+Use Dev Spaces to introduce a new API endpoint to your Gateway component.  
+
+image::platform_diagram.png[]
+
 While there are many ways to craft a Golden Path for your development staff, the option to include OpenShift Dev Spaces provides a quick path to success with zero laptop installation effort.
 
-In this chapter you will use Dev Spaces to introduce a new API endpoint to your Gateway component.  The goal will be to add a custom datapoint to the "Red Hat Summit POI" dataset, which is stored in-memory within the Gateway component.
 
 [#gateway_update]
 == Use Dev Spaces to update the Gateway
-Enter your <NAMESPACE> into the search input of the Software Catalog to find your Gateway component entity
+Enter your NAMESPACE into the search input of the Software Catalog to find your Gateway component entity
 
 image::catalog_3.png[]
 
@@ -61,9 +68,11 @@ Uncomment the following code block near the bottom of the file:
 
 ### Commit your change and sync
 
-Click on the Source Control tab in the side menu, then select the plus icon to add your change to the changeset. Enter your commit message in the top input box.  When you're done, click "Commit"
+Click on the Source Control tab in the side menu, then select the plus icon to add your change to the changeset. 
 
 image::add_changes.png[]
+
+Enter your commit message in the top input box.  Click "Commit" when done.
 
 image::commit.png[]
 
@@ -134,7 +143,7 @@ Now, it's your turn to begin crafting your own Golden Path experiences using Bac
 
 * For information about setting up your own Backstage / Janus demo environment, see: https://janus-idp.io/demo-setup/install/
 
-* To learn about the Software Templates that were used in this workshop, visit: https://github.com/hpgrahsl/rhsummit23-backstage-gpts
+* To learn about the Software Templates that were used in this workshop, visit: https://github.com/redhat-scholars/backstage-workshop
 
 * To share your feedback on this workshop, open an issue here: https://github.com/redhat-scholars/backstage-workshop/issues
 

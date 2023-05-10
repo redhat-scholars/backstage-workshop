@@ -1,8 +1,6 @@
 = Templates
 include::_attributes.adoc[]
 
-image::platform_diagram.png[]
-
 [#templates]
 == Software Templates
 
