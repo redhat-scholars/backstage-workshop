@@ -33,10 +33,13 @@ image::frontend_relations.png[]
 [#plugins]
 == About Plugins
 
+The KUBERNETES tab will show information from the Kubernetes plugin:
+
 image::frontend_k8s.png[]
 
-image::frontend_topology.png[]
+The TOPOLOGY tab will show informaion form the OpenShift Topology plugin:
 
+image::frontend_topology.png[]
 
 
 [#gateway]
@@ -53,9 +56,20 @@ image::catalog_results_1.png[]
 Take your time exploring the Component Overview page and each of the tabs
 
 image::gateway_overview.png[]
+
+Click on the API tab to explore the API that is provided by this software component.  Select the available API:
+
 image::gateway_apis.png[]
+
+From the API overview page, select "DEFINITION" to see the Relationship graph:
+
 image::gateway_api_overview.png[]
+
+Use OpenAPI to explore exposed endpoints:
+
 image::gateway_api_definition.png[]
+
+The gateway's /backend endpoint collection can be used to link a new Backend component and API.  We will do this in the next section.
 
 [#backend_template]
 == Use the Backend Template
