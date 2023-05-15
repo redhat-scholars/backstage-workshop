@@ -56,5 +56,3 @@ After successfully authenticating via GitHub, Backstage will greet you with a ch
 image::backstage_welcome.png[]
 
 Having established a Project on the OpenShift cluster and access to Backstage, you can start to build your app. First up: Instantiating Backstage _Templates_ to populate the Backstage Catalog.
-
-image::platform_diagram.png[]

@@ -10,6 +10,8 @@ IDPs help teams curate, manage and replicate these environments. _Backstage_ is 
 
 In this end-to-end developer experience, you’ll start on a golden path we’ve paved to show how Red Hat products center on the OpenShift Container Platform to supply a foundation for cloud-native development.
 
+image::platform_diagram.png["IDP diagram"]
+
 Backstage will support you from the start with signposts to components in a single place connecting the three key developer views: an IDE to code, pipelines to build, and orchestration to deploy your application.
 
 == Workshop brief
