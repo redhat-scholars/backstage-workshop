@@ -46,9 +46,7 @@ After Dev Spaces has loaded your workspace, select "Yes, I trust the authors" to
 
 image::trust_the_authors.png[]
 
-Open `/src/main/java/com/rhdevelopers/summit/workshop/SummitBackendResource.java`
-
-Uncomment the following code block near the bottom of the file:
+Open `/src/main/java/com/rhdevelopers/summit/workshop/SummitBackendResource.java` and uncomment the following code block from line 72 to 81:
 
 [.console-input]
 [source,java,subs="+macros,+attributes"]
@@ -62,6 +60,10 @@ Uncomment the following code block near the bottom of the file:
         ).entity("inserted custom data point").build();
     }
 ----
+
+You will find this block of code near the bottom of the file:
+
+image::uncomment-editor.png[]
 
 ### Commit your change and sync
 
@@ -83,7 +85,7 @@ Check the resulting pipelines for activity by selecting *Pipelines* from the sid
 
 image::pipelines_3.png[]
 
-Verify that your change has been published as a new image
+Verify that the pipeline run has reached completion.  This will indicate that a new image build is available for deployment
 
 [#validate_changes]
 == Validate your change
