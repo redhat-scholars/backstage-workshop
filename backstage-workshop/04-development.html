@@ -174,7 +174,10 @@
 <p>You will use Dev Spaces to introduce a new API endpoint to your Gateway component.</p>
 </div>
 <div class="paragraph">
-<p>While there are many ways to craft a Golden Path for your development staff, including OpenShift Dev Spaces provides a quick path to success with zero laptop installation effort.</p>
+<p><a href="https://developers.redhat.com/products/openshift-dev-spaces/overview"><strong>OpenShift Dev Spaces</strong></a> is a cloud and container-native development environment that provides a fast, secure, and zero-configuration development environment for Kubernetes and OpenShift. It allows developers to quickly bootstrap their development environment and start coding.</p>
+</div>
+<div class="paragraph">
+<p>While there are many ways to craft a Golden Path for your development staff, including OpenShift Dev Spaces provides a quick path to success, delivered securely via web browser.</p>
 </div>
 </div>
 </div>
@@ -255,10 +258,7 @@ Make sure to click on <strong><code>Grant</code></strong> next to the <strong>Su
 </div>
 </div>
 <div class="paragraph">
-<p>Open <code>/src/main/java/com/rhdevelopers/summit/workshop/SummitBackendResource.java</code></p>
-</div>
-<div class="paragraph">
-<p>Uncomment the following code block near the bottom of the file:</p>
+<p>Open <code>/src/main/java/com/rhdevelopers/summit/workshop/SummitBackendResource.java</code> and uncomment the following code block from line 72 to 81:</p>
 </div>
 <div class="listingblock console-input">
 <div class="content">
@@ -270,6 +270,14 @@ Make sure to click on <strong><code>Grant</code></strong> next to the <strong>Su
             UriBuilder.fromPath("fake/poi/find/"+(SUMMIT_POI_RECORDS.size()-1)).build()
         ).entity("inserted custom data point").build();
     }</code></pre>
+</div>
+</div>
+<div class="paragraph">
+<p>You will find this block of code near the bottom of the file:</p>
+</div>
+<div class="imageblock">
+<div class="content">
+<img src="_images/uncomment-editor.png" alt="uncomment editor">
 </div>
 </div>
 <div class="sect2">
@@ -312,7 +320,7 @@ Make sure to click on <strong><code>Grant</code></strong> next to the <strong>Su
 </div>
 </div>
 <div class="paragraph">
-<p>Verify that your change has been published as a new image</p>
+<p>Verify that the pipeline run has reached completion.  This will indicate that a new image build is available for deployment</p>
 </div>
 </div>
 </div>
