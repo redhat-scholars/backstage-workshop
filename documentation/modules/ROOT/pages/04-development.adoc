@@ -8,12 +8,9 @@ IDP productivity is achieved by aligning platform services with developer experi
 
 The goal of this chapter will be to add a custom datapoint to the "Red Hat Summit POI" dataset, which is stored in-memory within the Gateway component.
 
-Use Dev Spaces to introduce a new API endpoint to your Gateway component.  
+You will use Dev Spaces to introduce a new API endpoint to your Gateway component.  
 
-image::platform_diagram.png[]
-
-While there are many ways to craft a Golden Path for your development staff, the option to include OpenShift Dev Spaces provides a quick path to success with zero laptop installation effort.
-
+While there are many ways to craft a Golden Path for your development staff, including OpenShift Dev Spaces provides a quick path to success with zero laptop installation effort.
 
 [#gateway_update]
 == Use Dev Spaces to update the Gateway
