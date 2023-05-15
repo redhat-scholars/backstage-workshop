@@ -10,7 +10,11 @@ The goal of this chapter will be to add a custom datapoint to the "Red Hat Summi
 
 You will use Dev Spaces to introduce a new API endpoint to your Gateway component.  
 
-While there are many ways to craft a Golden Path for your development staff, including OpenShift Dev Spaces provides a quick path to success with zero laptop installation effort.
+link:https://developers.redhat.com/products/openshift-dev-spaces/overview[*OpenShift Dev Spaces*] is a cloud and container-native development environment that provides a fast, secure, and zero-configuration development environment for Kubernetes and OpenShift. It allows developers to quickly bootstrap their development environment and start coding.
+
+While there are many ways to craft a Golden Path for your development staff, including OpenShift Dev Spaces provides a quick path to success, delivered securely via web browser.
+
+
 
 [#gateway_update]
 == Use Dev Spaces to update the Gateway
