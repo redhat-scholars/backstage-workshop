@@ -127,11 +127,13 @@ curl --location 'http://localhost:8080/fake/poi/add/point/' \
 }'
 ----
 
-A successful `POST` to your new API endpoint will return `inserted custom data point`. Reload the map to look for your new Point.
+A successful `POST` to your new API endpoint will return: `inserted custom data point`
 
-If you see more than two points in the "Red Hat Summit POI" dataset, then you have successfully completed our Golden Path onboarding experience by pushing, building, and verifying your change.
+Reload the map and hide the National Parks map layer to look for your new Point.
 
 image::map_point.png[]
+
+If you see more than two points in the "Red Hat Summit POI" dataset, then you have successfully completed our Golden Path onboarding experience by pushing, building, and verifying your change.
 
 [#next_steps]
 == Paving your own Golden Path
