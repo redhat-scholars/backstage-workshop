@@ -160,32 +160,26 @@
 <div id="preamble">
 <div class="sectionbody">
 <div class="paragraph">
-<p>IDP productivity is achieved by aligning platform services with developer experiences.  This final chapter in our Golden Path workshop involves using OpenShift Dev Spaces to iterate on our three-tier example application.</p>
+<p>The last chapter in the Backstage Golden Path workshop uses OpenShift Dev Spaces to edit source code and add a feature to your application. Committing your changes to the Backstage-provisioned repo will in turn trigger the platform to automatically rebuild your enhanced component.</p>
 </div>
 </div>
 </div>
 <div class="sect1">
-<h2 id="devspaces"><a class="anchor" href="#devspaces"></a>OpenShift Dev Spaces</h2>
+<h2 id="gateway_update"><a class="anchor" href="#gateway_update"></a>Code a new feature for your app</h2>
 <div class="sectionbody">
 <div class="paragraph">
-<p>The goal of this chapter will be to add a custom datapoint to the "Red Hat Summit POI" dataset, which is stored in-memory within the Gateway component.</p>
+<p>In this chapter you will add a custom location to the "Red Hat Summit POI" dataset maintained in memory in the Gateway component. To make it possible to add arbitrary locations, you need to add a new <code>loadCustomPoi</code> endpoint to the API provided by the Gateway. An HTTP <code>POST</code> to <code>loadCustomPoi</code> specifies coordinates and metadata to add a location to the map displayed by your application.</p>
 </div>
+<div class="sect2">
+<h3 id="_openshift_dev_spaces"><a class="anchor" href="#_openshift_dev_spaces"></a>OpenShift Dev Spaces</h3>
 <div class="paragraph">
-<p>You will use Dev Spaces to introduce a new API endpoint to your Gateway component.</p>
+<p><a href="https://developers.redhat.com/products/openshift-dev-spaces/overview">OpenShift Dev Spaces</a> is an Integrated Development Environment (IDE) hosted on the lab&#8217;s OpenShift cluster and ready to run in your web browser. It&#8217;s based on the open source VSCode, so its features, interface, and large plugin ecosystem are already familiar to many developers. You&#8217;ll use Dev Spaces to edit code and push your changes to your application&#8217;s central repository.</p>
 </div>
+</div>
+<div class="sect2">
+<h3 id="_extend_the_gateway_api"><a class="anchor" href="#_extend_the_gateway_api"></a>Extend the Gateway API</h3>
 <div class="paragraph">
-<p><a href="https://developers.redhat.com/products/openshift-dev-spaces/overview"><strong>OpenShift Dev Spaces</strong></a> is a cloud and container-native development environment that provides a fast, secure, and zero-configuration development environment for Kubernetes and OpenShift. It allows developers to quickly bootstrap their development environment and start coding.</p>
-</div>
-<div class="paragraph">
-<p>While there are many ways to craft a Golden Path for your development staff, including OpenShift Dev Spaces provides a quick path to success, delivered securely via web browser.</p>
-</div>
-</div>
-</div>
-<div class="sect1">
-<h2 id="gateway_update"><a class="anchor" href="#gateway_update"></a>Use Dev Spaces to update the Gateway</h2>
-<div class="sectionbody">
-<div class="paragraph">
-<p>Enter your NAMESPACE into the search input of the Software Catalog to find your Gateway component entity</p>
+<p>Enter your NAMESPACE into the search input of the Software Catalog to find your Gateway entity. Or, you can select your user name, which also matches your Project/NAMESPACE name, from the <em>Owner</em> pulldown menu on the left.</p>
 </div>
 <div class="imageblock">
 <div class="content">
@@ -193,7 +187,7 @@
 </div>
 </div>
 <div class="paragraph">
-<p>From the Gateway Component Overview page, click on "OpenShift Dev Spaces (VS Code)"</p>
+<p>From the Gateway Component Overview page, click on "OpenShift Dev Spaces (VS Code)" to launch a new browser tab running the Dev Spaces IDE.</p>
 </div>
 <div class="imageblock">
 <div class="content">
@@ -201,7 +195,7 @@
 </div>
 </div>
 <div class="paragraph">
-<p>Click on "Log in with OpenShift"</p>
+<p>Click on <em>Log in with OpenShift</em></p>
 </div>
 <div class="imageblock">
 <div class="content">
@@ -209,7 +203,7 @@
 </div>
 </div>
 <div class="paragraph">
-<p>Select the "GitHub" login option</p>
+<p>Select the <em>GitHub</em> login option</p>
 </div>
 <div class="imageblock">
 <div class="content">
@@ -217,7 +211,7 @@
 </div>
 </div>
 <div class="paragraph">
-<p>Click on "Allow selected permissions" to grant Dev Spaces access to your OpenShift account</p>
+<p>Click on <em>Allow selected permissions</em> to grant Dev Spaces your access to OpenShift.</p>
 </div>
 <div class="imageblock">
 <div class="content">
@@ -231,7 +225,7 @@
 <i class="fa icon-important" title="Important"></i>
 </td>
 <td class="content">
-Make sure to click on <strong><code>Grant</code></strong> next to the <strong>Summit23JanusN</strong> GitHub Org before approving Dev Spaces access (where "N" matches your cluster&#8217;s GitHub Org ID)
+Make sure to click on <strong><code>Grant</code></strong> next to the <strong>Summit23JanusN</strong> GitHub Org before approving Dev Spaces access (where <em>N</em> matches your cluster&#8217;s GitHub Org ID number).
 </td>
 </tr>
 </table>
@@ -242,7 +236,7 @@ Make sure to click on <strong><code>Grant</code></strong> next to the <strong>Su
 </div>
 </div>
 <div class="paragraph">
-<p>Wait for your workspace to load.  This may take several minutes&#8230;&#8203;</p>
+<p>Wait for your Dev Spaces workspace to load. This can take a minute.</p>
 </div>
 <div class="imageblock">
 <div class="content">
@@ -250,7 +244,7 @@ Make sure to click on <strong><code>Grant</code></strong> next to the <strong>Su
 </div>
 </div>
 <div class="paragraph">
-<p>After Dev Spaces has loaded your workspace, select "Yes, I trust the authors" to open the code editor</p>
+<p>After Dev Spaces has loaded your workspace, select <em>Yes, I trust the authors</em> to open the code editor on your clone of your code repo for the Gateway component.</p>
 </div>
 <div class="imageblock">
 <div class="content">
@@ -258,7 +252,7 @@ Make sure to click on <strong><code>Grant</code></strong> next to the <strong>Su
 </div>
 </div>
 <div class="paragraph">
-<p>Open <code>/src/main/java/com/rhdevelopers/summit/workshop/SummitBackendResource.java</code> and uncomment the following code block from line 72 to 81:</p>
+<p>Select the file <code>/src/main/java/com/rhdevelopers/summit/workshop/SummitBackendResource.java</code> in the left-hand file tree. Uncomment the following code block on lines 72 to 81:</p>
 </div>
 <div class="listingblock console-input">
 <div class="content">
@@ -273,17 +267,18 @@ Make sure to click on <strong><code>Grant</code></strong> next to the <strong>Su
 </div>
 </div>
 <div class="paragraph">
-<p>You will find this block of code near the bottom of the file:</p>
+<p>This block of code is near the bottom of the file:</p>
 </div>
 <div class="imageblock">
 <div class="content">
 <img src="_images/uncomment-editor.png" alt="uncomment editor">
 </div>
 </div>
+</div>
 <div class="sect2">
 <h3 id="_commit_your_change_and_sync"><a class="anchor" href="#_commit_your_change_and_sync"></a>Commit your change and sync</h3>
 <div class="paragraph">
-<p>Click on the Source Control tab in the side menu, then select the plus icon to add your change to the changeset.</p>
+<p>Click on the Source Control tab in the left sidebar, then select the plus icon to add your change to the changeset.</p>
 </div>
 <div class="imageblock">
 <div class="content">
@@ -291,7 +286,7 @@ Make sure to click on <strong><code>Grant</code></strong> next to the <strong>Su
 </div>
 </div>
 <div class="paragraph">
-<p>Enter your commit message in the top input box.  Click "Commit" when done.</p>
+<p>Enter your commit message in the top input box. Click "Commit" when done.</p>
 </div>
 <div class="imageblock">
 <div class="content">
@@ -320,14 +315,11 @@ Make sure to click on <strong><code>Grant</code></strong> next to the <strong>Su
 </div>
 </div>
 <div class="paragraph">
-<p>Verify that the pipeline run has reached completion.  This will indicate that a new image build is available for deployment</p>
+<p>Verify that the pipeline run has reached completion. This will indicate that a new image build is available for deployment</p>
 </div>
 </div>
-</div>
-</div>
-<div class="sect1">
-<h2 id="validate_changes"><a class="anchor" href="#validate_changes"></a>Validate your change</h2>
-<div class="sectionbody">
+<div class="sect2">
+<h3 id="validate_changes"><a class="anchor" href="#validate_changes"></a>Use your new feature</h3>
 <div class="paragraph">
 <p>Connect to a Pod in the Gateway Deployment to test the new API endpoint.</p>
 </div>
@@ -394,7 +386,7 @@ Make sure to click on <strong><code>Grant</code></strong> next to the <strong>Su
 <p>A successful <code>POST</code> to your new API endpoint will return <code>inserted custom data point</code>. Reload the map to look for your new Point.</p>
 </div>
 <div class="paragraph">
-<p>If you see more than two points in the "Red Hat Summit POI" dataset, then you have successfully completed our Golden Path onboarding experience by pushing, testing, and verifying your change.</p>
+<p>If you see more than two points in the "Red Hat Summit POI" dataset, then you have successfully completed our Golden Path onboarding experience by pushing, building, and verifying your change.</p>
 </div>
 <div class="imageblock">
 <div class="content">
@@ -403,14 +395,15 @@ Make sure to click on <strong><code>Grant</code></strong> next to the <strong>Su
 </div>
 </div>
 </div>
+</div>
 <div class="sect1">
 <h2 id="next_steps"><a class="anchor" href="#next_steps"></a>Paving your own Golden Path</h2>
 <div class="sectionbody">
 <div class="paragraph">
-<p>You have made it to the end of this particular Golden Path.  <em>Congratulations!</em></p>
+<p>You have made it to the end of the National Parks Map application Golden Path. <em>Congratulations!</em></p>
 </div>
 <div class="paragraph">
-<p>Now, it&#8217;s your turn to begin crafting your own Golden Path experiences using Backstage Software Templates and related platform services such as ArgoCD, Tekton, Dev Spaces, and OpenShift.</p>
+<p>Now it&#8217;s your turn to begin crafting your own Golden Paths using Backstage Software Templates and related platform services such as ArgoCD, Tekton, Dev Spaces, and OpenShift.</p>
 </div>
 <div class="ulist">
 <ul>
