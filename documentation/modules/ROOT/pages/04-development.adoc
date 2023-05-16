@@ -48,21 +48,6 @@ image::trust_the_authors.png[]
 
 Select the file `/src/main/java/com/rhdevelopers/summit/workshop/SummitBackendResource.java` in the left-hand file tree. Uncomment the following code block on lines 72 to 81:
 
-[.console-input]
-[source,java,subs="+macros,+attributes"]
-----
-    @POST
-    @Path("poi/add/point")
-    public Response loadCustomPoi(PoiRecord record) {
-        SUMMIT_POI_RECORDS.add(record);
-        return Response.created(
-            UriBuilder.fromPath("fake/poi/find/"+(SUMMIT_POI_RECORDS.size()-1)).build()
-        ).entity("inserted custom data point").build();
-    }
-----
-
-This block of code is near the bottom of the file:
-
 image::uncomment-editor.png[]
 
 === Commit your change and sync
@@ -78,6 +63,8 @@ image::commit.png[]
 Click on "Sync Changes" to publish your changes to GitHub
 
 image::sync.png[]
+
+Click "OK" to confirm and push
 
 image::push.png[]
 
@@ -104,9 +91,12 @@ Delete the Running pod to trigger OpenShift to replace it with a Pod running you
 
 image::gateway_pod_delete.png[]
 
-Return to the Topology view to open a connection to the new Gateway pod
+Return to the Topology view to open a connection to the new Gateway pod. Select the gateway component to view the component resources:
 
 image::top_3.png[]
+
+Select a Pod from the Resources list to access the pod details page:
+
 image::top_3_gateway_2.png[]
 
 Open a terminal connection on the new pod
@@ -147,5 +137,3 @@ Now it's your turn to begin crafting your own Golden Paths using Backstage Softw
 * To learn about the Software Templates that were used in this workshop, visit: https://github.com/redhat-scholars/backstage-workshop
 
 * To share your feedback on this workshop, open an issue here: https://github.com/redhat-scholars/backstage-workshop/issues
-
-_Thank you for helping review this content. Your feedback is appreciated!_
