@@ -1,56 +1,52 @@
 = Development
 include::_attributes.adoc[]
 
-IDP productivity is achieved by aligning platform services with developer experiences.  This final chapter in our Golden Path workshop involves using OpenShift Dev Spaces to iterate on our three-tier example application.
-
-[#devspaces]
-== OpenShift Dev Spaces
-
-The goal of this chapter will be to add a custom datapoint to the "Red Hat Summit POI" dataset, which is stored in-memory within the Gateway component.
-
-You will use Dev Spaces to introduce a new API endpoint to your Gateway component.  
-
-link:https://developers.redhat.com/products/openshift-dev-spaces/overview[*OpenShift Dev Spaces*] is a cloud and container-native development environment that provides a fast, secure, and zero-configuration development environment for Kubernetes and OpenShift. It allows developers to quickly bootstrap their development environment and start coding.
-
-While there are many ways to craft a Golden Path for your development staff, including OpenShift Dev Spaces provides a quick path to success, delivered securely via web browser.
-
-
+The last chapter in the Backstage Golden Path workshop uses OpenShift Dev Spaces to edit source code and add a feature to your application. Committing your changes to the Backstage-provisioned repo will in turn trigger the platform to automatically rebuild your enhanced component.
 
 [#gateway_update]
-== Use Dev Spaces to update the Gateway
-Enter your NAMESPACE into the search input of the Software Catalog to find your Gateway component entity
+== Code a new feature for your app
+
+In this chapter you will add a custom location to the "Red Hat Summit POI" dataset maintained in memory in the Gateway component. To make it possible to add arbitrary locations, you need to add a new `loadCustomPoi` endpoint to the API provided by the Gateway. An HTTP `POST` to `loadCustomPoi` specifies coordinates and metadata to add a location to the map displayed by your application.
+
+=== OpenShift Dev Spaces
+
+https://developers.redhat.com/products/openshift-dev-spaces/overview[OpenShift Dev Spaces] is an Integrated Development Environment (IDE) hosted on the lab's OpenShift cluster and ready to run in your web browser. It's based on the open source VSCode, so its features, interface, and large plugin ecosystem are already familiar to many developers. You'll use Dev Spaces to edit code and push your changes to your application's central repository.
+
+=== Extend the Gateway API
+
+Enter your NAMESPACE into the search input of the Software Catalog to find your Gateway entity. Or, you can select your user name, which also matches your Project/NAMESPACE name, from the _Owner_ pulldown menu on the left.
 
 image::catalog_3.png[]
 
-From the Gateway Component Overview page, click on "OpenShift Dev Spaces (VS Code)"
+From the Gateway Component Overview page, click on "OpenShift Dev Spaces (VS Code)" to launch a new browser tab running the Dev Spaces IDE.
 
 image::gateway_devspaces.png[]
 
-Click on "Log in with OpenShift"
+Click on _Log in with OpenShift_
 
 image::login_4.png[]
 
-Select the "GitHub" login option
+Select the _GitHub_ login option
 
 image::login_5.png[]
 
-Click on "Allow selected permissions" to grant Dev Spaces access to your OpenShift account
+Click on _Allow selected permissions_ to grant Dev Spaces your access to OpenShift.
 
 image::auth_6.png[]
 
-IMPORTANT: Make sure to click on *`Grant`* next to the **Summit23JanusN** GitHub Org before approving Dev Spaces access (where "N" matches your cluster's GitHub Org ID)
+IMPORTANT: Make sure to click on *`Grant`* next to the **Summit23JanusN** GitHub Org before approving Dev Spaces access (where _N_ matches your cluster's GitHub Org ID number).
 
 image::auth_4.png[]
 
-Wait for your workspace to load.  This may take several minutes...
+Wait for your Dev Spaces workspace to load. This can take a minute.
 
 image::devspaces_loading.png[]
 
-After Dev Spaces has loaded your workspace, select "Yes, I trust the authors" to open the code editor
+After Dev Spaces has loaded your workspace, select _Yes, I trust the authors_ to open the code editor on your clone of your code repo for the Gateway component.
 
 image::trust_the_authors.png[]
 
-Open `/src/main/java/com/rhdevelopers/summit/workshop/SummitBackendResource.java` and uncomment the following code block from line 72 to 81:
+Select the file `/src/main/java/com/rhdevelopers/summit/workshop/SummitBackendResource.java` in the left-hand file tree. Uncomment the following code block on lines 72 to 81:
 
 [.console-input]
 [source,java,subs="+macros,+attributes"]
@@ -65,17 +61,17 @@ Open `/src/main/java/com/rhdevelopers/summit/workshop/SummitBackendResource.java
     }
 ----
 
-You will find this block of code near the bottom of the file:
+This block of code is near the bottom of the file:
 
 image::uncomment-editor.png[]
 
-### Commit your change and sync
+=== Commit your change and sync
 
-Click on the Source Control tab in the side menu, then select the plus icon to add your change to the changeset. 
+Click on the Source Control tab in the left sidebar, then select the plus icon to add your change to the changeset.
 
 image::add_changes.png[]
 
-Enter your commit message in the top input box.  Click "Commit" when done.
+Enter your commit message in the top input box. Click "Commit" when done.
 
 image::commit.png[]
 
@@ -89,10 +85,10 @@ Check the resulting pipelines for activity by selecting *Pipelines* from the sid
 
 image::pipelines_3.png[]
 
-Verify that the pipeline run has reached completion.  This will indicate that a new image build is available for deployment
+Verify that the pipeline run has reached completion. This will indicate that a new image build is available for deployment
 
 [#validate_changes]
-== Validate your change
+=== Use your new feature
 
 Connect to a Pod in the Gateway Deployment to test the new API endpoint.
 
@@ -133,16 +129,16 @@ curl --location 'http://localhost:8080/fake/poi/add/point/' \
 
 A successful `POST` to your new API endpoint will return `inserted custom data point`. Reload the map to look for your new Point.
 
-If you see more than two points in the "Red Hat Summit POI" dataset, then you have successfully completed our Golden Path onboarding experience by pushing, testing, and verifying your change.
+If you see more than two points in the "Red Hat Summit POI" dataset, then you have successfully completed our Golden Path onboarding experience by pushing, building, and verifying your change.
 
 image::map_point.png[]
 
 [#next_steps]
 == Paving your own Golden Path
 
-You have made it to the end of this particular Golden Path.  _Congratulations!_
+You have made it to the end of the National Parks Map application Golden Path. _Congratulations!_
 
-Now, it's your turn to begin crafting your own Golden Path experiences using Backstage Software Templates and related platform services such as ArgoCD, Tekton, Dev Spaces, and OpenShift.
+Now it's your turn to begin crafting your own Golden Paths using Backstage Software Templates and related platform services such as ArgoCD, Tekton, Dev Spaces, and OpenShift.
 
 * For information about setting up your own Backstage / Janus demo environment, see: https://janus-idp.io/demo-setup/install/
 
