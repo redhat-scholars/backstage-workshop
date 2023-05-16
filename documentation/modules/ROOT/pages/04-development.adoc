@@ -68,11 +68,11 @@ Click "OK" to confirm and push
 
 image::push.png[]
 
-Check the resulting pipelines for activity by selecting *Pipelines* from the side menu in the OpenShift web console
+Check the resulting pipelines for activity by selecting *Pipelines* from the side menu in the OpenShift web console.  If the gateway pipeline is not running, click on the activity icon to the right, and select "Start last run" to trigger a new pipeline build:
 
-image::pipelines_3.png[]
+image::pipelines_3_restart.png[]
 
-Verify that the pipeline run has reached completion. This will indicate that a new image build is available for deployment
+Wait until the pipeline run has reached completion. This will indicate that a new image has been built and is now available for deployment
 
 [#validate_changes]
 === Use your new feature
@@ -123,7 +123,7 @@ Reload the map and hide the National Parks map layer to look for your new Point.
 
 image::map_point.png[]
 
-If you see more than two points in the "Red Hat Summit POI" dataset, then you have successfully completed our Golden Path onboarding experience by pushing, building, and verifying your change.
+If you see more than two points in the "Red Hat Summit POI" dataset, then you have successfully completed our Golden Path onboarding experience by pushing, building, deploying, and verifying your change.
 
 [#next_steps]
 == Paving your own Golden Path
