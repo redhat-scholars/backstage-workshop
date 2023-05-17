@@ -11,22 +11,21 @@ Select your Frontend component entity from the list of results
 
 image::catalog_results.png[]
 
-You will be prompted for authentication by the github plugin on your first visit.  Click "LOG IN"
+You will be prompted for authentication by the github plugin on your first visit.  Click "LOG IN". While you have already logged in to OpenShift and to Backstage, opening a Catalog Entity's detail screen for the first time requires authentication for the GitHub Plugin, an optional Backstage component.
 
 image::login_3.png[]
 
-Backstage would like to access your GitHub profile information and repositories.  Click "Authorize" to continue
+Backstage would like to access your GitHub profile information and repositories.  Click "Authorize" to continue.
 
 image::auth_3.png[]
 
-
 [#frontend]
 == View the Frontend Component
-Take your time exploring the Component Overview page and each of the tabs
+Take your time exploring the Component Overview page and each of the tabs.
 
 image::frontend_overview.png[]
 
-Click on the "DEPENDENCIES" tab to inspect the component relationship graph
+Click on the _DEPENDENCIES_ tab to inspect the component relationship graph. Note that you can scroll the tabs on the Entity details screen to the left and right. You may need to scroll to find the _DEPENDENCIES_, _API_ and other tabs highlighted in this workshop.
 
 image::frontend_relations.png[]
 
