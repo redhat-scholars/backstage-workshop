@@ -39,11 +39,11 @@ Review the output from deploying the template.  Click on the _Source Code Reposi
 [#github]
 == View the source
 
-Explore the newly created repository, paying special attention to the `catalog-info.yaml` file.
+Explore the repository Backstage created for you with the frontend component source code. Each scaffolded repo is part of the GitHub Org used in this workshop. Each one is prefixed with your Project/namespace name, giving your frontend component's source code repository a qualified name like github.com/Summit23JanusN/_NAMESPACE_-frontend.
 
 image::github_repo.png[]
 
-The resulting component yaml is available in the `catalog-info.yaml` file at the root of the repository.
+The file `catalog-info.yaml` at the root of the repo contains the Backstage-generated YAML defining the Component.
 
 image::github_component.png[]
 
