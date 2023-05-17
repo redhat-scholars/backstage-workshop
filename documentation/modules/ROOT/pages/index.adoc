@@ -57,6 +57,8 @@ In section 4, you'll extend your map app with a lower-level feature. Backstage l
 
 [.tile]
 .xref:04-development.adoc[Development]
-* xref:04-development.adoc#gateway_update[Update the Gateway Component]
+* xref:04-development.adoc#gateway_feature[Code a new feature]
+* xref:04-development.adoc#dev_spaces[OpenShift Dev Spaces]
+* xref:04-development.adoc#extend_gateway[Extend the Gateway API]
 * xref:04-development.adoc#validate_changes[Use your new feature]
 * xref:04-development.adoc#next_steps[Paving your own Golden Path]

@@ -3,15 +3,17 @@ include::_attributes.adoc[]
 
 The last chapter in the Backstage Golden Path workshop uses OpenShift Dev Spaces to edit source code and add a feature to your application. Committing your changes to the Backstage-provisioned repo will in turn trigger the platform to automatically rebuild your enhanced component.
 
-[#gateway_update]
-== Code a new feature for your app
+[#gateway_feature]
+== Code a new feature
 
 In this chapter you will add a custom location to the "Red Hat Summit POI" dataset maintained in memory in the Gateway component. To make it possible to add arbitrary locations, you need to add a new `loadCustomPoi` endpoint to the API provided by the Gateway. An HTTP `POST` to `loadCustomPoi` specifies coordinates and metadata to add a location to the map displayed by your application.
 
+[#dev_spaces]
 === OpenShift Dev Spaces
 
 https://developers.redhat.com/products/openshift-dev-spaces/overview[OpenShift Dev Spaces] is an Integrated Development Environment (IDE) hosted on the lab's OpenShift cluster and ready to run in your web browser. It's based on the open source VSCode, so its features, interface, and large plugin ecosystem are already familiar to many developers. You'll use Dev Spaces to edit code and push your changes to your application's central repository.
 
+[#extend_gateway]
 === Extend the Gateway API
 
 Enter your NAMESPACE into the search input of the Software Catalog to find your Gateway entity. Or, you can select your user name, which also matches your Project/NAMESPACE name, from the _Owner_ pulldown menu on the left.
