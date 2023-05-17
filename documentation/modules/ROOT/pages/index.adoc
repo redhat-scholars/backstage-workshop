@@ -52,8 +52,8 @@ In section 4, you'll extend your map app with a lower-level feature. Backstage l
 * xref:03-components.adoc#component_frontend[View the FrontEnd Component]
 * xref:03-components.adoc#plugins[Plugins]
 * xref:03-components.adoc#component_gateway[View the Gateway Component]
-* xref:03-components.adoc#backend[Deploy the Backend Template]
-* xref:03-components.adoc#backend_view[View the Backend Component]
+* xref:03-components.adoc#deploy_backend[Deploy the Backend Template]
+* xref:03-components.adoc#component_backend[View the Backend Component]
 
 [.tile]
 .xref:04-development.adoc[Development]

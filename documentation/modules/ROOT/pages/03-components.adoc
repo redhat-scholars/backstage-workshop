@@ -11,15 +11,15 @@ Select your Frontend component entity from the list of results
 
 image::catalog_results.png[]
 
-You will be prompted for authentication by the github plugin on your first visit.  Click "LOG IN". While you have already logged in to OpenShift and to Backstage, opening a Catalog Entity's detail screen for the first time requires authentication for the GitHub Plugin, an optional Backstage component.
+You will be prompted for authentication by the github plugin on your first visit. Click "LOG IN". While you have already logged in to OpenShift and to Backstage, opening a Catalog Entity's detail screen for the first time requires authentication for the GitHub Plugin, an optional Backstage component.
 
 image::login_3.png[]
 
-Backstage would like to access your GitHub profile information and repositories.  Click "Authorize" to continue.
+Backstage would like to access your GitHub profile information and repositories. Click "Authorize" to continue.
 
 image::auth_3.png[]
 
-[#frontend]
+[#component_frontend]
 == View the Frontend Component
 Take your time exploring the Component Overview page and each of the tabs.
 
@@ -40,8 +40,7 @@ The TOPOLOGY tab will show informaion form the OpenShift Topology plugin:
 
 image::frontend_topology.png[]
 
-
-[#gateway]
+[#component_gateway]
 == View the Gateway
 
 Return to the Backstage Software Catalog to check the status of the gateway entity. Enter your NAMESPACE into the search box to filter the results.
@@ -56,7 +55,7 @@ Take your time exploring the Component Overview page and each of the tabs
 
 image::gateway_overview.png[]
 
-Click on the API tab to explore the API that is provided by this software component.  Select the available API:
+Click on the API tab to explore the API that is provided by this software component. Select the available API:
 
 image::gateway_apis.png[]
 
@@ -68,12 +67,12 @@ Use OpenAPI to explore exposed endpoints:
 
 image::gateway_api_definition.png[]
 
-The gateway's /backend endpoint collection can be used to link a new Backend component and API.  We will do this in the next section.
+The gateway's /backend endpoint collection can be used to link a new Backend component and API. We will do this in the next section.
 
-[#backend_template]
-== Use the Backend Template
+[#deploy_backend]
+== Create from the Backend Template
 
-Return to the `Create...` menu to Choose the Backend Template
+Return to the `Create...` menu to Choose the Backend Template, _Quarkus Backend Application for Points-of-Interest Map_.
 
 image::backstage_create_backend.png[]
 
@@ -91,7 +90,7 @@ Open the new Backend component using the Software Catalog:
 
 image::backend_5.png[]
 
-[#backend]
+[#component_backend]
 == View the resulting Components
 
 View the resulting component and plugins.
