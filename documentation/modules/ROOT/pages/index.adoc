@@ -6,7 +6,7 @@
 
 Every team and every project evolves a tailored development environment. This collection of tools, services and configuration is often maintained by convention and transmitted by osmosis.
 
-IDPs help teams curate, manage and replicate these environments. _Backstage_ is an open source CNCF project for building developer platforms, and for encapsulating tools, services, documentation and best practices in “golden paths” to ease onboarding and daily development. _Janus_ is Red Hat's community project for contributing to the Backstage core and the ecosystem around it. The IDP presented in this workshop is referred to by both names: fundamental Backstage features are described as such, while you'll work with a running Janus instance labeled with that name.
+IDPs help teams curate, manage and replicate these environments. _Backstage_ is an open source CNCF project for building developer platforms, and for encapsulating tools, services, documentation and best practices in “golden paths” to ease onboarding and daily development. _Janus_ is Red Hat's project for contributing to the Backstage core and the ecosystem around it. The IDP presented in this workshop is referred to by both names: fundamental Backstage features are described as such, while you'll work with a running Janus instance labeled with that name.
 
 In this end-to-end developer experience, you’ll start on a golden path we’ve paved to show how Red Hat products center on the OpenShift Container Platform to supply a foundation for cloud-native development.
 
