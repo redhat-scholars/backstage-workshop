@@ -24,47 +24,16 @@ image::poi-map.png["POI Map Architecture diagram"]
 * The data-bridging **Gateway**
 * The data storage **Backend**.
 
-In the first section, you'll sign in to OpenShift and to Backstage with your GitHub ID. Throughout the exercises, you'll note that your GitHub ID is your user name in both OpenShift and Backstage, and that your application components are deployed to an OpenShift _Project_ with the same name. Both your user name and your Project name will match the GitHub ID you use to authenticate.
+In the xref:01-setup.adoc[first section], you'll sign in to OpenShift and to Backstage with your GitHub ID. Throughout the exercises, you'll note that your GitHub ID is your user name in both OpenShift and Backstage, and that your application components are deployed to an OpenShift _Project_ with the same name. Both your user name and your Project name will match the GitHub ID you use to authenticate.
 
-In section 2, you'll get to know Backstage Templates as you use two provided Templates to fork, build, and deploy the graphical map interface frontend and the API gateway that supports it.
+In xref:02-templates.adoc[section 2], you'll get to know Backstage Templates as you use two provided Templates to fork, build, and deploy the graphical map interface frontend and the API gateway that supports it.
 
 While those two components are enough to establish the absolute minimum viable product of a global, dynamic map diplaying arbitrary locations, you'll soon want to iterate a more robust data source for points on the map.
 
-In section 3, you'll use Backstage's tools for exploring application _Components_ and their connections to examine the deployed frontend and gateway to understand their places in the application architecture. The gateway provides a for-purpose map location API used by the frontend. It also expects to consume a more database-centric backend API.
+In xref:03-components.adoc[section 3], you'll use Backstage's tools for exploring application _Components_ and their connections to examine the deployed frontend and gateway to understand their places in the application architecture. The gateway provides a for-purpose map location API used by the frontend. It also expects to consume a more database-centric backend API.
 
 You'll use another template to create and deploy that backend component. At that point, you'll have a map application displaying many location points around the world. Backstage lets Platform Engineers devise _Golden Paths_ like this one that encapsulate the basic components of applications a team might work on and guides developers in their quick deployment.
 
-In section 4, you'll extend your map app with a lower-level feature. Backstage links you from app components to the OpenShift Dev Spaces web IDE, where you can edit the gateway's source code. Then you'll see how Backstage helps you or your teammates discover, navigate and test your modified gateway API.
+In xref:04-development.adoc[section 4], you'll extend your map app with a lower-level feature. Backstage links you from app components to the OpenShift Dev Spaces web IDE, where you can edit the gateway's source code. Then you'll see how Backstage helps you or your teammates discover, navigate and test your modified gateway API.
 
-[.tiles.browse]
-[.tile]
-.xref:01-setup.adoc[OpenShift and Backstage Authentication]
-* xref:01-setup.adoc#prerequisites[Prerequisites]
-* xref:01-setup.adoc#cluster_access[Accessing OpenShift]
-* xref:01-setup.adoc#backstage_access[Accessing Backstage]
-
-[.tile]
-.xref:02-templates.adoc[Software Templates]
-* xref:02-templates.adoc#templates[Templates and Golden Paths]
-* xref:02-templates.adoc#frontend[Deploy the Front End Template]
-* xref:02-templates.adoc#github[View the resulting Repos]
-* xref:02-templates.adoc#gateway[Deploy the Gateway Template]
-* xref:02-templates.adoc#pipelines[View the resulting Pipelines]
-* xref:02-templates.adoc#view_map[Access the resulting Workloads]
-
-[.tile]
-.xref:03-components.adoc[Components]
-* xref:03-components.adoc#software_catalog[Software Catalog]
-* xref:03-components.adoc#component_frontend[View the FrontEnd Component]
-* xref:03-components.adoc#plugins[Backstage Plugins]
-* xref:03-components.adoc#component_gateway[View the Gateway Component]
-* xref:03-components.adoc#deploy_backend[Deploy the Backend Template]
-* xref:03-components.adoc#component_backend[View the Backend Component]
-
-[.tile]
-.xref:04-development.adoc[Development]
-* xref:04-development.adoc#gateway_feature[Code a new feature]
-* xref:04-development.adoc#dev_spaces[OpenShift Dev Spaces]
-* xref:04-development.adoc#extend_gateway[Extend the Gateway API]
-* xref:04-development.adoc#validate_changes[Use your new feature]
-* xref:04-development.adoc#next_steps[Paving your own Golden Path]
+Let's start!
