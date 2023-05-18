@@ -16,7 +16,13 @@ Backstage will support you from the start with signposts to components in a sing
 
 == Workshop brief
 
-In these exercises you will use Backstage _Templates_ to deploy three application tiers: the user interface frontend, the data-bridging gateway, and the data storage backend. You'll pair Backstage and OpenShift facilities to edit code and add features to your browser-based mapping application.
+In these exercises you will use Backstage _Templates_ to deploy the *POI Map* application, a microservices-based application showing geo-data points into a world map. The architecture is divided in three application tiers as you can see from the picture below. 
+
+image::poi-map.png["POI Map Architecture diagram"]
+
+* The user interface **Frontend**
+* The data-bridging **Gateway**
+* The data storage **Backend**.
 
 In the first section, you'll sign in to OpenShift and to Backstage with your GitHub ID. Throughout the exercises, you'll note that your GitHub ID is your user name in both OpenShift and Backstage, and that your application components are deployed to an OpenShift _Project_ with the same name. Both your user name and your Project name will match the GitHub ID you use to authenticate.
 
