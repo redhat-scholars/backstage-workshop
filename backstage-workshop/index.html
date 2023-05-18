@@ -186,7 +186,13 @@
 <h2 id="_workshop_brief"><a class="anchor" href="#_workshop_brief"></a>Workshop brief</h2>
 <div class="sectionbody">
 <div class="paragraph">
-<p>In these exercises you will use Backstage <em>Templates</em> to deploy the <strong>POI Map</strong> application, a microservices-based application showing geo-data points into a world map. The architecture is divided in three application tiers as you can see from the picture below.</p>
+<p>In these exercises you will use Backstage <em>Templates</em> to deploy the <strong>Points of Interest (POI) Map</strong> application. The POI Map shows location points on a world map that zooms and scrolls. Clicking on a location marker reveals its details.</p>
+</div>
+<div class="paragraph">
+<p>POI Map defines a location to have a latitdue, longitude, name, and an optional description. It can display arbitrary locations. In this workshop, you&#8217;ll attach a data source containing hundreds of national parks around the world.</p>
+</div>
+<div class="paragraph">
+<p>POI Map is divided into three application tiers:</p>
 </div>
 <div class="imageblock">
 <div class="content">
@@ -207,25 +213,22 @@
 </ul>
 </div>
 <div class="paragraph">
-<p>In the <a href="01-setup.html" class="xref page">first section</a>, you&#8217;ll sign in to OpenShift and to Backstage with your GitHub ID. Throughout the exercises, you&#8217;ll note that your GitHub ID is your user name in both OpenShift and Backstage, and that your application components are deployed to an OpenShift <em>Project</em> with the same name. Both your user name and your Project name will match the GitHub ID you use to authenticate.</p>
+<p>In the <a href="01-setup.html" class="xref page">first section</a>, you&#8217;ll sign in to OpenShift and to Backstage with your GitHub ID. Notice that your GitHub ID is your user name in both OpenShift and Backstage, and that your application components are deployed to an OpenShift <em>Project</em> with the same name. Both your user name and your Project name will match the GitHub ID you use to authenticate.</p>
 </div>
 <div class="paragraph">
-<p>In <a href="02-templates.html" class="xref page">section 2</a>, you&#8217;ll get to know Backstage Templates as you use two provided Templates to fork, build, and deploy the graphical map interface frontend and the API gateway that supports it.</p>
+<p>In <a href="02-templates.html" class="xref page">section 2</a>, you&#8217;ll use two provided Templates to build and deploy the graphical map interface frontend and the API gateway that supports it.</p>
 </div>
 <div class="paragraph">
-<p>While those two components are enough to establish the absolute minimum viable product of a global, dynamic map diplaying arbitrary locations, you&#8217;ll soon want to iterate a more robust data source for points on the map.</p>
+<p>While those two components establish the absolute minimum viable product of a global, dynamic map diplaying arbitrary locations, you&#8217;ll soon want a more interesting and robust data source for points on the map.</p>
 </div>
 <div class="paragraph">
-<p>In <a href="03-components.html" class="xref page">section 3</a>, you&#8217;ll use Backstage&#8217;s tools for exploring application <em>Components</em> and their connections to examine the deployed frontend and gateway to understand their places in the application architecture. The gateway provides a for-purpose map location API used by the frontend. It also expects to consume a more database-centric backend API.</p>
+<p>In <a href="03-components.html" class="xref page">section 3</a>, you&#8217;ll use Backstage&#8217;s tools for exploring application <em>Components</em> and their connections to examine the deployed frontend and gateway to understand their places in the application architecture. The gateway provides a map location API used by the frontend. It also expects to consume a more database-centric backend API.</p>
 </div>
 <div class="paragraph">
-<p>You&#8217;ll use another template to create and deploy that backend component. At that point, you&#8217;ll have a map application displaying many location points around the world. Backstage lets Platform Engineers devise <em>Golden Paths</em> like this one that encapsulate the basic components of applications a team might work on and guides developers in their quick deployment.</p>
+<p>You&#8217;ll use another template to create and deploy that backend component. You&#8217;ll then have a map application displaying many location points around the world. Backstage lets Platform Engineers devise <em>Golden Paths</em> like this one that encapsulate the pieces of the applications a team might work on and guides developers in their quick deployment.</p>
 </div>
 <div class="paragraph">
 <p>In <a href="04-development.html" class="xref page">section 4</a>, you&#8217;ll extend your map app with a lower-level feature. Backstage links you from app components to the OpenShift Dev Spaces web IDE, where you can edit the gateway&#8217;s source code. Then you&#8217;ll see how Backstage helps you or your teammates discover, navigate and test your modified gateway API.</p>
-</div>
-<div class="paragraph">
-<p>Let&#8217;s start!</p>
 </div>
 </div>
 </div>
