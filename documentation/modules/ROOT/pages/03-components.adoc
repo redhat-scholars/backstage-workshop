@@ -36,7 +36,7 @@ The KUBERNETES tab will show information from the Kubernetes plugin:
 
 image::frontend_k8s.png[]
 
-The TOPOLOGY tab will show informaion form the OpenShift Topology plugin:
+The TOPOLOGY tab will show information from the OpenShift Topology plugin:
 
 image::frontend_topology.png[]
 
