@@ -43,10 +43,6 @@ Explore the repository Backstage created for you with the frontend component sou
 
 image::github_repo.png[]
 
-The file `catalog-info.yaml` at the root of the repo contains the Backstage-generated YAML defining the Component.
-
-image::github_component.png[]
-
 [#gateway]
 == Launch the Gateway Template
 
