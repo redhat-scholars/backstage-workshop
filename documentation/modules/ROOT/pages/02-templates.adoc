@@ -30,7 +30,7 @@ Type or paste your Project name to replace the NAMESPACE placeholder in the _Ima
 
 image::frontend_4.png[]
 
-Review your configuration, making sure that your own Project name is as expected in the fields you adjusted: _Repo Name_, _Namespace_, _Owner_, and _Image Name_. Click `CREATE` to deploy your frontend component.
+Review your configuration, making sure that your own Project name is as expected in the fields you adjusted: _Repo Name_, _Namespace_, _Owner_, and _Image Name_. Note that the _Owner_ name may include a `default` prefix in the summary, like `user:default/projectname`. This represents Backstage's `default` user grouping. Click `CREATE` to deploy your frontend component.
 
 image::frontend_5.png[]
 
