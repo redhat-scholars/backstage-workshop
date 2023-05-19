@@ -1,6 +1,8 @@
 = Components
 include::_attributes.adoc[]
 
+In this chapter, we will use Backstage to view and manage the components that make up our application. We will also use Backstage to create a new component and API.
+
 [#software_catalog]
 == Software Catalog
 Return to backstage to check the status of the frontend and gateway entities in the Catalog. Enter your NAMESPACE into the search box to filter the results.

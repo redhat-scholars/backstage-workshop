@@ -1,7 +1,7 @@
 = Development
 include::_attributes.adoc[]
 
-The last chapter in the Backstage Golden Path workshop uses OpenShift Dev Spaces to edit source code and add a feature to your application. Committing your changes to the Backstage-provisioned repo will in turn trigger the platform to automatically rebuild your enhanced component.
+The last chapter in the Backstage Golden Path workshop uses OpenShift Dev Spaces to edit source code and add a feature to your application. Committing your changes to the Backstage-provisioned repo will in turn trigger the platform to automatically rebuild your enhanced component. You will then verify your change by connecting to a Pod in the Gateway Deployment and testing the new API endpoint.
 
 [#gateway_feature]
 == Code a new feature
@@ -40,7 +40,7 @@ IMPORTANT: Make sure to click on *`Grant`* next to the **Summit23JanusN** GitHub
 
 image::auth_4.png[]
 
-Wait for your Dev Spaces workspace to load. This can take a minute.
+Wait for your Dev Spaces workspace to load. This can take a minute. You will see a loading screen while the workspace is being provisioned, where Dev Spaces is creating a workspace based on a default https://access.redhat.com/documentation/en-us/red_hat_openshift_dev_spaces/3.1/html/user_guide/introduction-to-devfile[devfile], which can be customized to include your own tools and configuration.
 
 image::devspaces_loading.png[]
 

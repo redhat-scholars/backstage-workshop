@@ -1,7 +1,7 @@
 * xref:01-setup.adoc[1. Backstage Pass: Accessing Backstage]
 ** xref:01-setup.adoc#prerequisites[Prerequisites]
 ** xref:01-setup.adoc#cluster_access[Accessing OpenShift]
-** xref:01-setup.adoc#project_access[OpenShift Projects]
+** xref:01-setup.adoc#project_access[OpenShift Project]
 ** xref:01-setup.adoc#backstage_access[Accessing Backstage]
 
 * xref:02-templates.adoc[2. Templates]

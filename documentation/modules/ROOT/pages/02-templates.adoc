@@ -1,6 +1,8 @@
 = Templates
 include::_attributes.adoc[]
 
+In this chapter, you will use the Backstage Software Catalog to deploy a frontend and gateway component for the Points of Interest (POI) Map application.
+
 [#templates]
 == Software Templates
 
