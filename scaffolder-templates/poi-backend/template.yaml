@@ -42,7 +42,7 @@ spec:
           title: Component Id
           type: string
           description: Id of the component
-          default: poi-backend-app
+          default: NAMESPACE-poi-backend-app
         cluster_id:
           title: Cluster Id
           type: string

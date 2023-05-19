@@ -42,7 +42,7 @@ spec:
           title: Component Id
           type: string
           description: Id of the component
-          default: poi-gateway-app
+          default: NAMESPACE-poi-gateway-app
         cluster_id:
           title: Cluster Id
           type: string

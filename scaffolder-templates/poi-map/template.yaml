@@ -41,7 +41,7 @@ spec:
           title: Component Id
           type: string
           description: Id of the component
-          default: poi-map-app
+          default: NAMESPACE-poi-map-app
         cluster_id:
           title: Cluster Id
           type: string
