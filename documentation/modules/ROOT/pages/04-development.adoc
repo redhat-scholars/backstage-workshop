@@ -48,7 +48,7 @@ After Dev Spaces has loaded your workspace, select _Yes, I trust the authors_ to
 
 image::trust_the_authors.png[]
 
-Select the file `/src/main/java/com/rhdevelopers/summit/workshop/SummitBackendResource.java` in the left-hand file tree. Uncomment the following code block on lines 73 to 82:
+Select the file `/src/main/java/com/rhdevelopers/summit/workshop/SummitBackendResource.java` in the left-hand file tree. Delete the comment markers (`/&ast;` and `&ast;/`) on line 73 and line 82 to enable the block of code they surround:
 
 image::uncomment-editor.png[]
 
