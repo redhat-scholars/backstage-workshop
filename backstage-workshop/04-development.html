@@ -61,7 +61,7 @@
     <a class="nav-link" href="01-setup.html#cluster_access">Accessing OpenShift</a>
   </li>
   <li class="nav-item" data-depth="2">
-    <a class="nav-link" href="01-setup.html#project_access">OpenShift Projects</a>
+    <a class="nav-link" href="01-setup.html#project_access">OpenShift Project</a>
   </li>
   <li class="nav-item" data-depth="2">
     <a class="nav-link" href="01-setup.html#backstage_access">Accessing Backstage</a>
@@ -163,7 +163,7 @@
 <div id="preamble">
 <div class="sectionbody">
 <div class="paragraph">
-<p>The last chapter in the Backstage Golden Path workshop uses OpenShift Dev Spaces to edit source code and add a feature to your application. Committing your changes to the Backstage-provisioned repo will in turn trigger the platform to automatically rebuild your enhanced component.</p>
+<p>The last chapter in the Backstage Golden Path workshop uses OpenShift Dev Spaces to edit source code and add a feature to your application. Committing your changes to the Backstage-provisioned repo will in turn trigger the platform to automatically rebuild your enhanced component. You will then verify your change by connecting to a Pod in the Gateway Deployment and testing the new API endpoint.</p>
 </div>
 </div>
 </div>
@@ -239,7 +239,7 @@ Make sure to click on <strong><code>Grant</code></strong> next to the <strong>Su
 </div>
 </div>
 <div class="paragraph">
-<p>Wait for your Dev Spaces workspace to load. This can take a minute.</p>
+<p>Wait for your Dev Spaces workspace to load. This can take a minute. You will see a loading screen while the workspace is being provisioned, where Dev Spaces is creating a workspace based on a default <a href="https://access.redhat.com/documentation/en-us/red_hat_openshift_dev_spaces/3.1/html/user_guide/introduction-to-devfile">devfile</a>, which can be customized to include your own tools and configuration.</p>
 </div>
 <div class="imageblock">
 <div class="content">
