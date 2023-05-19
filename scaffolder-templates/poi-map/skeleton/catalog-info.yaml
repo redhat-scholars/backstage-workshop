@@ -11,8 +11,8 @@ metadata:
     backstage.io/kubernetes-namespace: ${{values.namespace}}
     backstage.io/kubernetes-label-selector: 'app.kubernetes.io/instance=${{values.namespace}}-${{values.component_id}}-dev'
     backstage.io/techdocs-ref: dir:.
-    janus-idp.io/tekton-enabled : 'false'
     github.com/project-slug: ${{values.githubOrg}}/${{values.repoName}}
+    janus-idp.io/tekton-enabled: 'true'
   tags:
     - typescript
     - angular
