@@ -17,32 +17,21 @@ spec:
     - title: Provide information about the GitHub location
       required:
         - githubOrg
-        - repoName
       properties:
         githubOrg:
           title: GitHub Organization
           type: string
           default: Summit23DevLab
-        repoName:
-          title: Repository Name
-          type: string
-          default: NAMESPACE-gateway
         description:
           title: Description
           type: string
           description: Help others understand what this component is for
     - title: Provide information about the new component
       required:
-        - component_id
         - cluster_id
         - namespace
         - owner
       properties:
-        component_id:
-          title: Component Id
-          type: string
-          description: Id of the component
-          default: NAMESPACE-poi-gateway-app
         cluster_id:
           title: Cluster Id
           type: string
@@ -64,7 +53,6 @@ spec:
     - title: Provide Build Information
       required:
         - image_host
-        - image_name
         - image_tag
       properties:
         image_host:
@@ -72,11 +60,6 @@ spec:
           type: string
           description: Host for storing image (defaults to openshift internal)
           default: image-registry.openshift-image-registry.svc:5000
-        image_name:
-          title: Image Name
-          type: string
-          default: NAMESPACE/poi-gateway-app
-          description: Image name to use for storing in the internal registry
         image_tag:
           title: Image Tag
           default: latest
@@ -91,11 +74,11 @@ spec:
         targetPath: ./source
         values:
           githubOrg: ${{parameters.githubOrg}}
-          repoName: ${{parameters.repoName}}
+          repoName: ${{parameters.namespace}}-gateway
           owner: ${{parameters.owner}}
           cluster_id: ${{parameters.cluster_id}}
           namespace: ${{parameters.namespace}}
-          component_id: ${{parameters.component_id}}
+          component_id: ${{parameters.namespace}}-poi-gateway-app
     - id: publishSource
       name: Publishing to Source Code Repository
       action: publish:github
@@ -104,7 +87,7 @@ spec:
         allowedHosts:
           - github.com
         description: ${{parameters.description}}
-        repoUrl: github.com?owner=${{parameters.githubOrg}}&repo=${{parameters.repoName}}
+        repoUrl: github.com?owner=${{parameters.githubOrg}}&repo=${{parameters.namespace}}-gateway
         defaultBranch: main
         protectDefaultBranch: false
         repoVisibility: public    
@@ -121,25 +104,25 @@ spec:
         url: ./manifests
         copyWithoutTemplating: []
         values:
-          component_id: ${{parameters.component_id}}
+          component_id: ${{parameters.namespace}}-poi-gateway-app
           description: ${{parameters.description}}
-          destination: https://github.com/${{parameters.githubOrg}}/${{parameters.repoName}}-gitops
-          source_repository: https://github.com/${{parameters.githubOrg}}/${{parameters.repoName}}
-          repository_name: ${{parameters.repoName}}
+          destination: https://github.com/${{parameters.githubOrg}}/${{parameters.namespace}}-gateway-gitops
+          source_repository: https://github.com/${{parameters.githubOrg}}/${{parameters.namespace}}-gateway
+          repository_name: ${{parameters.namespace}}-gateway
           git_owner: ${{parameters.githubOrg}}
           cluster: ${{parameters.cluster_id}}
           namespace: ${{parameters.namespace}}
           image_host: ${{parameters.image_host}}
-          image_name: ${{parameters.image_name}}
+          image_name: ${{parameters.namespace}}/poi-gateway-app
           image_tag: ${{parameters.image_tag}}
         targetPath: ./tenant-gitops
     - id: publishGitops
       name: Publishing to Deployment Resource Repository
       action: publish:github
       input:
-        repoUrl: github.com?owner=${{parameters.githubOrg}}&repo=${{parameters.repoName}}-gitops
-        title: gitops resources for ${{parameters.component_id}}
-        description: gitops resources for ${{parameters.component_id}}
+        repoUrl: github.com?owner=${{parameters.githubOrg}}&repo=${{parameters.namespace}}-gateway-gitops
+        title: gitops resources for ${{parameters.namespace}}-poi-gateway-app
+        description: gitops resources for ${{parameters.namespace}}-poi-gateway-app
         sourcePath: ./tenant-gitops
         defaultBranch: main
         protectDefaultBranch: false
@@ -148,10 +131,10 @@ spec:
       name: Create ArgoCD Resources
       action: argocd:create-resources
       input:
-        appName: ${{parameters.namespace}}-${{parameters.component_id}}-bootstrap
+        appName: ${{parameters.namespace}}-${{parameters.namespace}}-poi-gateway-app-bootstrap
         argoInstance: main
         namespace: janus-argocd
-        repoUrl: https://github.com/${{parameters.githubOrg}}/${{parameters.repoName}}-gitops.git
+        repoUrl: https://github.com/${{parameters.githubOrg}}/${{parameters.namespace}}-gateway-gitops.git
         path: 'argocd/'
   output:
     links:
