@@ -40,7 +40,6 @@ spec:
           title: Namespace
           type: string
           description: Namespace
-          default: NAMESPACE
         owner:
           title: Owner
           type: string
