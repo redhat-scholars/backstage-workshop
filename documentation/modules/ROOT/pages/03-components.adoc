@@ -78,15 +78,16 @@ Return to the `Create...` menu to Choose the Backend Template, _Quarkus Backend 
 
 image::backstage_create_backend.png[]
 
-Insert your NAMESPACE as directed in the following examples:
+image::backend_1b.png[]
 
-image::backend_1.png[]
-image::backend_2.png[]
-image::backend_3.png[]
+Insert your NAMESPACE and USERNAME as directed in the following example:
+
+image::frontend_2b.png[]
+image::frontend_3b.png[]
 
 Review and create your backend component:
 
-image::backend_4.png[]
+image::frontend_4b.png[]
 
 Open the new Backend component using the Software Catalog:
 
