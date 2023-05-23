@@ -52,7 +52,7 @@ spec:
         - package
       taskRef:
         kind: Task
-        name: kaniko
+        name: kaniko-gateway
       workspaces:
         - name: source
           workspace: source-folder

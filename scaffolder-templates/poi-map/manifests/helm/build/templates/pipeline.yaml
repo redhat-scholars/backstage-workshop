@@ -41,7 +41,7 @@ spec:
         - git-clone
       taskRef:
         kind: Task
-        name: kaniko
+        name: kaniko-map
       workspaces:
         - name: source
           workspace: source-folder
