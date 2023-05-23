@@ -5,16 +5,16 @@ include::_attributes.adoc[]
 == Prerequisites
 You need a GitHub account for this workshop to authenticate with the provided infrastructure and to store your source code. The account is free of charge and it takes about five minutes to register. If you do not have a GitHub account, or would like to use a dedicated account for this workshop, please create one now at <https://github.com>.
 
-Enter your github username in the onboarding doc and let an instructor know. We will add you to the GitHub Org for today's workshop. You must receive **and accept** an invitation to our GitHub Org before continuing.
+Enter your github username in column A of the https://docs.google.com/spreadsheets/d/1wgyZ719TrwNv-3rHPBQpDLgkRqVA_jZpihLxUaqpJe8/edit[onboarding spreadsheet] and let an instructor know. We will add you to the GitHub Org for today's workshop. You must receive **and accept** an invitation to our GitHub Org before continuing.
 
 === Where's my invite?
 
-Hate waiting and searching for email? When logged in to GitHub with an invited account, you'll see a button on the https://github.com/Summit23JanusN[Workshop GitHub Org home page] to accept the invite and join the Org.
+Hate waiting and searching for email?  After your invite has been generated, we will add a link to your invite in Column B of the https://docs.google.com/spreadsheets/d/1wgyZ719TrwNv-3rHPBQpDLgkRqVA_jZpihLxUaqpJe8/edit[onboarding spreadsheet]. You must accept this invite to join the Org.
 
 [#cluster_access]
 == Accessing OpenShift
 
-Check the onboarding doc for the latest cluster URL ✅
+Check the https://docs.google.com/spreadsheets/d/1wgyZ719TrwNv-3rHPBQpDLgkRqVA_jZpihLxUaqpJe8/edit[onboarding sheet] for the latest cluster URL ✅.  After your invite has been sent, we will publish your cluster URL in Column C of the spreadsheet.
 
 Point a web browser to the OpenShift Web Console URL. Choose the *Login with Github* option.
 
