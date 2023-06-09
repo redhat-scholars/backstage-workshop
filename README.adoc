@@ -29,7 +29,7 @@ git push origin master
 
 To set up your own workshop cluster, implement the following changes to the link:https://janus-idp.io/demo-setup/install/[demo-setup] installation process:
 
-1. When asked to clone the `janus-idp/demo-setup` repo, create a checkout of this `workshop` branch instead:
+1. When asked to clone the `janus-idp/demo-setup` repo, create a checkout of link:https://github.com/ryanj/janus-platforms/tree/workshop[this `workshop` branch] instead:
 +
 ```bash
 git clone https://github.com/ryanj/janus-platforms.git
