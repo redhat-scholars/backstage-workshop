@@ -1,4 +1,4 @@
-= Backstage Workshop for Red Hat Summit 2023
+= Backstage Workshop
 
 To learn about the Software Templates that were used in this workshop, explore the `scaffolder-templates` folder. For additional Template examples, see https://github.com/janus-idp/software-templates
 
@@ -27,91 +27,37 @@ git push origin master
 
 == Workshop Cluster Setup
 
-To set up your own workshop cluster, link:https://janus-idp.io/demo-setup/install/[begin with the demo-setup installation instructions] while implementing the following changes:
+To set up your own workshop cluster, implement the following changes to the link:https://janus-idp.io/demo-setup/install/[demo-setup] installation process:
 
-1. After creating your new GH Org, visit the `org/settings/member_privileges` admin page, and change the Base permissions for all repos to "Write"
+1. When asked to clone the `janus-idp/demo-setup` repo, create a checkout of this `workshop` branch instead:
++
+```bash
+git clone https://github.com/ryanj/janus-platforms.git
+cd janus-platforms/ansible/cluster-setup
+git checkout workshop
+```
+2. When asked to fork the `janus-idp/software-templates` repo to your new GH Org, fork this repo instead: `https://github.com/redhat-scholars/backstage-workshop`.  Make sure to change the name of the resulting repo to: `software-templates`
+3. After creating your new GH Org, visit the `org/settings/member_privileges` admin page, and change the Base permissions for all repos to "Write"
 +
 ```bash
 open "https://github.com/organizations/$GITHUB_ORGANIZATION/settings/member_privileges/"
 ```
-2. When asked to fork the `janus-idp/software-templates` repo to your new GH Org, fork this repo instead: `https://github.com/redhat-scholars/backstage-workshop`.  Make sure that the resulting repo is named "software-templates"
-3. When running the `template` playbook, use this modified `template.yaml` file instead: https://github.com/ryanj/janus-platforms/blob/workshop/ansible/cluster-setup/template.yaml
-4. When running the `site` playbook, use this modified `site.yaml` file instead: https://github.com/ryanj/janus-platforms/blob/workshop/ansible/cluster-setup/site.yaml
-5. After the ansible installation has finished successfully, complete all Post Install instructions in the next section
 
-=== Post Install
+If you a using a ROSA cluster that is configured to use GH Auth for cluster access, proceed to the next section to install the Namespace Configuration Operator
 
-TODO: Automate this section using Ansible
+=== Installing the Namespace Configuration Operator (Optional)
 
-This section includes creating three console links, and installing the Namespace Configuration Operator.
+WARNING: This section is NOT intended for RHPD users!  This section is ONLY for ROSA users who have configured GH Auth as their primary authentication scheme!
 
-==== Installing the Console Links
-
-Create three console links for the header menu:
-
-```bash
-cat <<EOF | oc apply -f -
-apiVersion: console.openshift.io/v1
-kind: ConsoleLink
-metadata:
-  name: application-menu-github
-spec:
-  href: 'https://github.com/$GITHUB_ORGANIZATION'
-  location: ApplicationMenu
-  text: $GITHUB_ORGANIZATION
-  applicationMenu:
-    section: Workshop Resources
-    imageURL: https://github.githubassets.com/images/modules/logos_page/GitHub-Mark.png
-EOF
-```
-
-```bash
-cat <<EOF | oc apply -f -
-apiVersion: console.openshift.io/v1
-kind: ConsoleLink
-metadata:
-  name: application-menu-content
-spec:
-  href: 'https://redhat-scholars.github.io/backstage-workshop'
-  location: ApplicationMenu
-  text: Workshop Content
-  applicationMenu:
-    section: Workshop Resources
-    # TODO: Get better source URL, or add to GitHub
-    imageURL: https://yt3.ggpht.com/ytc/AKedOLRI9AQ_w5yyklg6BhPexpyq9ZPbAXZnXTnzEcyx5Q=s88-c-k-c0x00ffffff-no-rj
-EOF
-```
-
-```bash
-cat <<EOF | oc apply -f -
-apiVersion: console.openshift.io/v1
-kind: ConsoleLink
-metadata:
-  name: application-menu-backstage
-spec:
-  href: 'https://janus-demo.apps$OPENSHIFT_CLUSTER_INFO'
-  location: ApplicationMenu
-  text: Backstage
-  applicationMenu:
-    section: Workshop Resources
-    # TODO: Get better source URL, or add to GitHub
-    imageURL: https://janus-idp.io/images/favicon/favicon.ico
-EOF
-```
-
-==== Installing the Namespace Configuration Operator
-
-WARNING: This section is only intended for OpenShift clusters that are using GH Auth to authenticate cluster users. Skip this section if you are not using GH Auth to log in to your OpenShift cluster. (See the providerName config line in the below yaml)
-
-Install the CoP Namespace Configuration Operator from the OperatorHub:
-
+1. *Optionally,* install the CoP Namespace Configuration Operator from OperatorHub:
++
 ```bash
 oc new-project namespace-configuration-operator
 oc create -f https://raw.githubusercontent.com/redhat-cop/namespace-configuration-operator/master/config/operatorhub/operator.yaml
 ```
-
-After the operator installation has completed, install the following UserConfig yaml:
-
+2. Wait for the operator installation to complete...
+3. After the operator installation has completed, install the following `UserConfig` yaml:
++
 ```bash
 cat <<EOF | oc create -f -
 kind: UserConfig
