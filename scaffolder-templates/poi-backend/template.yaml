@@ -130,7 +130,7 @@ spec:
       name: Create ArgoCD Resources
       action: argocd:create-resources
       input:
-        appName: ${{parameters.namespace}}-${{parameters.namespace}}-poi-backend-app-bootstrap
+        appName: ${{parameters.namespace}}-poi-backend-app-bootstrap
         argoInstance: main
         namespace: janus-argocd
         repoUrl: https://github.com/${{parameters.githubOrg}}/${{parameters.namespace}}-backend-gitops.git
