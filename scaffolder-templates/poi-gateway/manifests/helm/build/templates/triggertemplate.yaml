@@ -19,7 +19,7 @@ spec:
       metadata:
         name: {{ .Values.app.name }}-$(uid)
         labels:
-          backstage.io/kubernetes-id: ${{values.component_id}}-dev
+          backstage.io/kubernetes-id: ${{values.component_id}}
       spec:
         params:
           - name: source-repo
