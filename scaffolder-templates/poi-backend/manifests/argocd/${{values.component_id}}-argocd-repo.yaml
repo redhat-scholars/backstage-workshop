@@ -2,7 +2,7 @@
 apiVersion: v1
 kind: Secret
 metadata:
-  name: ${{values.namespace}}-${{values.component_id}}-repo
+  name: ${{values.component_id}}-repo
   namespace: janus-argocd
   labels:
     argocd.argoproj.io/secret-type: repository

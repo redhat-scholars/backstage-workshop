@@ -2,12 +2,12 @@
 apiVersion: argoproj.io/v1alpha1
 kind: Application
 metadata:
-  name: ${{values.namespace}}-${{values.component_id}}-dev
+  name: ${{values.component_id}}-dev
   namespace: janus-argocd
   labels:
-    argocd/app-name: ${{values.namespace}}-${{values.component_id}}-dev
+    argocd/app-name: ${{values.component_id}}-dev
   annotations:
-    argocd/app-name: ${{values.namespace}}-${{values.component_id}}-dev
+    argocd/app-name: ${{values.component_id}}-dev
   finalizers:
     - resources-finalizer.argocd.argoproj.io  
 spec:
