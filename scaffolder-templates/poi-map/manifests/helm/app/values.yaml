@@ -6,6 +6,7 @@ app:
   gatewayApiUrl: http://${{values.namespace}}-poi-gateway-app-${{values.namespace}}${{values.cluster}}
   websocketEndpoint: ws://${{values.namespace}}-poi-gateway-app-${{values.namespace}}${{values.cluster}}/ws-server-endpoint
   componentId: ${{values.component_id}}
+  namespace: ${{values.namespace}}
 
 namespace:
   enabled: true

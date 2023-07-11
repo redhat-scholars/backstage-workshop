@@ -3,7 +3,9 @@ kind: Deployment
 metadata:
   name: {{ .Values.app.componentId }}
   annotations:
-    app.openshift.io/connects-to: '[{"apiVersion":"apps/v1","kind":"Deployment","name":"poi-gateway-app"}]'
+    image.openshift.io/triggers: >-
+      [{"from":{"kind":"ImageStreamTag","name":"poi-map-app:latest","namespace":"{{ .Values.app.namespace }}"},"fieldPath":"spec.template.spec.containers[?(@.name==\"nodejs-template\")].image","pause":"false"}]
+    app.openshift.io/connects-to: '[{"apiVersion":"apps/v1","kind":"Deployment","name":"{{ .Values.app.namespace }}-poi-gateway-app"}]'
   labels:
     {{- include "backstage.labels" . | nindent 4 }}
     {{- include "nodejs-template.labels" . | nindent 4 }}

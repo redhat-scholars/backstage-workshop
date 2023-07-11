@@ -4,6 +4,7 @@
 
 app:
   componentId: ${{values.component_id}}
+  namespace: ${{values.namespace}}
 
 namespace:
   enabled: true
