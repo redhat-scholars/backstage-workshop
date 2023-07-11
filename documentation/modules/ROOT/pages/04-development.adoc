@@ -87,18 +87,6 @@ image::top_3.png[]
 
 Click on the running pod
 
-image::top_3_gateway.png[]
-
-Delete the Running pod to trigger OpenShift to replace it with a Pod running your new gateway image. 
-
-image::gateway_pod_delete.png[]
-
-Return to the Topology view to open a connection to the new Gateway pod. Select the gateway component to view the component resources:
-
-image::top_3.png[]
-
-Select a Pod from the Resources list to access the pod details page:
-
 image::top_3_gateway_2.png[]
 
 Open a terminal connection on the new pod
