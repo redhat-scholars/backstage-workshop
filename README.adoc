@@ -72,7 +72,7 @@ spec:
 EOF
 ```
 
-=== Upgrading to RHDH
+=== Switching from Janus to RHDH
 
 To switch to the latest rhdh image, you will need to complete the folowing:
 
