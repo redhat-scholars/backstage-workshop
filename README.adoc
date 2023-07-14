@@ -22,7 +22,7 @@ open "https://github.com/organizations/$GITHUB_ORGANIZATION/settings/member_priv
 
 If you a using a ROSA cluster that is configured to use GH Auth for cluster access, proceed to the next section to install the Namespace Configuration Operator
 
-=== Installing the Namespace Configuration Operator (Optional)
+=== Install the Namespace Configuration Operator (Optional)
 
 WARNING: This section is NOT intended for RHPD users!  This section is ONLY for ROSA users who have configured GH Auth as their primary authentication scheme!
 
@@ -72,9 +72,9 @@ spec:
 EOF
 ```
 
-=== Switching from Janus to RHDH
+=== Janus to RHDH
 
-To switch to the latest rhdh image, you will need to complete the folowing:
+To switch to the latest RHDH image, you will need to complete the folowing:
 
  1. Request access to the following quay repo: `quay.io/rhdh/developer-hub-rhel9`.  Requests from Internal Red Hatters should be sent to rhdh@redhat.com.  Requests from customers should be sent to rhdh-interest@redhat.com.
  2. After gaining access to the quay repo.  Visit https://quay.io and click on Profile -> Account Settings -> Robot Accounts -> Create Robot Account
@@ -95,10 +95,12 @@ To switch to the latest rhdh image, you will need to complete the folowing:
 * then update the second `image:` line as follows:
 +
 ```
-      image: quay.io/rhdh/developer-hub-rhel9:1.0
+      image: quay.io/rhdh/developer-hub-rhel9:0.1
 ```
 
 == Workshop Content Development
+
+workshop content is available at: https://redhat-scholars.github.io/backstage-workshop
 
 ==== Local Development with Gulp
 Install local development dependencies via `npm`:
