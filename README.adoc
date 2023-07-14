@@ -88,7 +88,7 @@ To switch to the latest rhdh image, you will need to complete the folowing:
 +
 ```
   imagePullSecrets:
-  - name: rhdh-pull-secret
+    - name: rhdh-pull-secret
 ```
  8. Update the janus deployment to reference the private quay image: `oc edit deploy/janus-dev -n backstage`
 +
