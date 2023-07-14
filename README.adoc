@@ -2,29 +2,6 @@
 
 To learn about the Software Templates that were used in this workshop, explore the `scaffolder-templates` folder. For additional Template examples, see https://github.com/janus-idp/software-templates
 
-== Workshop Content Development
-
-==== Local Development with Gulp
-Install local development dependencies via `npm`:
-
-```bash
-npm install
-```
-
-Launch a local development server:
-
-```bash
-npm start
-```
-
-==== Promoting your changes
-
-Add and commit your changes, then run `git push` to trigger a new deployment:
-
-```bash
-git push origin master
-```
-
 == Workshop Cluster Setup
 
 To set up your own workshop cluster, implement the following changes to the link:https://janus-idp.io/demo-setup/install/[demo-setup] installation process:
@@ -93,4 +70,53 @@ spec:
             kind: User
             name: {{ .Name }}
 EOF
+```
+
+=== Upgrading to RHDH
+
+To switch to the latest rhdh image, you will need to complete the folowing:
+
+ 1. Request access to the following quay repo: `quay.io/rhdh/developer-hub-rhel9`.  Requests from Internal Red Hatters should be sent to rhdh@redhat.com.  Requests from customers should be sent to rhdh-interest@redhat.com.
+ 2. After gaining access to the quay repo.  Visit https://quay.io and click on Profile -> Account Settings -> Robot Accounts -> Create Robot Account
+ 3. Name the Robot Account "rhdh_pull_secret".
+ 4. Open your robot account and select the "Kubernetes Secret" tab.  Download your pull secret yaml.
+ 5. Edit your pull secret yaml, setting the pull secret's `metadata.name` field to: `rhdh-pull-secret`
+ 6. Install your pull secret in the backstage namespace: `kubectl create -f secret.yaml -n backstage`
+ 7. Update the janus deployment to reference the new image pull secret: `oc edit deploy/janus-dev -n backstage`
++
+* then update the `imagePullSecrets: []` setting as follows:
++
+```
+  imagePullSecrets:
+  - name: rhdh-pull-secret
+```
+ 8. Update the janus deployment to reference the private quay image: `oc edit deploy/janus-dev -n backstage`
++
+* then update the second `image:` line as follows:
++
+```
+      image: quay.io/rhdh/developer-hub-rhel9:1.0
+```
+
+== Workshop Content Development
+
+==== Local Development with Gulp
+Install local development dependencies via `npm`:
+
+```bash
+npm install
+```
+
+Launch a local development server:
+
+```bash
+npm start
+```
+
+==== Promoting your changes
+
+Add and commit your changes, then run `git push` to trigger a new deployment:
+
+```bash
+git push origin master
 ```
