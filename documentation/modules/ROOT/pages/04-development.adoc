@@ -70,42 +70,50 @@ Click "OK" to confirm and push
 
 image::push.png[]
 
-Check the resulting pipelines for activity by selecting *Pipelines* from the side menu in the OpenShift web console.  If the gateway pipeline is not running, click on the activity icon to the right, and select "Start last run" to trigger a new pipeline build:
+Check the resulting pipelines for activity by selecting *CI* tab.  Then, click on "GO TO TEKTON" to view the Tekton tab:
 
-image::pipelines_3_restart.png[]
+image::tab_ci.png[]
 
-Wait until the pipeline run has reached completion. This will indicate that a new image has been built and is now available for deployment
+Wait until the top pipeline run has reached completion. This will indicate that a new image has been built and is now available for deployment
+
+After the new pipeline run reports "Succeeded", click on the Right Nav button in the header tabs to reveal the "API" tab.
+
+image::tab_tekton.png[]
+
+Click on the "API" tab to view the associated APIs offered by this component, then select the "Gateway" API:
+
+image::tab_api.png[]
 
 [#validate_changes]
-=== Use your new feature
+=== Test your new feature
 
-Connect to a Pod in the Gateway Deployment to test the new API endpoint.
+To test the new API endpoint, we will use Swagger to interact with the OpenAPI spec.  Click on the "Swagger UI" link:
 
-First, use the Topology view to examine the Gateway component
+image::swagger_link.png[]
 
-image::top_3.png[]
+Scroll down to the new "/fake/poi/add/point" API endpoint and expand the item:
 
-Click on the running pod
+image::swagger_list.png[]
 
-image::top_3_gateway_2.png[]
+If you don't see the new API endpoint, your second build may not be completed.  Double check your work from the previous section if needed.
 
-Open a terminal connection on the new pod
+Click on "Try it out" to test the API:
 
-image::gateway_pod_terminal.png[]
+image::swagger_try.png[]
 
-Paste the following curl command into the terminal to test the new API endpoint:
+Paste the following content into the Request body input, then click the "Execute" button to test the new endpoint:
 
 [.console-input]
-[source,bash,subs="+macros,+attributes"]
+[source,json,subs="+macros,+attributes"]
 ----
-curl --location 'http://localhost:8080/fake/poi/add/point/' \
---header 'Content-Type: application/json' \
---data '{
-"name":"Milano, Italy",
-"description":"example city",
-"coordinates":[45.464203,9.189982]
-}'
+{
+  "name":"Milano, Italy",
+  "description":"example city",
+  "coordinates":[45.464203,9.189982]
+}
 ----
+
+image::swagger_exec.png[]
 
 A successful `POST` to your new API endpoint will return: `inserted custom data point`
 
