@@ -108,15 +108,15 @@ Select the API tab to browse the provided APIs:
 
 image::backend_api.png[]
 
-Return to the OVERVIEW tab to check the resulting pipelines for activity:
+Select the CI tab to check the resulting pipelines for activity:
 
-image::backend_view_pipelines.png[]
+image::backend_ci.png[]
 
-View Tekton Pipelines in the OpenShift Web Console:
+View Tekton Pipelines using the Tekton tab:
 
-image::backend_pipeline.png[]
+image::backend_tekton.png[]
 
-When the build has completed successfully, reload the map to check for results!
+When the pipeline build has completed successfully, reload the map to check for results!
 
 image::map_3.png[]
 
