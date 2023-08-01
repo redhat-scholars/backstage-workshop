@@ -298,58 +298,77 @@ Make sure to click on <strong><code>Grant</code></strong> next to the <strong>Su
 </div>
 </div>
 <div class="paragraph">
-<p>Check the resulting pipelines for activity by selecting <strong>Pipelines</strong> from the side menu in the OpenShift web console.  If the gateway pipeline is not running, click on the activity icon to the right, and select "Start last run" to trigger a new pipeline build:</p>
+<p>Check the resulting pipelines for activity by selecting <strong>CI</strong> tab.  Then, click on "GO TO TEKTON" to view the Tekton tab:</p>
 </div>
 <div class="imageblock">
 <div class="content">
-<img src="_images/pipelines_3_restart.png" alt="pipelines 3 restart">
+<img src="_images/tab_ci.png" alt="tab ci">
 </div>
 </div>
 <div class="paragraph">
-<p>Wait until the pipeline run has reached completion. This will indicate that a new image has been built and is now available for deployment</p>
+<p>Wait until the top pipeline run has reached completion. This will indicate that a new image has been built and is now available for deployment</p>
+</div>
+<div class="paragraph">
+<p>After the new pipeline run reports "Succeeded", click on the Right Nav button in the header tabs to reveal the "API" tab.</p>
+</div>
+<div class="imageblock">
+<div class="content">
+<img src="_images/tab_tekton.png" alt="tab tekton">
+</div>
+</div>
+<div class="paragraph">
+<p>Click on the "API" tab to view the associated APIs offered by this component, then select the "Gateway" API:</p>
+</div>
+<div class="imageblock">
+<div class="content">
+<img src="_images/tab_api.png" alt="tab api">
+</div>
 </div>
 </div>
 <div class="sect2">
-<h3 id="validate_changes"><a class="anchor" href="#validate_changes"></a>Use your new feature</h3>
+<h3 id="validate_changes"><a class="anchor" href="#validate_changes"></a>Test your new feature</h3>
 <div class="paragraph">
-<p>Connect to a Pod in the Gateway Deployment to test the new API endpoint.</p>
-</div>
-<div class="paragraph">
-<p>First, use the Topology view to examine the Gateway component</p>
+<p>To test the new API endpoint, we will use Swagger to interact with the OpenAPI spec.  Click on the "Swagger UI" link:</p>
 </div>
 <div class="imageblock">
 <div class="content">
-<img src="_images/top_3.png" alt="top 3">
+<img src="_images/swagger_link.png" alt="swagger link">
 </div>
 </div>
 <div class="paragraph">
-<p>Click on the running pod</p>
+<p>Scroll down to the new "/fake/poi/add/point" API endpoint and expand the item:</p>
 </div>
 <div class="imageblock">
 <div class="content">
-<img src="_images/top_3_gateway_2.png" alt="top 3 gateway 2">
+<img src="_images/swagger_list.png" alt="swagger list">
 </div>
 </div>
 <div class="paragraph">
-<p>Open a terminal connection on the new pod</p>
+<p>If you don&#8217;t see the new API endpoint, your second build may not be completed.  Double check your work from the previous section if needed.</p>
+</div>
+<div class="paragraph">
+<p>Click on "Try it out" to test the API:</p>
 </div>
 <div class="imageblock">
 <div class="content">
-<img src="_images/gateway_pod_terminal.png" alt="gateway pod terminal">
+<img src="_images/swagger_try.png" alt="swagger try">
 </div>
 </div>
 <div class="paragraph">
-<p>Paste the following curl command into the terminal to test the new API endpoint:</p>
+<p>Paste the following content into the Request body input, then click the "Execute" button to test the new endpoint:</p>
 </div>
 <div class="listingblock console-input">
 <div class="content">
-<pre class="highlightjs highlight"><code class="language-bash hljs" data-lang="bash">curl --location 'http://localhost:8080/fake/poi/add/point/' \
---header 'Content-Type: application/json' \
---data '{
-"name":"Milano, Italy",
-"description":"example city",
-"coordinates":[45.464203,9.189982]
-}'</code></pre>
+<pre class="highlightjs highlight"><code class="language-json hljs" data-lang="json">{
+  "name":"Milano, Italy",
+  "description":"example city",
+  "coordinates":[45.464203,9.189982]
+}</code></pre>
+</div>
+</div>
+<div class="imageblock">
+<div class="content">
+<img src="_images/swagger_exec.png" alt="swagger exec">
 </div>
 </div>
 <div class="paragraph">
