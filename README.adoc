@@ -45,7 +45,7 @@ spec:
   annotationSelector: {}
   identityExtraFieldSelector: {}
   labelSelector: {}
-  providerName: GitHub
+  providerName: github
   templates:
     - excludedPaths:
         - .spec.replicas
