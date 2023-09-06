@@ -34,7 +34,7 @@ open "https://console-openshift-console.apps$OPENSHIFT_CLUSTER_INFO/settings/idp
 8. Increase cluster capacity by scaling up machineSets (if needed):
 +
 ```bash
-open "https://console-openshift-console.apps$OPENSHIFT_CLUSTER_INFO/k8s/ns/openshift-machine-api/machine.openshift.io~v1beta1~MachineSet
+open "https://console-openshift-console.apps$OPENSHIFT_CLUSTER_INFO/k8s/ns/openshift-machine-api/machine.openshift.io~v1beta1~MachineSet"
 ```
 
 === Janus to RHDH
