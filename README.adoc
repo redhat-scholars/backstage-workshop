@@ -90,7 +90,11 @@ To switch to the latest RHDH image, you will need to complete the folowing:
  4. Open your robot account and select the "Kubernetes Secret" tab.  Download your pull secret yaml.
  5. Edit your pull secret yaml, setting the pull secret's `metadata.name` field to: `rhdh-pull-secret`
  6. Install your pull secret in the backstage namespace: `kubectl create -f secret.yaml -n backstage`
- 7. Update the janus deployment to reference the new image pull secret: `kubectl patch deploy/janus-dev -n backstage -p '{"spec":{"template":{"spec":{"imagePullSecrets":[{"name":"rhdh-pull-secret"}],"containers":[{"name":"janus-backstage","image":"quay.io/rhdh/developer-hub-rhel9:0.1"}]}}}}'`
+ 7. Update the janus deployment to reference the new image pull secret: 
++
+```bash
+kubectl patch deploy/janus-dev -n backstage -p '{"spec":{"template":{"spec":{"imagePullSecrets":[{"name":"rhdh-pull-secret"}],"containers":[{"name":"janus-backstage","image":"quay.io/rhdh/developer-hub-rhel9:0.1"}]}}}}'
+```
 
 == Workshop Content Development
 
