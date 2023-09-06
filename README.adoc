@@ -19,18 +19,23 @@ git checkout workshop
 ```bash
 open "https://github.com/organizations/$GITHUB_ORGANIZATION/settings/member_privileges/"
 ```
-4. Create another OAuth app to allow GitHub Auth into the cluster via your new gh org:
+4. Create another OAuth app to allow GitHub Auth into the Openshift cluster for org members:
 +
 ```bash
 open "https://github.com/organizations/$GITHUB_ORGANIZATION/settings/applications/new/?oauth_application[name]=$GITHUB_ORGANIZATION-auth&oauth_application[url]=https://oauth-openshift.apps$OPENSHIFT_CLUSTER_INFO&oauth_application[callback_url]=https://oauth-openshift.apps$OPENSHIFT_CLUSTER_INFO/oauth2callback/github"
 ```
-5. Configure GitHub Auth for the cluster: https://docs.openshift.com/container-platform/4.13/authentication/identity_providers/configuring-github-identity-provider.html
+5. Configure your new GitHub OAuth App's `id` and `secret` for the cluster and add your gh org name to the access list:
 +
 ```bash
 open "https://console-openshift-console.apps$OPENSHIFT_CLUSTER_INFO/settings/idp/github"
 ```
-6. Switch from Janus to RHDH (see below)
-7. Install the Namespace Configuration Operator (see below)
+6. Switch from xref:#janus-to-rhdh[Janus to RHDH] (see below)
+7. xref:#install-the-namespace-configuration-operator-optional[Install the Namespace Configuration Operator] (see below)
+8. Increase cluster capacity by scaling up machineSets (if needed):
++
+```bash
+open "https://console-openshift-console.apps$OPENSHIFT_CLUSTER_INFO/k8s/ns/openshift-machine-api/machine.openshift.io~v1beta1~MachineSet
+```
 
 === Janus to RHDH
 
@@ -52,21 +57,17 @@ kubectl create -f secret.yaml -n backstage
 kubectl patch deploy/janus-dev -n backstage -p '{"spec":{"template":{"spec":{"imagePullSecrets":[{"name":"rhdh-pull-secret"}],"containers":[{"name":"janus-backstage","image":"quay.io/rhdh/developer-hub-rhel9:0.1"}]}}}}'
 ```
 
-
 === Install the Namespace Configuration Operator (Optional)
 
 WARNING: This section is ONLY for clusters that have GH Auth configured as the primary authentication scheme for user access!
 
-1. *Optionally,* install the CoP Namespace Configuration Operator from OperatorHub:
-+
+*Optionally,* install the CoP Namespace Configuration Operator from OperatorHub:
+
 ```bash
 oc new-project namespace-configuration-operator
 oc create -f https://raw.githubusercontent.com/redhat-cop/namespace-configuration-operator/master/config/operatorhub/operator.yaml
-```
-2. Wait for the operator installation to complete...
-3. After the operator installation has completed, install the following `UserConfig` yaml:
-+
-```bash
+# wait for the operator installation to complete...
+sleep 60
 cat <<EOF | oc create -f -
 kind: UserConfig
 apiVersion: redhatcop.redhat.io/v1alpha1
