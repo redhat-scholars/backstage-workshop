@@ -19,27 +19,27 @@ git checkout workshop
 ```bash
 open "https://github.com/organizations/$GITHUB_ORGANIZATION/settings/member_privileges/"
 ```
-4. Create another OAuth app to allow GitHub Auth into the Openshift cluster for org members:
+4. Create *another* OAuth app to provide GitHub Auth into the Openshift cluster:
 +
 ```bash
 open "https://github.com/organizations/$GITHUB_ORGANIZATION/settings/applications/new/?oauth_application[name]=$GITHUB_ORGANIZATION-auth&oauth_application[url]=https://oauth-openshift.apps$OPENSHIFT_CLUSTER_INFO&oauth_application[callback_url]=https://oauth-openshift.apps$OPENSHIFT_CLUSTER_INFO/oauth2callback/github"
 ```
-5. Configure your new GitHub OAuth App's `id` and `secret` for the cluster and add your gh org name to the access list:
+5. Configure your new GitHub OAuth App's `id` and `secret`, and add your gh org to the list of approved orgs:
 +
 ```bash
 open "https://console-openshift-console.apps$OPENSHIFT_CLUSTER_INFO/settings/idp/github"
 ```
 6. Switch from xref:#janus-to-rhdh[Janus to RHDH] (see below)
-7. xref:#install-the-namespace-configuration-operator-optional[Install the Namespace Configuration Operator] (see below)
+7. Install the xref:#install-the-namespace-configuration-operator[Namespace Configuration Operator] (see below)
 8. Increase cluster capacity by scaling up machineSets (if needed):
 +
 ```bash
 open "https://console-openshift-console.apps$OPENSHIFT_CLUSTER_INFO/k8s/ns/openshift-machine-api/machine.openshift.io~v1beta1~MachineSet"
 ```
-9. Invite users to your new github org in order to share access. Users will need to accept the invite before accessing the cluster.
+9. Share access by inviting users to your github org. Users will need to accept the invite before accessing the cluster:
 +
 ```bash
-open "https://github.com/orgs/$GITHUB_ORGANIZATION/people
+open "https://github.com/orgs/$GITHUB_ORGANIZATION/people"
 ```
 
 TIP: For larger workshops you can optionally link:https://gist.github.com/ryanj/47da864d6f892bbb86deb918232d1d14[upload the list of new users using a script]
@@ -64,7 +64,7 @@ kubectl create -f secret.yaml -n backstage
 kubectl patch deploy/janus-dev -n backstage -p '{"spec":{"template":{"spec":{"imagePullSecrets":[{"name":"rhdh-pull-secret"}],"containers":[{"name":"janus-backstage","image":"quay.io/rhdh/developer-hub-rhel9:0.1"}]}}}}'
 ```
 
-=== Install the Namespace Configuration Operator (Optional)
+=== Install the Namespace Configuration Operator
 
 *Optionally,* install the CoP Namespace Configuration Operator from OperatorHub:
 
