@@ -36,6 +36,13 @@ open "https://console-openshift-console.apps$OPENSHIFT_CLUSTER_INFO/settings/idp
 ```bash
 open "https://console-openshift-console.apps$OPENSHIFT_CLUSTER_INFO/k8s/ns/openshift-machine-api/machine.openshift.io~v1beta1~MachineSet"
 ```
+9. Invite users to your new github org in order to share access. Users will need to accept the invite before accessing the cluster.
++
+```bash
+open "https://github.com/orgs/$GITHUB_ORGANIZATION/people
+```
+
+TIP: For larger workshops you can optionally link:https://gist.github.com/ryanj/47da864d6f892bbb86deb918232d1d14[upload the list of new users using a script]
 
 === Janus to RHDH
 
@@ -58,8 +65,6 @@ kubectl patch deploy/janus-dev -n backstage -p '{"spec":{"template":{"spec":{"im
 ```
 
 === Install the Namespace Configuration Operator (Optional)
-
-WARNING: This section is ONLY for clusters that have GH Auth configured as the primary authentication scheme for user access!
 
 *Optionally,* install the CoP Namespace Configuration Operator from OperatorHub:
 
