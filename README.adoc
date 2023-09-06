@@ -19,12 +19,20 @@ git checkout workshop
 ```bash
 open "https://github.com/organizations/$GITHUB_ORGANIZATION/settings/member_privileges/"
 ```
+4. Configure GitHub Auth for the cluster: https://docs.openshift.com/container-platform/4.13/authentication/identity_providers/configuring-github-identity-provider.html
++
+```bash
+open "https://github.com/organizations/$GITHUB_ORGANIZATION/settings/applications/new/"
+open "https://console-openshift-console.apps$OPENSHIFT_CLUSTER_INFO/settings/idp/github"
+```
+5. Install the Namespace Configuration Operator (see below)
+6. Switch from Janus to RHDH (see below)
 
-If you a using a ROSA cluster that is configured to use GH Auth for cluster access, proceed to the next section to install the Namespace Configuration Operator
+If you a using acluster that is configured to use GH Auth for cluster access, proceed to the next section to install the Namespace Configuration Operator
 
 === Install the Namespace Configuration Operator (Optional)
 
-WARNING: This section is NOT intended for RHPD users!  This section is ONLY for ROSA users who have configured GH Auth as their primary authentication scheme!
+WARNING: This section is ONLY for clusters that have GH Auth configured as the primary authentication scheme for user access!
 
 1. *Optionally,* install the CoP Namespace Configuration Operator from OperatorHub:
 +
@@ -82,21 +90,7 @@ To switch to the latest RHDH image, you will need to complete the folowing:
  4. Open your robot account and select the "Kubernetes Secret" tab.  Download your pull secret yaml.
  5. Edit your pull secret yaml, setting the pull secret's `metadata.name` field to: `rhdh-pull-secret`
  6. Install your pull secret in the backstage namespace: `kubectl create -f secret.yaml -n backstage`
- 7. Update the janus deployment to reference the new image pull secret: `oc edit deploy/janus-dev -n backstage`
-+
-* then update the `imagePullSecrets: []` setting as follows:
-+
-```
-  imagePullSecrets:
-    - name: rhdh-pull-secret
-```
- 8. Update the janus deployment to reference the private quay image: `oc edit deploy/janus-dev -n backstage`
-+
-* then update the second `image:` line as follows:
-+
-```
-      image: quay.io/rhdh/developer-hub-rhel9:0.1
-```
+ 7. Update the janus deployment to reference the new image pull secret: `kubectl patch deploy/janus-dev -n backstage -p '{"spec":{"template":{"spec":{"imagePullSecrets":[{"name":"rhdh-pull-secret"}],"containers":[{"name":"janus-backstage","image":"quay.io/rhdh/developer-hub-rhel9:0.1"}]}}}}'`
 
 == Workshop Content Development
 
