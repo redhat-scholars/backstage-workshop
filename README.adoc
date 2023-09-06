@@ -19,14 +19,18 @@ git checkout workshop
 ```bash
 open "https://github.com/organizations/$GITHUB_ORGANIZATION/settings/member_privileges/"
 ```
-4. Configure GitHub Auth for the cluster: https://docs.openshift.com/container-platform/4.13/authentication/identity_providers/configuring-github-identity-provider.html
+4. Create another OAuth app to allow GitHub Auth into the cluster via your new gh org:
 +
 ```bash
-open "https://github.com/organizations/$GITHUB_ORGANIZATION/settings/applications/new/"
+open "https://github.com/organizations/$GITHUB_ORGANIZATION/settings/applications/new/?oauth_application[name]=$GITHUB_ORGANIZATION-auth&oauth_application[url]=https://oauth-openshift.apps$OPENSHIFT_CLUSTER_INFO&oauth_application[callback_url]=https://oauth-openshift.apps$OPENSHIFT_CLUSTER_INFO/oauth2callback/github"
+```
+5. Configure GitHub Auth for the cluster: https://docs.openshift.com/container-platform/4.13/authentication/identity_providers/configuring-github-identity-provider.html
++
+```bash
 open "https://console-openshift-console.apps$OPENSHIFT_CLUSTER_INFO/settings/idp/github"
 ```
-5. Switch from Janus to RHDH (see below)
-6. Install the Namespace Configuration Operator (see below)
+6. Switch from Janus to RHDH (see below)
+7. Install the Namespace Configuration Operator (see below)
 
 === Janus to RHDH
 
