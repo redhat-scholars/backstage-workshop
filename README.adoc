@@ -25,10 +25,29 @@ open "https://github.com/organizations/$GITHUB_ORGANIZATION/settings/member_priv
 open "https://github.com/organizations/$GITHUB_ORGANIZATION/settings/applications/new/"
 open "https://console-openshift-console.apps$OPENSHIFT_CLUSTER_INFO/settings/idp/github"
 ```
-5. Install the Namespace Configuration Operator (see below)
-6. Switch from Janus to RHDH (see below)
+5. Switch from Janus to RHDH (see below)
+6. Install the Namespace Configuration Operator (see below)
 
-If you a using acluster that is configured to use GH Auth for cluster access, proceed to the next section to install the Namespace Configuration Operator
+=== Janus to RHDH
+
+To switch to the latest RHDH image, you will need to complete the folowing:
+
+ 1. Request access to the following quay repo: `quay.io/rhdh/developer-hub-rhel9`.  Requests from Internal Red Hatters should be sent to rhdh@redhat.com.  Requests from customers should be sent to rhdh-interest@redhat.com.
+ 2. After gaining access to the quay repo.  Visit https://quay.io and click on Profile -> Account Settings -> Robot Accounts -> Create Robot Account
+ 3. Name the Robot Account "rhdh_pull_secret".
+ 4. Open your robot account and select the "Kubernetes Secret" tab.  Download your pull secret yaml.
+ 5. Edit your pull secret yaml, setting the pull secret's `metadata.name` field to: `rhdh-pull-secret`
+ 6. Install your pull secret in the backstage namespace: 
++
+```bash
+kubectl create -f secret.yaml -n backstage
+```
+ 7. Update the janus deployment to reference the new image pull secret: 
++
+```bash
+kubectl patch deploy/janus-dev -n backstage -p '{"spec":{"template":{"spec":{"imagePullSecrets":[{"name":"rhdh-pull-secret"}],"containers":[{"name":"janus-backstage","image":"quay.io/rhdh/developer-hub-rhel9:0.1"}]}}}}'
+```
+
 
 === Install the Namespace Configuration Operator (Optional)
 
@@ -78,22 +97,6 @@ spec:
             kind: User
             name: {{ .Name }}
 EOF
-```
-
-=== Janus to RHDH
-
-To switch to the latest RHDH image, you will need to complete the folowing:
-
- 1. Request access to the following quay repo: `quay.io/rhdh/developer-hub-rhel9`.  Requests from Internal Red Hatters should be sent to rhdh@redhat.com.  Requests from customers should be sent to rhdh-interest@redhat.com.
- 2. After gaining access to the quay repo.  Visit https://quay.io and click on Profile -> Account Settings -> Robot Accounts -> Create Robot Account
- 3. Name the Robot Account "rhdh_pull_secret".
- 4. Open your robot account and select the "Kubernetes Secret" tab.  Download your pull secret yaml.
- 5. Edit your pull secret yaml, setting the pull secret's `metadata.name` field to: `rhdh-pull-secret`
- 6. Install your pull secret in the backstage namespace: `kubectl create -f secret.yaml -n backstage`
- 7. Update the janus deployment to reference the new image pull secret: 
-+
-```bash
-kubectl patch deploy/janus-dev -n backstage -p '{"spec":{"template":{"spec":{"imagePullSecrets":[{"name":"rhdh-pull-secret"}],"containers":[{"name":"janus-backstage","image":"quay.io/rhdh/developer-hub-rhel9:0.1"}]}}}}'
 ```
 
 == Workshop Content Development
