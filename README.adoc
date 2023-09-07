@@ -13,22 +13,22 @@ git clone https://github.com/ryanj/janus-platforms.git
 cd janus-platforms/ansible/cluster-setup
 git checkout workshop
 ```
-2. Next, link:https://github.com/redhat-scholars/backstage-workshop/fork[fork this repo] into your new github org and set the name of the new repo to: `software-templates`
-3. Then, complete the rest of the link:https://janus-idp.io/demo-setup/install/[demo-setup] installation process (while skipping the optional quay section).  That doc will instuct you to export several variables that will be used in the upcoming example commands.
-4. Visit the `org/settings/member_privileges` admin page, and change the Base permissions for all repos to "Write"
-+
-```bash
-open "https://github.com/organizations/$GITHUB_ORGANIZATION/settings/member_privileges/"
-```
-5. Create *another* OAuth app to provide GitHub Auth into the Openshift cluster:
+2. Next, link:https://github.com/redhat-scholars/backstage-workshop/fork[fork this repo] while setting the owner input to your new github org, and the name of the new repo to: `software-templates`
+3. Then, complete the rest of the link:https://janus-idp.io/demo-setup/install/[demo-setup] installation process (while skipping the optional quay section).  That doc will instuct you to export several variables that will be used in the upcoming example commands
+4. Create *another* OAuth app to provide GitHub Auth into the Openshift cluster:
 +
 ```bash
 open "https://github.com/organizations/$GITHUB_ORGANIZATION/settings/applications/new/?oauth_application[name]=$GITHUB_ORGANIZATION-auth&oauth_application[url]=https://oauth-openshift.apps$OPENSHIFT_CLUSTER_INFO&oauth_application[callback_url]=https://oauth-openshift.apps$OPENSHIFT_CLUSTER_INFO/oauth2callback/github"
 ```
-6. Configure your new GitHub OAuth App's `id` and `secret`, and add your gh org to the list of approved orgs:
+5. Configure your new GitHub OAuth App's client `id` and `secret`, and include your gh org in the list of approved orgs:
 +
 ```bash
 open "https://console-openshift-console.apps$OPENSHIFT_CLUSTER_INFO/settings/idp/github"
+```
+6. Change the Base permissions for all repos to "Write"
++
+```bash
+open "https://github.com/organizations/$GITHUB_ORGANIZATION/settings/member_privileges/"
 ```
 7. Install the CoP Namespace Configuration Operator from OperatorHub:
 +
@@ -72,25 +72,34 @@ spec:
             name: {{ .Name }}
 EOF
 ```
-8. Switch from xref:#janus-to-rhdh[Janus to RHDH] (see below)
-9. Increase cluster capacity by scaling up machineSets (if needed):
+8. Increase cluster capacity by scaling up machineSets (if needed):
 +
 ```bash
 open "https://console-openshift-console.apps$OPENSHIFT_CLUSTER_INFO/k8s/ns/openshift-machine-api/machine.openshift.io~v1beta1~MachineSet"
 ```
-10. Share access by inviting users to your github org. Users will need to accept the invite before accessing the cluster:
+9. Switch from xref:#janus-to-rhdh[Janus to RHDH] (see below)
+10. Invite users to your github org:
 +
 ```bash
 open "https://github.com/orgs/$GITHUB_ORGANIZATION/people"
 ```
-
-TIP: For larger workshops you can optionally link:https://gist.github.com/ryanj/47da864d6f892bbb86deb918232d1d14[upload your list of new users using a script]
++
+TIP: For larger workshops link:https://gist.github.com/ryanj/47da864d6f892bbb86deb918232d1d14[try uploading a list of github user ids using a script]
+11. Distribute the following onboarding information to each workshop attendee:
++
+```bash
+echo "Attendee invite: https://github.com/orgs/$GITHUB_ORGANIZATION/invitation" &&
+echo "Workshop Instructions: https://bit.ly/rhdh-workshop" &&
+echo "Cluster URL: https://console-openshift-console.apps$OPENSHIFT_CLUSTER_INFO"
+```
++
+WARNING: Workshop users need to accept their org invitation before accessing the cluster
 
 === Janus to RHDH
 
-To switch to the latest RHDH image, you will need to complete the folowing:
+To switch to the latest RHDH image, you will need to complete the following:
 
- 1. Request access to the following quay repo: `quay.io/rhdh/developer-hub-rhel9`.  Requests from Internal Red Hatters should be sent to rhdh@redhat.com.  Requests from customers should be sent to rhdh-interest@redhat.com.
+ 1. Request access to the following quay repo via email: `quay.io/rhdh/developer-hub-rhel9`.  Requests from Internal Red Hatters should be sent to rhdh@redhat.com.  Requests from customers should be sent to rhdh-interest@redhat.com.
  2. After gaining access to the quay repo.  Visit https://quay.io and click on Profile -> Account Settings -> Robot Accounts -> Create Robot Account
  3. Name the Robot Account "rhdh_pull_secret".
  4. Open your robot account and select the "Kubernetes Secret" tab.  Download your pull secret yaml.
