@@ -1,4 +1,4 @@
-= Backstage Workshop at Red Hat Summit 2023
+= Backstage Workshop 
 :page-layout: home
 
 [#introduction]

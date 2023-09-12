@@ -37,7 +37,7 @@ Next, you'll connect to Backstage and discover the starting point for developing
 [#backstage_access]
 == Logging in to Backstage
 
-Click on the app launcher link in the OpenShift Web Console header menu and select "Backstage". 
+Click on the waffle icon in the OpenShift Web Console header menu and select "Red Hat Developer Hub". 
 
 image::console_backstage_link.png[]
 
