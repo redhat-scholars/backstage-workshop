@@ -14,7 +14,7 @@ cd janus-platforms/ansible/cluster-setup
 git checkout workshop
 ```
 2. Next, link:https://github.com/redhat-scholars/backstage-workshop/fork[fork this repo] while setting the owner input to your new github org, and the name of the new repo to: `software-templates`
-3. Then, complete the rest of the link:https://janus-idp.io/demo-setup/install/[demo-setup] installation process (while skipping the optional quay section).  That doc will instuct you to export several variables that will be used in the upcoming example commands
+3. Then, complete the rest of the link:https://janus-idp.io/demo-setup/install/[demo-setup] installation process (while skipping the optional quay section).  That doc will instruct you to export several variables that will be used in the upcoming example commands
 4. Create *another* OAuth app to provide GitHub Auth into the Openshift cluster:
 +
 ```bash
