@@ -24,11 +24,13 @@ image::cluster_auth.png[]
 [#project_access]
 === OpenShift Project
 
-Your user will have an OpenShift _Project_ for your exclusive use. Projects are a superset of the base Kubernetes _namespace_, and isolate resource names and access rights from other Projects on the cluster. Your OpenShift user and Project names both match the GitHub ID you used to log in.
+You will need to create an OpenShift _Project_ for your exclusive use. Projects are a superset of the base Kubernetes _namespace_, and isolate resource names and access rights from other Projects on the cluster. Your OpenShift user and Project names should both match the GitHub ID you used to log in.
+
+image::project_create.png[]
 
 image::project_list.png[]
 
-TIP: The project will be created in the background as you log in. If you do not find a project, try refreshing your browser to reload the Projects pulldown menu.
+TIP: If you do not find a project, try refreshing your browser to reload the Projects pulldown menu.
 
 IMPORTANT: Remember your Project name! You will enter it into Template forms to replace the *NAMESPACE* placeholder as you deploy components in the next two chapters.
 
