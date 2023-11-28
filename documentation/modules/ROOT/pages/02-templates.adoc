@@ -37,7 +37,7 @@ image::frontend_5.png[]
 [#github]
 == View the source
 
-Explore the repository Backstage created for you with the frontend component source code. Each scaffolded repo is part of the GitHub Org used in this workshop. Each one is prefixed with your Project/namespace name, giving your frontend component's source code repository a qualified name like github.com/Summit23JanusN/_NAMESPACE_-frontend.
+Explore the repository Backstage created for you with the frontend component source code. Each scaffolded repo is part of the GitHub Org used in this workshop. Each one is prefixed with your Project/namespace name, giving your frontend component's source code repository a qualified name like github.com/**rhdh23-lab**/_NAMESPACE_-frontend.
 
 image::github_repo.png[]
 

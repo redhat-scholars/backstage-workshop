@@ -36,7 +36,7 @@ Click on _Allow selected permissions_ to grant Dev Spaces your access to OpenShi
 
 image::auth_6.png[]
 
-IMPORTANT: Make sure to click on *`Grant`* next to the **Summit23JanusN** GitHub Org before approving Dev Spaces access (where _N_ matches your cluster's GitHub Org ID number).
+IMPORTANT: Make sure to click on *`Grant`* next to the **rhdh23-lab** GitHub Org before approving Dev Spaces access (where _N_ matches your cluster's GitHub Org ID number).
 
 image::auth_4.png[]
 
